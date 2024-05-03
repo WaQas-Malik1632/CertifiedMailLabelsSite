@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>CertifiedMailLables_Site</groupId>
+	<artifactId>CertifiedMailLablesSite</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>CertifiedMailLablesSite</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!--https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.19.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.8.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!--https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.8.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.27.0</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/io.qameta.allure/allure-test-filter -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-test-filter</artifactId>
+			<version>2.27.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-java-commons</artifactId>
+			<version>2.27.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-model -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-model</artifactId>
+			<version>2.27.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-maven -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-maven</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.github.automatedowl/allure-environment-writer -->
+		<dependency>
+			<groupId>com.github.automatedowl</groupId>
+			<artifactId>allure-environment-writer</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.16.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.checkerframework/jdk7 -->
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>jdk7</artifactId>
+			<version>2.1.14</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
+		<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/velocity/velocity-dep -->
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity-dep</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.22</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.10.1</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>2.10.0</version>
+				<configuration>
+					<reportVersion>2.13.0</reportVersion>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<properties>
+						<properties>
+							<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+							<aspectj.version>1.9.9.1</aspectj.version>
+						</properties>
+						<property>
+							<name>usedefaultlisteners</name>
+							<value>True</value>
+						</property>
+					</properties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
