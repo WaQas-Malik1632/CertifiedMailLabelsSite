@@ -1,12 +1,8 @@
 package com.cml.qa.testcases;
 
 import org.testng.annotations.Test;
-
 import com.cml.qa.base.TestBaseClass;
-import com.cml.qa.pages.HomePageClass;
-import com.cml.qa.pages.LoginPageClass;
 import com.cml.qa.pages.SignUpPageClass;
-
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -24,10 +20,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class SignUpPageTest extends TestBaseClass {
-	LoginPageClass login;
-	HomePageClass homepage;
 	SignUpPageClass signup;
-	
+
 	public SignUpPageTest() throws IOException {
 		super();
 	}
@@ -35,13 +29,24 @@ public class SignUpPageTest extends TestBaseClass {
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
 		intialization();
-		login=new LoginPageClass();
-		homepage = login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
-		signup=new SignUpPageClass();
-		
+		signup = new SignUpPageClass();
+		signup.Precondition();
 	}
 
-	@Test(priority = 1, description = "Signup TC001", enabled = true, invocationCount = 1)
+	@Test(priority = 1, invocationCount = 1, enabled = true, description = "SignUp Page Test #1")
+	@Description("SignUp Page->Verify that user is able to validate signUp Page Title")
+	@Epic("EP001")
+	@Feature("Feature:001")
+	@Story("Sign Up Page TestCases")
+	@Step("Login->Home->Verify Elements")
+	@Severity(SeverityLevel.CRITICAL)
+	public void ValidateSignUpPageTitle() throws IOException {
+		signup.Precondition();
+		String SignUpTitleVerify = signup.VerifySignUpTitle();
+		Assert.assertEquals(SignUpTitleVerify, "Register", "Register");
+	}
+
+	@Test(priority = 2, description = "Signup TC001", enabled = true, invocationCount = 1)
 	@Description("Verify that user is able to register himself successfully")
 	@Epic("Singup_EP001")
 	@Feature("Signup_001")
@@ -50,15 +55,12 @@ public class SignUpPageTest extends TestBaseClass {
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
 	public void Testcases_ToVerifyRegisterUserSuccessfully() throws IOException {
-
-		signup.Precondition();
-		signup.userRegistrationForm("User", "ABCTest", "User ABCTest", "Return address", "Address2", "US", "12",
-				"1111", "0000000000", "Testabc@mail.com", "Test@123", "Test@123");
+		signup.userRegistrationForm("User", "ABCTest", "User ABCTest", "Return address", "Address2", "US", "Florida",
+				"12", "1111", "0000000000", "Testabc@mail.com", "Test@123", "Test@123");
 		// Verify page title is matched "nopCommerce demo store"
-		Assert.assertEquals(driver.getTitle(), "nopCommerce demo store");
-		String actual_url = driver.getCurrentUrl();
-		String expected_url = "https://demo.nopcommerce.com/";
-		Assert.assertEquals(actual_url, expected_url);
+		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
+		Assert.assertEquals(signup, driver.getCurrentUrl(), ExpectedUrl);
+		System.out.print("Currrent Page Url is:" + driver.getCurrentUrl());
 	}
 
 	@AfterMethod
