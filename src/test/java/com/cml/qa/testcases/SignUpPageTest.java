@@ -1,5 +1,6 @@
 package com.cml.qa.testcases;
 
+import com.cml.qa.utilities.TestUtil_mailinator;
 import org.testng.annotations.Test;
 import com.cml.qa.base.TestBaseClass;
 import com.cml.qa.pages.SignUpPageClass;
@@ -20,8 +21,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class SignUpPageTest extends TestBaseClass {
-	SignUpPageClass signup;
 
+	SignUpPageClass signup;
+	TestUtil_mailinator utilMailinator;
 	public SignUpPageTest() throws IOException {
 		super();
 	}
@@ -29,11 +31,12 @@ public class SignUpPageTest extends TestBaseClass {
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
 		intialization();
+		utilMailinator=new TestUtil_mailinator();
 		signup = new SignUpPageClass();
 		signup.Precondition();
 	}
 
-	@Test(priority = 1, invocationCount = 1, enabled = true, description = "SignUp Page Test #1")
+	@Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_001")
 	@Description("SignUp Page->Verify that user is able to validate signUp Page Title")
 	@Epic("EP001")
 	@Feature("Feature:001")
@@ -46,7 +49,7 @@ public class SignUpPageTest extends TestBaseClass {
 		Assert.assertEquals(SignUpTitleVerify, "Register", "Register");
 	}
 
-	@Test(priority = 2, description = "Signup TC001", enabled = true, invocationCount = 1)
+	@Test(priority = 1, description = "Signup TC001", enabled = true, invocationCount = 1)
 	@Description("Verify that user is able to register himself successfully")
 	@Epic("Singup_EP001")
 	@Feature("Signup_001")
@@ -54,17 +57,22 @@ public class SignUpPageTest extends TestBaseClass {
 	@Step("Signup>>Home page")
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
-	public void Testcases_ToVerifyRegisterUserSuccessfully() throws IOException {
-		signup.userRegistrationForm("User", "ABCTest", "User ABCTest", "Return address", "Address2", "US", "Florida",
-				"12", "1111", "0000000000", "Testabc@mail.com", "Test@123", "Test@123");
-		// Verify page title is matched "nopCommerce demo store"
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
-		Assert.assertEquals(signup, driver.getCurrentUrl(), ExpectedUrl);
-		System.out.print("Currrent Page Url is:" + driver.getCurrentUrl());
+	public void TC_CML_SS_020() throws IOException {
+		signup.userRegistrationForm("Testparent", "Staging178", "Destiny Planners", "4678 James Martin Circle", "Columbus, OH 43215", "US", "Florida",
+				"43215", "4678", "614-370-3225", "EugeneMHubbara@mailinator.com", "Pass@123", "Pass@123");
+
+		// Verify page url is matched or not
+		String ExpectedUrl = "https://staging.certifiedmaillabels.com/login";
+		String ActualUrl=driver.getCurrentUrl();
+		Assert.assertEquals(signup, ActualUrl, ExpectedUrl);
+		System.out.print("Current Page Url is:" + driver.getCurrentUrl());
+	}
+	@Test(priority = 2)
+	public void LinkVerification() throws IOException {
+		signup.MailinatorInbox("EugeneMHubbara@mailinator.com");
 	}
 
 	@AfterMethod
 	public void afterMethod() {
 	}
-
 }
