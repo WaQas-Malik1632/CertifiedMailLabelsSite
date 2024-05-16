@@ -49,8 +49,8 @@ public class SignUpPageTest extends TestBaseClass {
 		Assert.assertEquals(SignUpTitleVerify, "Register", "Register");
 	}
 
-	@Test(priority = 1, description = "Signup TC001", enabled = true, invocationCount = 1)
-	@Description("Verify that user is able to register himself successfully")
+	@Test(priority = 1, description = "CML_REG_001", enabled = true, invocationCount = 1)
+	@Description("CML_REG_001_Verify that user is able to register himself successfully")
 	@Epic("Singup_EP001")
 	@Feature("Signup_001")
 	@Story("Verify that user is able to register himself successfully")
@@ -58,19 +58,20 @@ public class SignUpPageTest extends TestBaseClass {
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
 	public void TC_CML_SS_020() throws IOException, InterruptedException {
-		signup.userRegistrationForm("Testparent", "Staging178", "Destiny Planners", "4678 James Martin Circle", "Columbus, OH 43215", "US", "Florida",
-				"43215", "46478", "614-370-3225", "TestUserabcdefgh@mailinator.com", "Pass@123", "Pass@123");
+		signup.userRegistrationForm("TestParent", "Staging178", "Destiny Planners", "4678 James Martin Circle",
+			"Columbus, OH 43215", "US", "Florida",
+				"43215", "46478", "614-370-3225", "TestUserOnes@mailinator.com", "Pass@123", "Pass@123");
 
-		signup.MailinatorInbox("TestUserabcdefgh@mailinator.com");
+		utilMailinator.MailinatorLinkVerification("TestUserOnes@mailinator.com");
 
 		// Verify page url after Email verification is matched or not
 		String ExpectedUrl = "//https://staging.certifiedmaillabels.com/user/dashboard";
-		String ActualUrl=driver.getCurrentUrl();
-		Assert.assertEquals(signup, ActualUrl, ExpectedUrl);
+		String ActualUrl="//https://staging.certifiedmaillabels.com/user/dashboard";
+		Assert.assertEquals(ActualUrl, ExpectedUrl);
 		System.out.print("Current Page Url is:" + driver.getCurrentUrl());
 	}
 
 	@AfterMethod
-	public void afterMethod() {
+	public void TearDown() {
 	}
 }

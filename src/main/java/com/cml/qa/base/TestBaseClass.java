@@ -19,7 +19,7 @@ public class TestBaseClass {
 
 	public TestBaseClass() throws IOException {
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream("D:/Automation Sites/CertifiedMailLabelsSite/src/main/java/com/cml/qa/config/config.properties");
+		FileInputStream ip = new FileInputStream("E:/Automation Projects/CertifiedMailLablesSite/src/main/java/com/cml/qa/config/config.properties");
 		prop.load(ip);
 	}
 	public static void intialization() {
@@ -43,7 +43,5 @@ public class TestBaseClass {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-
-		
 	}
 }

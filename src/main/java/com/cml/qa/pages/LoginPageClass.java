@@ -56,7 +56,6 @@ public class LoginPageClass extends TestBaseClass {
 
 		// If user wants to check the RememberMe
 		rememberMe.click();
-
 		btnLoginSubmit.click();
 
 		return home = new HomePageClass();

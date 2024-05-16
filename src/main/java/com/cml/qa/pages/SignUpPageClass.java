@@ -1,8 +1,6 @@
 package com.cml.qa.pages;
 
 import java.io.IOException;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,11 +54,12 @@ public class SignUpPageClass extends TestBaseClass {
     WebElement checkAgree;
     @FindBy(xpath = "//button[normalize-space()='Register']")
     WebElement btn_RegisterSubmit;
+
     @FindBy(xpath = "//a[normalize-space()='click resend email']")
     WebElement linkTextClick_VerifyEmail;
 
-	@FindBy(xpath = "//input[@id='inbox_field']")
-	WebElement MailinatorIb;
+    @FindBy(xpath = "//input[@id='inbox_field']")
+    WebElement MailinatorIb;
 
     @FindBy(xpath = "//button[@class='primary-btn']")
     WebElement ClickGo;
@@ -82,8 +81,7 @@ public class SignUpPageClass extends TestBaseClass {
         return registerTitle.getText();
     }
 
-    public void userRegistrationForm(String Fname, String Lname, String CombName, String ReturnAddress, String Address2,
-                                     String City, String SelectState, String Zip, String Zip4, String PhoneNumber, String Email, String Pass,
+    public void userRegistrationForm(String Fname, String Lname, String CombName, String ReturnAddress, String Address2, String City, String SelectState, String Zip, String Zip4, String PhoneNumber, String Email, String Pass,
                                      String Confpass) {
         // Enter First Name
         fName.sendKeys(Fname);
@@ -122,25 +120,4 @@ public class SignUpPageClass extends TestBaseClass {
         // Click on Regsiter button to submit the form
         btn_RegisterSubmit.click();
     }
-
-    public void MailinatorInbox(String email) throws InterruptedException {
-        //After signup, on Login page, user can click on resend the email link text
-        //  linkTextClick_VerifyEmail.click();
-        driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
-		MailinatorIb.sendKeys(email);
-
-        ClickGo.click();
-
-        Thread.sleep(3000);
-        ClickIbMsgResult.click();
-
-        driver.switchTo().frame("html_msg_body");
-
-        Thread.sleep(3000);
-        js.executeScript("window.scrollBy(0, 400)", "");
-
-        LinkTextClickToVerifyEmail.click();
-
-    }
-
 }

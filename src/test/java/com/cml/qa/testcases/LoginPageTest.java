@@ -44,9 +44,9 @@ public class LoginPageTest extends TestBaseClass {
 	public void LoginTest() throws IOException {
 		login.PreRequisiteLinkClickLogin();
 		homepage = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
+		String ExpectedUrl = "https://staging.certifiedmaillabels.com/user/dashboard";
 		Assert.assertEquals(homepage, driver.getCurrentUrl(), ExpectedUrl);
-		System.out.print("Currrent Page Url is:" + driver.getCurrentUrl());
+		System.out.print("Current Page Url is:" + driver.getCurrentUrl());
 	}
 
 	@Test(priority = 2, invocationCount = 1, enabled = true, description = "Login Page Test #3", groups = {
