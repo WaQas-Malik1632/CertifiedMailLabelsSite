@@ -2,6 +2,7 @@ package com.cml.qa.pages;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -70,7 +71,6 @@ public class SignUpPageClass extends TestBaseClass {
     @FindBy(xpath = "//a[@class='button button-primary']")
     WebElement LinkTextClickToVerifyEmail;
 
-
     public void Precondition() {
 
         click_register.click();
@@ -123,13 +123,22 @@ public class SignUpPageClass extends TestBaseClass {
         btn_RegisterSubmit.click();
     }
 
-    public void MailinatorInbox(String email) {
+    public void MailinatorInbox(String email) throws InterruptedException {
         //After signup, on Login page, user can click on resend the email link text
         //  linkTextClick_VerifyEmail.click();
         driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
 		MailinatorIb.sendKeys(email);
+
         ClickGo.click();
+
+        Thread.sleep(3000);
         ClickIbMsgResult.click();
+
+        driver.switchTo().frame("html_msg_body");
+
+        Thread.sleep(3000);
+        js.executeScript("window.scrollBy(0, 400)", "");
+
         LinkTextClickToVerifyEmail.click();
 
     }

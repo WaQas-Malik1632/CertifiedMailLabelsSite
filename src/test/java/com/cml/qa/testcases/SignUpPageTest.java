@@ -57,19 +57,17 @@ public class SignUpPageTest extends TestBaseClass {
 	@Step("Signup>>Home page")
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
-	public void TC_CML_SS_020() throws IOException {
+	public void TC_CML_SS_020() throws IOException, InterruptedException {
 		signup.userRegistrationForm("Testparent", "Staging178", "Destiny Planners", "4678 James Martin Circle", "Columbus, OH 43215", "US", "Florida",
-				"43215", "4678", "614-370-3225", "EugeneMHubbara@mailinator.com", "Pass@123", "Pass@123");
+				"43215", "46478", "614-370-3225", "TestUserabcdefgh@mailinator.com", "Pass@123", "Pass@123");
 
-		// Verify page url is matched or not
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/login";
+		signup.MailinatorInbox("TestUserabcdefgh@mailinator.com");
+
+		// Verify page url after Email verification is matched or not
+		String ExpectedUrl = "//https://staging.certifiedmaillabels.com/user/dashboard";
 		String ActualUrl=driver.getCurrentUrl();
 		Assert.assertEquals(signup, ActualUrl, ExpectedUrl);
 		System.out.print("Current Page Url is:" + driver.getCurrentUrl());
-	}
-	@Test(priority = 2)
-	public void LinkVerification() throws IOException {
-		signup.MailinatorInbox("EugeneMHubbara@mailinator.com");
 	}
 
 	@AfterMethod
