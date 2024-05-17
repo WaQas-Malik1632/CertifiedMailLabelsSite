@@ -8,11 +8,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.cml.qa.base.TestBaseClass;
-import com.cml.qa.utilities.TestUtil;
 
 public class LoginPageClass extends TestBaseClass {
 	JavascriptExecutor js=(JavascriptExecutor) driver;
-	HomePageClass home;
+	DashboardPageClass dashboard;
 
 	@FindBy(xpath = "//a[normalize-space()='Login']")
 	WebElement btnLoginClick;
@@ -44,7 +43,7 @@ public class LoginPageClass extends TestBaseClass {
 		btnLoginClick.click();
 	}
 
-	public HomePageClass Login_Testcases(String Email, String Pass) throws IOException {
+	public DashboardPageClass Login_Testcases(String Email, String Pass) throws IOException {
 		emailAddress.sendKeys(Email);
 		password.sendKeys(Pass);
 
@@ -52,13 +51,13 @@ public class LoginPageClass extends TestBaseClass {
 
 		// Scroll the windows to the specific element
 		// js1.executeScript("arguments[0].click();", btnLoginSubmit);
-		// After successful login->it should return Homepage
 
 		// If user wants to check the RememberMe
 		rememberMe.click();
 		btnLoginSubmit.click();
 
-		return home = new HomePageClass();
+		// After successful login->User should return Dashboard Page
+		return dashboard = new DashboardPageClass();
 	}
 
 	public String VerifyLoginTitle() {

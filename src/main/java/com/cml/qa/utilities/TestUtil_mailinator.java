@@ -1,6 +1,7 @@
 package com.cml.qa.utilities;
 
 import com.cml.qa.base.TestBaseClass;
+import com.cml.qa.pages.DashboardPageClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,8 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-
 public class TestUtil_mailinator extends TestBaseClass {
+
+	DashboardPageClass dashboard;
 
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -28,15 +30,14 @@ public class TestUtil_mailinator extends TestBaseClass {
 	@FindBy(xpath = "//a[@class='button button-primary']")
 	WebElement LinkTextClickToVerifyEmail;
 
-
 	public TestUtil_mailinator() throws IOException {
 		super();
 		PageFactory.initElements(driver, this);
 	}
 
-	public void MailinatorLinkVerification(String email) throws InterruptedException {
+	public DashboardPageClass MailinatorLinkVerification(String email) throws InterruptedException, IOException {
 		//After signup, user can click to resend the email link again
-		//  linkTextClick_VerifyEmail.click();
+		//linkTextClick_VerifyEmail.click();
 
 		driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
 		MailinatorIb.sendKeys(email);
@@ -52,5 +53,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 		js.executeScript("window.scrollBy(0, 200)", "");
 
 		LinkTextClickToVerifyEmail.click();
+
+		return new DashboardPageClass();
 	}
 }

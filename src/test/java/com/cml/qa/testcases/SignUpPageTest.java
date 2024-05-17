@@ -1,5 +1,7 @@
 package com.cml.qa.testcases;
 
+import com.cml.qa.pages.DashboardPageClass;
+import com.cml.qa.pages.LoginPageClass;
 import com.cml.qa.utilities.TestUtil_mailinator;
 import org.testng.annotations.Test;
 import com.cml.qa.base.TestBaseClass;
@@ -12,18 +14,18 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-
 import org.testng.annotations.BeforeMethod;
-
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class SignUpPageTest extends TestBaseClass {
 
+	LoginPageClass loginpage;
+	DashboardPageClass dashboard;
 	SignUpPageClass signup;
 	TestUtil_mailinator utilMailinator;
+
 	public SignUpPageTest() throws IOException {
 		super();
 	}
@@ -31,9 +33,10 @@ public class SignUpPageTest extends TestBaseClass {
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
 		intialization();
-		utilMailinator=new TestUtil_mailinator();
 		signup = new SignUpPageClass();
 		signup.Precondition();
+		utilMailinator = new TestUtil_mailinator();
+		dashboard = new DashboardPageClass();
 	}
 
 	@Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_001")
@@ -44,7 +47,6 @@ public class SignUpPageTest extends TestBaseClass {
 	@Step("Login->Home->Verify Elements")
 	@Severity(SeverityLevel.CRITICAL)
 	public void ValidateSignUpPageTitle() throws IOException {
-		signup.Precondition();
 		String SignUpTitleVerify = signup.VerifySignUpTitle();
 		Assert.assertEquals(SignUpTitleVerify, "Register", "Register");
 	}
@@ -58,16 +60,22 @@ public class SignUpPageTest extends TestBaseClass {
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
 	public void TC_CML_SS_020() throws IOException, InterruptedException {
-		signup.userRegistrationForm("TestParent", "Staging178", "Destiny Planners", "4678 James Martin Circle",
-			"Columbus, OH 43215", "US", "Florida",
-				"43215", "46478", "614-370-3225", "TestUserOnes@mailinator.com", "Pass@123", "Pass@123");
+		loginpage = signup.userRegistrationForm("TestParent", "Staging178", "Destiny Planners",
+				"4678 James Martin " + "Circle", "Columbus, OH 43215", "US", "Florida", "43215", "46478",
+				"614-370-3225", "TestUserTwoss@mailinator.com", "Pass@123", "Pass@123");
 
-		utilMailinator.MailinatorLinkVerification("TestUserOnes@mailinator.com");
+		// Verify that Page url is belongs to Login Page
+		// Verify page url after sign up is matched or not
+
+		System.out.print("After Sign up Current Page Url is:" + driver.getCurrentUrl());
+
+		//Validate email via mailinator
+		dashboard = utilMailinator.MailinatorLinkVerification("TestUserTwoss@mailinator.com");
 
 		// Verify page url after Email verification is matched or not
-		String ExpectedUrl = "//https://staging.certifiedmaillabels.com/user/dashboard";
-		String ActualUrl="//https://staging.certifiedmaillabels.com/user/dashboard";
-		Assert.assertEquals(ActualUrl, ExpectedUrl);
+		String ExpectedUrlDashboard = "//https://staging.certifiedmaillabels.com/user/dashboard";
+		String ActualUrlDashboard = driver.getCurrentUrl();
+		Assert.assertEquals(dashboard, ActualUrlDashboard, ExpectedUrlDashboard);
 		System.out.print("Current Page Url is:" + driver.getCurrentUrl());
 	}
 

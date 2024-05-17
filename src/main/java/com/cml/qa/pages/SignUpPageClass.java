@@ -10,6 +10,8 @@ import com.cml.qa.base.TestBaseClass;
 
 public class SignUpPageClass extends TestBaseClass {
 
+    LoginPageClass loginpage;
+
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public SignUpPageClass() throws IOException {
@@ -81,8 +83,9 @@ public class SignUpPageClass extends TestBaseClass {
         return registerTitle.getText();
     }
 
-    public void userRegistrationForm(String Fname, String Lname, String CombName, String ReturnAddress, String Address2, String City, String SelectState, String Zip, String Zip4, String PhoneNumber, String Email, String Pass,
-                                     String Confpass) {
+    public LoginPageClass userRegistrationForm(String Fname, String Lname, String CombName, String ReturnAddress, String Address2,
+                                  String City, String SelectState, String Zip, String Zip4, String PhoneNumber, String Email, String Pass,
+                                     String Confpass) throws IOException {
         // Enter First Name
         fName.sendKeys(Fname);
         // Enter Last Name
@@ -119,5 +122,7 @@ public class SignUpPageClass extends TestBaseClass {
         checkAgree.click();
         // Click on Regsiter button to submit the form
         btn_RegisterSubmit.click();
+
+        return new LoginPageClass();
     }
 }
