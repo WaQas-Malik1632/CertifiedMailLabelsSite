@@ -9,12 +9,16 @@ import java.io.IOException;
 
 public class DashboardPageClass extends TestBaseClass {
 
-  //  @FindBy(xpath = "//a[normalize-space()='Register']")
-   // WebElement click_register;
+   @FindBy(xpath = "//h1[normalize-space()='Dashboard']")
+    WebElement DashboardTitle;
 
     public DashboardPageClass() throws IOException {
         super();
         PageFactory.initElements(driver, this);
     }
-
+    public String DashboardTitleVerify()
+    {
+        DashboardTitle.isDisplayed();
+        return driver.getTitle();
+    }
 }

@@ -27,8 +27,8 @@ public class TestUtil extends TestBaseClass {
 
 	public TestUtil() throws IOException
 	{
+		super();
 	}
-
 	// Take Screenshot
 	public void TakeScreenshot(WebDriver webdriver, String filename) throws IOException {
 		TakesScreenshot src = ((TakesScreenshot) webdriver);
