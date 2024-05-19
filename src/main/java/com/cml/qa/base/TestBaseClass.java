@@ -18,6 +18,7 @@ public class TestBaseClass {
 	public static Properties prop;
 
 	public TestBaseClass() throws IOException {
+
 		prop = new Properties();
 		FileInputStream ip = new FileInputStream("E:/Automation Projects/CertifiedMailLablesSite/src/main/java/com/cml/qa/config/config.properties");
 		prop.load(ip);

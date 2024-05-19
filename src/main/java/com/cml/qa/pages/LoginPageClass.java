@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,24 +16,31 @@ public class LoginPageClass extends TestBaseClass {
 	DashboardPageClass dashboard;
 
 	@FindBy(xpath = "//a[normalize-space()='Login']")
+	@CacheLookup
 	WebElement btnLoginClick;
 
 	@FindBy(xpath = "//div[contains(@class,'required')]//div[@class='col-md-12']//input[@id='email']")
+	@CacheLookup
 	WebElement emailAddress;
 
 	@FindBy(xpath = "//input[@id='password']")
+	@CacheLookup
 	WebElement password;
 
 	@FindBy(xpath = "//button[normalize-space()='Login']")
+	@CacheLookup
 	WebElement btnLoginSubmit;
 
 	@FindBy(id = "remember")
+	@CacheLookup
 	WebElement rememberMe;
 
 	@FindBy(xpath = "//h1[normalize-space()='Login']")
+	@CacheLookup
 	WebElement LoginTitle;
 
 	@FindBy(xpath = "//img[@alt='Certified Mail Labels']")
+	@CacheLookup
 	WebElement CMLLogo;
 
 	public LoginPageClass() throws IOException {

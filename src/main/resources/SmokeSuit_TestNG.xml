@@ -3,8 +3,8 @@
 <suite thread-count="10" name="Smoke Suit-CML Site Automation Test Cases">
 	<test thread-count="10" name="Smoke Suit Test">
 		<classes>
-			<class name="com.cml.qa.testcases.SignUpPageTest" />
 			<class name="com.cml.qa.testcases.LoginPageTest" />
+			<class name="com.cml.qa.testcases.SignUpPageTest" />
 			<class name="com.cml.qa.testcases.DashboardPageTestClass" />
 		</classes>
 	</test> <!--Smoke Suit Test -->
