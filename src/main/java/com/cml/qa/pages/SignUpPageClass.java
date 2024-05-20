@@ -11,8 +11,6 @@ import com.cml.qa.base.TestBaseClass;
 
 public class SignUpPageClass extends TestBaseClass {
 
-    LoginPageClass loginpage;
-
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public SignUpPageClass() throws IOException {

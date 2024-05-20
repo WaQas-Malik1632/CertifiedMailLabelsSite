@@ -36,21 +36,46 @@ public class LoginPageTest extends TestBaseClass {
         login.PreRequisiteLinkClickLogin();
     }
 
-    // Validate that user can login to the system using valid credentials
+    // Validate that parent user can login to the system using valid credentials
     @Test(invocationCount = 1, priority = 3, enabled = true, description = "CML_LOGIN_001")
-    @Description("CML_LOGIN_001->Validate that user can log in using valid credentials: Email:TestUserOne@mailinator.com, password: Pass@123")
+    @Description("CML_LOGIN_001->Verify that user can login successfully as parent user->Email=TestUserOne@mailinator.com, password=Pass@123")
     @Epic("LOGIN->EP001")
     @Feature("LOGIN->Feature:001")
     @Story("Login TestCases")
-    @Step("Hit Site Url->Login")
+    @Step("Hit Site Url->Login as Parent User")
     @Severity(SeverityLevel.BLOCKER)
-    public void TC_CML_SS_003() throws IOException {
+    public void TC_CML_SS_010() throws IOException {
         dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
         Assert.assertTrue(true, "Login Test Passed");
     }
+    // Verify that user cannot login with invalid username or password
+    @Test(invocationCount = 1, priority = 3, enabled = false, description = "CML_LOGIN_002")
+    @Description("CML_LOGIN_002->Verify that user cannot login with invalid username or password")
+    @Epic("LOGIN->EP001")
+    @Feature("LOGIN->Feature:001")
+    @Story("Login TestCases")
+    @Step("Hit Site Url->Login as Parent User")
+    @Severity(SeverityLevel.CRITICAL)
+    public void TC_CML_SS_168() throws IOException {
+        dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
+        Assert.assertTrue(true, "Login Test Passed");
 
-    @Test(priority = 2, invocationCount = 1, enabled = true, description = "CML_LOGIN_002")
-    @Description("CML_LOGIN_002->Verify that user is able to validate Login Page Title")
+        String ExpectedUrl = "https://staging.certifiedmaillabels.com/login";
+        String ActualUrl = driver.getCurrentUrl();
+
+        try {
+            Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
+            System.out.println("\n"+"Login Failed->These credentials do not match our records. Password is case-sensitive." + "\n");
+        } catch (AssertionError e) {
+            System.out.println("User logged in successfully" + "\n");
+            util.TakeScreenshot(driver," _Login Test Failure Screenshot_ ");
+            throw e; // Re-throw the assertion error to ensure the test fails
+        }
+
+    }
+
+    @Test(priority = 2, invocationCount = 1, enabled = false, description = "CML_LOGIN_003")
+    @Description("CML_LOGIN_003->Verify that user is able to validate Login Page Title")
     @Epic("LOGIN->EP001")
     @Feature("LOGIN->Feature:001")
     @Story("Login Page TestCases")
@@ -67,8 +92,8 @@ public class LoginPageTest extends TestBaseClass {
         }
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = true, description = "CML_LOGIN_003")
-    @Description("CML_LOGIN_003->Verify that user is able to validate Login Page Logo")
+    @Test(priority = 1, invocationCount = 1, enabled = false, description = "CML_LOGIN_004")
+    @Description("CML_LOGIN_004->Verify that user is able to validate Login Page Logo")
     @Epic("LOGIN->EP001")
     @Feature("LOGIN->Feature:001")
     @Story("Login Page TestCases")

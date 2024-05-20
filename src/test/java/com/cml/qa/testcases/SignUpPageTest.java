@@ -22,7 +22,7 @@ import org.testng.annotations.AfterMethod;
 
 public class SignUpPageTest extends TestBaseClass {
 	TestUtil util;
-	LoginPageClass loginpage;
+	LoginPageClass loginPage;
 	DashboardPageClass dashboard;
 	SignUpPageClass signup;
 	TestUtil_mailinator utilMailinator;
@@ -61,15 +61,15 @@ public class SignUpPageTest extends TestBaseClass {
 	}
 
 	@Test(priority = 1, description = "CML_REG_001", enabled = true, invocationCount = 1)
-	@Description("CML_REG_001->Verify that user is able to register himself successfully")
-	@Epic("Singup_EP001")
+	@Description("CML_REG_001->Verify that user can register successfully as parent user")
+	@Epic("SingUp_EP001")
 	@Feature("Signup_001")
 	@Story("Verify that user is able to register himself successfully")
 	@Step("Signup>>Home page")
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
-	public void TC_CML_SS_001() throws IOException, InterruptedException {
-		loginpage = signup.userRegistrationForm("TestParent", "Staging178", "Destiny Planners",
+	public void TC_CML_SS_020() throws IOException, InterruptedException {
+		loginPage = signup.userRegistrationForm("TestParent", "Staging178", "Destiny Planners",
 				"4678 James Martin " + "Circle", "Columbus, OH 43215", "US", "Florida", "43215", "46478",
 				"614-370-3225", "TestUserFour@mailinator.com", "Pass@123", "Pass@123");
 
