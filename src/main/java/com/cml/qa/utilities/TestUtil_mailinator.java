@@ -77,7 +77,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
 		loginPage=new LoginPageClass();
-		loginPage.Login_Testcases("LoggedNewInTestSteveUser@mailinator.com","Pass@123");
+		loginPage.Login_Testcases("LoggedNewsInTestSteveUser@mailinator.com","Pass@123");
 
 		//driver.navigate().refresh();
 		driver.get(driver.getCurrentUrl());

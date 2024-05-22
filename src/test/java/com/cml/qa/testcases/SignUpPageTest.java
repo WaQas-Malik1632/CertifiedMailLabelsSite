@@ -70,12 +70,12 @@ public class SignUpPageTest extends TestBaseClass {
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
 	public void TC_CML_SS_020() throws IOException, InterruptedException {
-		loginPage = signup.userRegistrationForm("LoggedNewInTestSteveUser", "Staging178", "Destiny Planners",
+		loginPage = signup.userRegistrationForm("LoggedNewsInTestSteveUser", "Staging178", "Destiny Planners",
 				"4678 James Martin " + "Circle", "Columbus, OH 43215", "US", "Florida", "43215", "46478",
-				"2694558744", "LoggedNewInTestSteveUser@mailinator.com", "Pass@123", "Pass@123");
+				"2694558744", "LoggedNewsInTestSteveUser@mailinator.com", "Pass@123", "Pass@123");
 
 		//Validate email via mailinator
-		dashboard = utilMailinator.MailinatorLinkVerificationAndLoginNewUser("LoggedNewInTestSteveUser@mailinator.com");
+		dashboard = utilMailinator.MailinatorLinkVerificationAndLoginNewUser("LoggedNewsInTestSteveUser@mailinator.com");
 
 	//	driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
