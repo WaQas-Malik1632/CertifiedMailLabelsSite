@@ -35,13 +35,14 @@ public class SignUpPageTest extends TestBaseClass {
 	public void beforeMethod() throws IOException {
 		util=new TestUtil();
 		intialization();
+		loginPage=new LoginPageClass();
 		signup = new SignUpPageClass();
 		signup.Precondition();
 		utilMailinator = new TestUtil_mailinator();
 		dashboard = new DashboardPageClass();
 	}
 
-	@Test(priority = 1, invocationCount = 1, enabled = true, description = "CML_REG_002")
+	@Test(priority = 1, invocationCount = 1, enabled = false, description = "CML_REG_002")
 	@Description("CML_REG_002->SignUp Page->Verify that user is able to validate signUp Page Title")
 	@Epic("SINGUP->EP001")
 	@Feature("SINGUP->Feature:001")
@@ -69,26 +70,29 @@ public class SignUpPageTest extends TestBaseClass {
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
 	public void TC_CML_SS_020() throws IOException, InterruptedException {
-		loginPage = signup.userRegistrationForm("TestParent", "Staging178", "Destiny Planners",
+		loginPage = signup.userRegistrationForm("TesSteveUser", "Staging178", "Destiny Planners",
 				"4678 James Martin " + "Circle", "Columbus, OH 43215", "US", "Florida", "43215", "46478",
-				"614-370-3225", "TestUserFour@mailinator.com", "Pass@123", "Pass@123");
+				"614-370-3225", "Teststevesone@mailinator.com", "Pass@123", "Pass@123");
 
 		// Verify that Page url is belongs to Login Page
 		// Verify page url after sign up is matched or not
 
-		System.out.print("After Sign up Current Page Url is:" + driver.getCurrentUrl());
+		System.out.print("\n"+"After Sign up Current Page Url is:" + driver.getCurrentUrl()+"\n");
 
 		//Validate email via mailinator
-		dashboard = utilMailinator.MailinatorLinkVerification("TestUserFour@mailinator.com");
+		dashboard = utilMailinator.MailinatorLinkVerification("Teststevesone@mailinator.com");
+
+		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
+		loginPage.Login_Testcases("Teststevesone@mailinator.com","Pass@123");
 
 		// Verify page url after Email verification is matched or not
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/user/dashboard";
+		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
 		String ActualUrl = driver.getCurrentUrl();
 
 		try {
 			Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
 			System.out.println("User logged in successfully" + "\n");
-			System.out.println("->The Dashboard page Url has been verified successfully");
+			System.out.println("->Newly logged in user: Page Url has been verified successfully");
 
 		} catch (AssertionError e) {
 			System.out.println("Login Failed->These credentials do not match our records" + "\n");

@@ -43,6 +43,12 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.8.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 		<dependency>
@@ -125,7 +131,7 @@
 			<version>1.9.22</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 	</dependencies>
 	<build>
 		<plugins>
