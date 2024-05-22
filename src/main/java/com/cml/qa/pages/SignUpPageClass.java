@@ -149,7 +149,7 @@ public class SignUpPageClass extends TestBaseClass {
         // Select state
         Select stateName = new Select(stateSelection);
         stateName.selectByVisibleText(SelectState);
-        System.out.println("Selected State option is: " + selectedTextValue.getText());
+        System.out.println("\n"+"Selected State option is: " + selectedTextValue.getText());
         // Scrolling down the page till the element is found
         // js.executeScript("arguments[0].scrollIntoView();", comp);
         // Enter Zip code
@@ -167,7 +167,7 @@ public class SignUpPageClass extends TestBaseClass {
         txt_confirm_Password.sendKeys(Confpass);
         // Check Agree to our Terms Of Use and Privacy Policy
         checkAgree.click();
-        // Click on Regsiter button to submit the form
+        // Click on Register button to submit the form
         btn_RegisterSubmit.click();
 
         return new LoginPageClass();

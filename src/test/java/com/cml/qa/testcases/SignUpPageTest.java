@@ -70,36 +70,18 @@ public class SignUpPageTest extends TestBaseClass {
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
 	public void TC_CML_SS_020() throws IOException, InterruptedException {
-		loginPage = signup.userRegistrationForm("TesSteveUser", "Staging178", "Destiny Planners",
+		loginPage = signup.userRegistrationForm("LoggedNewInTestSteveUser", "Staging178", "Destiny Planners",
 				"4678 James Martin " + "Circle", "Columbus, OH 43215", "US", "Florida", "43215", "46478",
-				"614-370-3225", "Teststevesone@mailinator.com", "Pass@123", "Pass@123");
-
-		// Verify that Page url is belongs to Login Page
-		// Verify page url after sign up is matched or not
-
-		System.out.print("\n"+"After Sign up Current Page Url is:" + driver.getCurrentUrl()+"\n");
+				"2694558744", "LoggedNewInTestSteveUser@mailinator.com", "Pass@123", "Pass@123");
 
 		//Validate email via mailinator
-		dashboard = utilMailinator.MailinatorLinkVerification("Teststevesone@mailinator.com");
+		dashboard = utilMailinator.MailinatorLinkVerificationAndLoginNewUser("LoggedNewInTestSteveUser@mailinator.com");
 
-		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
-		loginPage.Login_Testcases("Teststevesone@mailinator.com","Pass@123");
+	//	driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
-		// Verify page url after Email verification is matched or not
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
-		String ActualUrl = driver.getCurrentUrl();
+		//System.out.println("\n"+"Page Title is: "+LoginTitle.getText()+"\n");
+	//	loginPage.Login_Testcases("EETestSteveUser@mailinator.com","Pass@123");
 
-		try {
-			Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
-			System.out.println("User logged in successfully" + "\n");
-			System.out.println("->Newly logged in user: Page Url has been verified successfully");
-
-		} catch (AssertionError e) {
-			System.out.println("Login Failed->These credentials do not match our records" + "\n");
-			throw e; // Re-throw the assertion error to ensure the test fails
-		}
-
-		util.TakeScreenshot(driver, " _Signup Page Screenshot_ ");
 	}
 
 	@AfterMethod

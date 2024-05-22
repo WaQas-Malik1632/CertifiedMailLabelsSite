@@ -7,7 +7,6 @@ import java.time.format.DateTimeFormatter;
 
 import com.cml.qa.base.TestBaseClass;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
