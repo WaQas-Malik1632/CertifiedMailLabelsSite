@@ -117,6 +117,10 @@ public class SignUpPageClass extends TestBaseClass {
     //p[normalize-space()='Your account is already verified']
     //https://staging.certifiedmaillabels.com/user-verification/verified
 
+    @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div[1]")
+    @CacheLookup
+    WebElement EmailVerifiedSuccessText;
+
     @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div[1]/ul/li")
     @CacheLookup
     WebElement EmailAlreadyVerifiedText;
@@ -175,6 +179,10 @@ public class SignUpPageClass extends TestBaseClass {
         btn_RegisterSubmit.click();
 
         return new LoginPageClass();
+    }
+    public String VerifyUniqueEmail()
+    {
+        return EmailVerifiedSuccessText.getText();
     }
     public String VerifyEmailAlreadyTaken()
     {
