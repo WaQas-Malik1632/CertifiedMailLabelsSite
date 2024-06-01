@@ -28,7 +28,6 @@ public class DashboardPageTestClass extends TestBaseClass {
 	public DashboardPageTestClass() throws IOException {
 		super();
 	}
-
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
         util = new TestUtil();

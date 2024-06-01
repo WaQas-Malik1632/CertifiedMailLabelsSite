@@ -4,6 +4,7 @@ import com.cml.qa.pages.DashboardPageClass;
 import com.cml.qa.pages.LoginPageClass;
 import com.cml.qa.utilities.TestUtil;
 import com.cml.qa.utilities.TestUtil_mailinator;
+import com.github.javafaker.Faker;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 import com.cml.qa.base.TestBaseClass;
@@ -22,10 +23,9 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.asserts.SoftAssert;
 
 public class SignUpPageTest extends TestBaseClass {
-
+    Faker fakeData = new Faker();
     TestUtil util;
     LoginPageClass loginPage;
     DashboardPageClass dashboard;
@@ -33,7 +33,6 @@ public class SignUpPageTest extends TestBaseClass {
     TestUtil_mailinator utilMailinator;
 
     public SignUpPageTest() throws IOException {
-
         super();
     }
 
@@ -76,23 +75,27 @@ public class SignUpPageTest extends TestBaseClass {
     @Step("Signup>>Home page")
     @Severity(SeverityLevel.CRITICAL)
     @Attachment()
-    public void TC_CML_SS_020() throws IOException, InterruptedException {
-        loginPage = signup.userRegistrationForm("User Tester Abcd", "Staging178", "Destiny Planners",
-                "4678 James Martin " + "Circle", "Columbus, OH 43215", "US", "Florida", "43215", "46478",
-                "2694558744", "UsertesterABCD@mailinator.com", "Pass@123", "Pass@123");
+    public void TC_CML_SS_020() throws InterruptedException, IOException {
+        loginPage = signup.userRegistrationForm();
+        /*
+              loginPage = signup.userRegistrationForm(fakeData.name().firstName(),fakeData.name().lastName(),
+              fakeData.name().fullName(),fakeData.address().fullAddress(),fakeData.address().secondaryAddress(),
+            fakeData.address().city(),fakeData.address().state(),fakeData.address().zipCodeByState("Florida"),
+            fakeData.address().zipCode(),fakeData.phoneNumber().cellPhone(),fakeData.internet().emailAddress(),
+            fakeData.internet().password(),fakeData.internet().password());
 
+         */
         System.out.println("\n" + "->Page Url is: " + driver.getCurrentUrl() + " and Title is-> " + driver.getTitle() + "\n");
 
         if (signup.VerifyUniqueEmail().contains("   Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, ")) {
             System.out.println("Email verification has started: ");
             System.out.println("Email is available. Proceeding with Mailinator verification.");
-            dashboard = utilMailinator.MailinatorLinkVerificationAndLoginNewUser("UsertesterABCD@mailinator.com");
+            dashboard = utilMailinator.MailinatorLinkVerificationAndLoginNewUser("UsertesterABCDE@mailinator.com");
             Assert.assertTrue(true, "Test case passed because, Email is verified");
 
         } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
             System.out.println("Email is already taken. Failing the test.");
             Assert.assertTrue(false, "Test case failed because, Email is already taken");
-
         } else {
             throw new SkipException("Skipping the test case execution, something went wrong");
         }

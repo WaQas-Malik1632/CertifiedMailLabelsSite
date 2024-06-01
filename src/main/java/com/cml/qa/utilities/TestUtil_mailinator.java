@@ -13,31 +13,30 @@ import org.testng.Assert;
 import java.io.IOException;
 
 public class TestUtil_mailinator extends TestBaseClass {
-
-//	DashboardPageClass dashboard;
 	TestUtil util;
 	LoginPageClass loginPage;
 
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	@FindBy(xpath = "//a[normalize-space()='click resend email']")
+	@CacheLookup
 	WebElement linkTextClick_VerifyEmail;
 
 	@FindBy(xpath = "//input[@id='inbox_field']")
+	@CacheLookup
 	WebElement MailinatorIb;
 
 	@FindBy(xpath = "//button[@class='primary-btn']")
+	@CacheLookup
 	WebElement ClickGo;
 
 	@FindBy(xpath = "//td[normalize-space()='CERTIFIED MAIL LABELS']")
+	@CacheLookup
 	WebElement ClickIbMsgResult;
 
 	@FindBy(xpath = "//a[@class='button button-primary']")
-	WebElement LinkTextClickToVerifyEmail;
-
-	@FindBy(xpath = "//h1[normalize-space()='Login']")
 	@CacheLookup
-	WebElement LoginTitle;
+	WebElement LinkTextClickToVerifyEmail;
 
 	public TestUtil_mailinator() throws IOException {
 		super();
@@ -77,7 +76,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
 		loginPage=new LoginPageClass();
-		loginPage.Login_Testcases("UsertesterABC@mailinator.com","Pass@123");
+		loginPage.Login_Testcases("UsertesterABCDE@mailinator.com","Pass@123");
 
 		//driver.navigate().refresh();
 	     driver.get(driver.getCurrentUrl());
@@ -97,7 +96,6 @@ public class TestUtil_mailinator extends TestBaseClass {
 			util.TakeScreenshot(driver, " _Signup Page Screenshot_ ");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}
-
 		return new DashboardPageClass();
 	}
 }
