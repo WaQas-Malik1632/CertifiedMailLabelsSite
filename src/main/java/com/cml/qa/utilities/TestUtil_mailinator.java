@@ -13,7 +13,7 @@ import org.testng.Assert;
 import java.io.IOException;
 
 public class TestUtil_mailinator extends TestBaseClass {
-	TestUtil util;
+	TestUtil util=new TestUtil();
 	LoginPageClass loginPage;
 
 	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -54,10 +54,13 @@ public class TestUtil_mailinator extends TestBaseClass {
 		String ParentWindowId= driver.getWindowHandle();
 		MailinatorIb.sendKeys(email);
 
+		Thread.sleep(3000);
 		ClickGo.click();
+		util.TakeScreenshot(driver, " _MailinatorLinkVerificationAndLoginNewUser_Screenshot_ ");
 
 		Thread.sleep(3000);
 		ClickIbMsgResult.click();
+		util.TakeScreenshot(driver, " _MailinatorLinkVerificationAndLoginNewUser_Screenshot_ ");
 
 		driver.switchTo().frame("html_msg_body");
 
@@ -76,10 +79,10 @@ public class TestUtil_mailinator extends TestBaseClass {
 		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
 		loginPage=new LoginPageClass();
-		loginPage.Login_Testcases("UsertesterABCDE@mailinator.com","Pass@123");
+		loginPage.Login_Testcases("Testwarner@mailinator.com","Pass@123");
 
 		//driver.navigate().refresh();
-	     driver.get(driver.getCurrentUrl());
+		driver.get(driver.getCurrentUrl());
 		System.out.println("\n"+"-> Landing page Url is: "+driver.getCurrentUrl()+" and Title is-> "+driver.getTitle()+"\n");
 
 		// Verify page url after Email verification is matched or not
@@ -92,7 +95,6 @@ public class TestUtil_mailinator extends TestBaseClass {
 
 		} catch (AssertionError e) {
 			System.out.println("Login Failed->These credentials do not match our records" + "\n");
-			util=new TestUtil();
 			util.TakeScreenshot(driver, " _Signup Page Screenshot_ ");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}

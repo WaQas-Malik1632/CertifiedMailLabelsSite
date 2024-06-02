@@ -38,7 +38,6 @@ public class SignUpPageTest extends TestBaseClass {
 
     @BeforeMethod
     public void beforeMethod() throws IOException {
-
         util = new TestUtil();
         intialization();
         loginPage = new LoginPageClass();
@@ -88,16 +87,25 @@ public class SignUpPageTest extends TestBaseClass {
         System.out.println("\n" + "->Page Url is: " + driver.getCurrentUrl() + " and Title is-> " + driver.getTitle() + "\n");
 
         if (signup.VerifyUniqueEmail().contains("   Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, ")) {
-            System.out.println("Email verification has started: ");
             System.out.println("Email is available. Proceeding with Mailinator verification.");
-            dashboard = utilMailinator.MailinatorLinkVerificationAndLoginNewUser("UsertesterABCDE@mailinator.com");
-            Assert.assertTrue(true, "Test case passed because, Email is verified");
 
-        } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
+            dashboard = utilMailinator.MailinatorLinkVerificationAndLoginNewUser("Testwarner@mailinator.com");
+
+            System.out.println("Email is verified successfully");
+
+            String ExpectedUrl="https://staging.certifiedmaillabels.com/";
+            Assert.assertEquals(true, driver.getCurrentUrl(),ExpectedUrl);
+            util.TakeScreenshot(driver,"TC_CML_SS_020_LinkVerifySuccess_");
+        }
+        else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
             System.out.println("Email is already taken. Failing the test.");
+            util.TakeScreenshot(driver,"TC_CML_SS_020_EmailAlreadyTaken_");
             Assert.assertTrue(false, "Test case failed because, Email is already taken");
+
         } else {
+            util.TakeScreenshot(driver,"Test");
             throw new SkipException("Skipping the test case execution, something went wrong");
+
         }
     }
 
@@ -105,6 +113,5 @@ public class SignUpPageTest extends TestBaseClass {
     public void TearDown() {
 
     }
-
 }
 
