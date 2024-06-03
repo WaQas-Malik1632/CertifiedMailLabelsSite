@@ -15,6 +15,7 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="--enable-preview --source 22" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CertifiedMailLabelsSite" options="" />
+      <module name="CertifiedMailLablesSite" options="" />
     </option>
   </component>
 </project>

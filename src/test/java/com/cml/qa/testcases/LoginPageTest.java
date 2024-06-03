@@ -37,7 +37,7 @@ public class LoginPageTest extends TestBaseClass {
 	}
 
 	// Validate that parent user can login to the system using valid credentials
-	@Test(invocationCount = 1, priority = 3, enabled = true, description = "CML_LOGIN_001")
+	@Test(invocationCount = 2, priority = 1, enabled = true, description = "CML_LOGIN_001")
 	@Description("CML_LOGIN_001->Verify that user can login successfully as parent user->Email=TestUserOne@mailinator.com, password=Pass@123")
 	@Epic("LOGIN->EP001")
 	@Feature("LOGIN->Feature:001")

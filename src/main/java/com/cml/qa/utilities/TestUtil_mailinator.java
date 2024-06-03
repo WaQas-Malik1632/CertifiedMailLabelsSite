@@ -4,14 +4,19 @@ import com.cml.qa.base.TestBaseClass;
 import com.cml.qa.pages.LandingPageClass;
 import com.cml.qa.pages.LoginPageClass;
 import com.cml.qa.pages.SignUpPageClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class TestUtil_mailinator extends TestBaseClass {
 	TestUtil util = new TestUtil();
@@ -62,7 +67,11 @@ public class TestUtil_mailinator extends TestBaseClass {
 		Thread.sleep(3000);
 		ClickGo.click();
 
-		Thread.sleep(6000);
+		// Define the WebDriverWait instance with a timeout
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		// Wait until the element is clickable and then click it
+		wait.until(ExpectedConditions.elementToBeClickable((ClickIbMsgTextButton)));
 		ClickIbMsgTextButton.click();
 		util.TakeScreenshot(driver, " _MailinatorLinkVerificationAndLoginNewUser_Screenshot_ ");
 
@@ -97,7 +106,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 		String ActualUrl = driver.getCurrentUrl();
 		try {
 			Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
-			System.out.println("->User logged in successfully" + "\n");
+			System.out.println("->User logged in and directed on landing page successfully " + "\n");
 			System.out.println("->Newly logged in user: Page Url has been verified successfully");
 
 		} catch (AssertionError e) {
