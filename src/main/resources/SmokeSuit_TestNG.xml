@@ -5,7 +5,8 @@
 		<classes>
 			<class name="com.cml.qa.testcases.LoginPageTest" />
 			<class name="com.cml.qa.testcases.SignUpPageTest" />
-			<class name="com.cml.qa.testcases.DashboardPageTestClass" />
+			<class name="com.cml.qa.testcases.LandingPageTest"/>
+			<class name="com.cml.qa.testcases.DashboardPageTestClass"/>
 		</classes>
 	</test> <!--Smoke Suit Test -->
 </suite> <!--Smoke Suit-CML Site Automation Test Cases -->

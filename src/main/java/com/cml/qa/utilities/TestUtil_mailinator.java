@@ -1,8 +1,9 @@
 package com.cml.qa.utilities;
 
 import com.cml.qa.base.TestBaseClass;
-import com.cml.qa.pages.DashboardPageClass;
+import com.cml.qa.pages.LandingPageClass;
 import com.cml.qa.pages.LoginPageClass;
+import com.cml.qa.pages.SignUpPageClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -13,7 +14,7 @@ import org.testng.Assert;
 import java.io.IOException;
 
 public class TestUtil_mailinator extends TestBaseClass {
-	TestUtil util=new TestUtil();
+	TestUtil util = new TestUtil();
 	LoginPageClass loginPage;
 
 	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -32,7 +33,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 
 	@FindBy(xpath = "//td[normalize-space()='CERTIFIED MAIL LABELS']")
 	@CacheLookup
-	WebElement ClickIbMsgResult;
+	WebElement ClickIbMsgTextButton;
 
 	@FindBy(xpath = "//a[@class='button button-primary']")
 	@CacheLookup
@@ -43,23 +44,26 @@ public class TestUtil_mailinator extends TestBaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	public DashboardPageClass MailinatorLinkVerificationAndLoginNewUser(String email) throws InterruptedException, IOException {
-		//After signup, user can click to resend the email link again
-		//linkTextClick_VerifyEmail.click();
+	public LandingPageClass MailinatorLinkVerificationAndLoginNewUser()
+			throws InterruptedException, IOException {
+		// After signup, user can click to resend the email link again
+		// linkTextClick_VerifyEmail.click();
 
 		driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
-		System.out.println("\n"+"User is navigating to the Mailinator for the Email verification "+"\n");
+		System.out.println("\n" + "User is navigating to the Mailinator for the Email verification " + "\n");
 
-		//Getting the Id of parent windows here
-		String ParentWindowId= driver.getWindowHandle();
-		MailinatorIb.sendKeys(email);
+		// Getting the Id of parent windows here
+		String ParentWindowId = driver.getWindowHandle();
+
+		//====Static is the properties of the class, we don't have to instance of the pageClass====
+		//Pass the Email to Mailinator entered ny the user
+		MailinatorIb.sendKeys(SignUpPageClass.Emailaddress);
 
 		Thread.sleep(3000);
 		ClickGo.click();
-		util.TakeScreenshot(driver, " _MailinatorLinkVerificationAndLoginNewUser_Screenshot_ ");
 
-		Thread.sleep(3000);
-		ClickIbMsgResult.click();
+		Thread.sleep(6000);
+		ClickIbMsgTextButton.click();
 		util.TakeScreenshot(driver, " _MailinatorLinkVerificationAndLoginNewUser_Screenshot_ ");
 
 		driver.switchTo().frame("html_msg_body");
@@ -69,21 +73,24 @@ public class TestUtil_mailinator extends TestBaseClass {
 
 		Thread.sleep(3000);
 		LinkTextClickToVerifyEmail.click();
-		System.out.println("\n"+"->Title is: "+driver.getTitle()+" and Link is-> "+driver.getCurrentUrl()+"\n");
+		System.out.println("\n" + "->Title is: " + driver.getTitle() + " and Link is-> " + driver.getCurrentUrl() + "\n");
 
-		//WebDriver control is shifted under the parent window
+		// WebDriver control is shifted under the parent window
 		driver.switchTo().window(ParentWindowId);
 
-		System.out.println("\n"+"->After switching window-> Url is :"+ driver.getCurrentUrl()+"\n"+"->Title is-> "+driver.getTitle()+"\n");
+		System.out.println("\n" + "->After switching window-> Url is :" + driver.getCurrentUrl() + "\n"
+				+ "->Title is-> " + driver.getTitle() + "\n");
 
 		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
-		loginPage=new LoginPageClass();
-		loginPage.Login_Testcases("Testwarner@mailinator.com","Pass@123");
+		//=========Login with the newly Registered user========
+		loginPage = new LoginPageClass();
+		loginPage.Login_Testcases(SignUpPageClass.Emailaddress,SignUpPageClass.password);
 
-		//driver.navigate().refresh();
+		// driver.navigate().refresh();
 		driver.get(driver.getCurrentUrl());
-		System.out.println("\n"+"-> Landing page Url is: "+driver.getCurrentUrl()+" and Title is-> "+driver.getTitle()+"\n");
+		System.out.println("\n" + "-> Landing page Url is: " + driver.getCurrentUrl() + " and Title is-> "
+				+ driver.getTitle() + "\n");
 
 		// Verify page url after Email verification is matched or not
 		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
@@ -98,6 +105,6 @@ public class TestUtil_mailinator extends TestBaseClass {
 			util.TakeScreenshot(driver, " _Signup Page Screenshot_ ");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}
-		return new DashboardPageClass();
+		return new LandingPageClass();
 	}
 }

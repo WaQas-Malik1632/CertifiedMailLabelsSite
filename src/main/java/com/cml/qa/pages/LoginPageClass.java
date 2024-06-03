@@ -11,7 +11,7 @@ import com.cml.qa.base.TestBaseClass;
 import org.testng.Assert;
 
 public class LoginPageClass extends TestBaseClass {
-	JavascriptExecutor js=(JavascriptExecutor) driver;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	DashboardPageClass dashboard;
 
 	@FindBy(xpath = "//a[normalize-space()='Login']")
@@ -73,22 +73,22 @@ public class LoginPageClass extends TestBaseClass {
 		// If user wants to check the RememberMe
 		rememberMe.click();
 		btnLoginSubmit.click();
-/*
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/user/dashboard";
-		String ActualUrl = driver.getCurrentUrl();
-
-		try {
-			Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
-			System.out.println("\n"+"User logged in successfully" + "\n");
-			System.out.println("User landed on Dashboard Page->Page Url has been successfully verified");
-		} catch (AssertionError e) {
-			System.out.println("Login Failed->These credentials do not match our records" + "\n");
-			//  util.TakeScreenshot(driver," _Login Test Failure Screenshot_ ");
-			throw e; // Re-throw the assertion error to ensure the test fails
-		}
-
-
- */
+		/*
+		 * String ExpectedUrl =
+		 * "https://staging.certifiedmaillabels.com/user/dashboard"; String ActualUrl =
+		 * driver.getCurrentUrl();
+		 * 
+		 * try { Assert.assertEquals(ActualUrl, ExpectedUrl,
+		 * "URL verification Passed: ");
+		 * System.out.println("\n"+"User logged in successfully" + "\n"); System.out.
+		 * println("User landed on Dashboard Page->Page Url has been successfully verified"
+		 * ); } catch (AssertionError e) {
+		 * System.out.println("Login Failed->These credentials do not match our records"
+		 * + "\n"); // util.TakeScreenshot(driver," _Login Test Failure Screenshot_ ");
+		 * throw e; // Re-throw the assertion error to ensure the test fails }
+		 * 
+		 * 
+		 */
 		// After successful login->User should return Dashboard Page
 		return dashboard = new DashboardPageClass();
 	}

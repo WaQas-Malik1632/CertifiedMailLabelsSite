@@ -17,17 +17,15 @@ public class TestUtil extends TestBaseClass {
 	public static long IMPLICIT_WAIT = 10;
 //	public static JavascriptExecutor js;
 
-	public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
-
 	LocalDateTime date = LocalDateTime.now();
 
 	DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd_MM_yyyy_HH-mm-ss");
 	String formattedDate = date.format(myFormatObj);
 
-	public TestUtil() throws IOException
-	{
+	public TestUtil() throws IOException {
 		super();
 	}
+
 	// Take Screenshot
 	public void TakeScreenshot(WebDriver webdriver, String filename) throws IOException {
 		TakesScreenshot src = ((TakesScreenshot) webdriver);

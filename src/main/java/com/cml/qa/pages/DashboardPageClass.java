@@ -10,17 +10,17 @@ import java.io.IOException;
 
 public class DashboardPageClass extends TestBaseClass {
 
-   @FindBy(xpath = "//h1[normalize-space()='Dashboard']")
-   @CacheLookup
-    WebElement DashboardTitle;
+	@FindBy(xpath = "//h1[normalize-space()='Dashboard']")
+	@CacheLookup
+	WebElement DashboardTitle;
 
-    public DashboardPageClass() throws IOException {
-        super();
-        PageFactory.initElements(driver, this);
-    }
-    public String DashboardTitleVerify()
-    {
-        DashboardTitle.isDisplayed();
-        return driver.getTitle();
-    }
+	public DashboardPageClass() throws IOException {
+		super();
+		PageFactory.initElements(driver, this);
+	}
+
+	public String DashboardTitleVerify() {
+		DashboardTitle.isDisplayed();
+		return driver.getTitle();
+	}
 }

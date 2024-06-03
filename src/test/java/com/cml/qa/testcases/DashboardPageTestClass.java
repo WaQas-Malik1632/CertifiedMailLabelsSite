@@ -21,18 +21,19 @@ import org.testng.annotations.AfterMethod;
 import java.io.IOException;
 
 public class DashboardPageTestClass extends TestBaseClass {
-    TestUtil util;
-    LoginPageClass login;
-    DashboardPageClass dashboard;
+	TestUtil util;
+	LoginPageClass login;
+	DashboardPageClass dashboard;
 
 	public DashboardPageTestClass() throws IOException {
 		super();
 	}
+
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
-        util = new TestUtil();
+		util = new TestUtil();
 		intialization();
-		login=new LoginPageClass();
+		login = new LoginPageClass();
 		login.PreRequisiteLinkClickLogin();
 		dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
 	}
@@ -45,15 +46,15 @@ public class DashboardPageTestClass extends TestBaseClass {
 	@Step("Login->Dashboard->Verify Page Title")
 	@Severity(SeverityLevel.CRITICAL)
 	public void VerifyDashboardPageTitle() {
-        String DashboardPageTitleIs = dashboard.DashboardTitleVerify();
-        try {
-            Assert.assertEquals(DashboardPageTitleIs, "Dashboard | Certified Mail Labels", "Dashboard");
-            System.out.println("->Page Title has been successfully verified");
-            System.out.println("User is landed on the Dashboard page successfully" + "\n");
-        } catch (AssertionError e) {
-            System.out.println("User doesn't login->Dashboard Page Title Verification Failed" + "\n");
-            throw e; // Re-throw the assertion error to ensure the test fails
-        }
+		String DashboardPageTitleIs = dashboard.DashboardTitleVerify();
+		try {
+			Assert.assertEquals(DashboardPageTitleIs, "Dashboard | Certified Mail Labels", "Dashboard");
+			System.out.println("->Page Title has been successfully verified");
+			System.out.println("User is landed on the Dashboard page successfully" + "\n");
+		} catch (AssertionError e) {
+			System.out.println("User doesn't login->Dashboard Page Title Verification Failed" + "\n");
+			throw e; // Re-throw the assertion error to ensure the test fails
+		}
 	}
 
 	@AfterMethod
