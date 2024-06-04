@@ -18,10 +18,12 @@ public class TestBaseClass {
 	public static Properties prop;
 
 	public TestBaseClass() throws IOException {
+
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream("D:/Automation Sites/CertifiedMailLablesSite/src/main/java/com/cml/qa/config/config.properties");
+		FileInputStream ip = new FileInputStream("E:/Automation Projects/CertifiedMailLablesSite/src/main/java/com/cml/qa/config/config.properties");
 		prop.load(ip);
 	}
+
 	public static void intialization() {
 		String browserName = prop.getProperty("browser");
 
@@ -34,16 +36,13 @@ public class TestBaseClass {
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-		}
-		else {
-			System.out.println("\n"+"You have entered Invalid Browser Name"+"\n");
+		} else {
+			System.out.println("\n" + "You have entered Invalid Browser Name" + "\n");
 		}
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-
-		
 	}
 }

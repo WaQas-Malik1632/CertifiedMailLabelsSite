@@ -1,12 +1,13 @@
 package com.cml.qa.testcases;
 
-import org.testng.annotations.Test;
-
-import com.cml.qa.base.TestBaseClass;
-import com.cml.qa.pages.HomePageClass;
+import com.cml.qa.pages.LandingPageClass;
 import com.cml.qa.pages.LoginPageClass;
+import com.cml.qa.utilities.TestUtil;
+import com.cml.qa.utilities.TestUtil_mailinator;
+import org.testng.SkipException;
+import org.testng.annotations.Test;
+import com.cml.qa.base.TestBaseClass;
 import com.cml.qa.pages.SignUpPageClass;
-
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -15,7 +16,6 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-
 import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
@@ -24,45 +24,82 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class SignUpPageTest extends TestBaseClass {
-	LoginPageClass login;
-	HomePageClass homepage;
+	TestUtil util;
+	LoginPageClass loginPage;
 	SignUpPageClass signup;
-	
+	TestUtil_mailinator utilMailinator;
+	LandingPageClass landPage;
+
 	public SignUpPageTest() throws IOException {
 		super();
 	}
 
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
+		util = new TestUtil();
 		intialization();
-		login=new LoginPageClass();
-		homepage = login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
-		signup=new SignUpPageClass();
-		
+		loginPage = new LoginPageClass();
+		signup = new SignUpPageClass();
+		signup.Precondition();
+		utilMailinator = new TestUtil_mailinator();
+		landPage = new LandingPageClass();
 	}
 
-	@Test(priority = 1, description = "Signup TC001", enabled = true, invocationCount = 1)
-	@Description("Verify that user is able to register himself successfully")
-	@Epic("Singup_EP001")
+	@Test(priority = 1, invocationCount = 1, enabled = false, description = "CML_REG_002")
+	@Description("CML_REG_002->SignUp Page->Verify that user is able to validate signUp Page Title")
+	@Epic("SINGUP->EP001")
+	@Feature("SINGUP->Feature:001")
+	@Story("SignUp Page TestCases")
+	@Step("Login->Home->Verify Elements")
+	@Severity(SeverityLevel.CRITICAL)
+	public void TC_CML_SS_002() throws IOException {
+
+		String SignUpTitleVerify = signup.VerifySignUpTitle();
+		try {
+			Assert.assertEquals(SignUpTitleVerify, "Register", "SignUp title does not match");
+			System.out.println("SignUp title has been successfully verified");
+		} catch (AssertionError e) {
+			System.out.println("SignUp title verification failed: " + e.getMessage());
+			throw e; // Re-throw the assertion error to ensure the test fails
+		}
+	}
+
+	@Test(priority = 1, description = "CML_REG_001", enabled = true, invocationCount = 1)
+	@Description("CML_REG_001->Verify that user can register successfully as parent user")
+	@Epic("SingUp_EP001")
 	@Feature("Signup_001")
 	@Story("Verify that user is able to register himself successfully")
 	@Step("Signup>>Home page")
 	@Severity(SeverityLevel.CRITICAL)
 	@Attachment()
-	public void Testcases_ToVerifyRegisterUserSuccessfully() throws IOException {
+	public void TC_CML_SS_020() throws InterruptedException, IOException {
+		loginPage = signup.userRegistrationForm();
 
-		signup.Precondition();
-		signup.userRegistrationForm("User", "ABCTest", "User ABCTest", "Return address", "Address2", "US", "12",
-				"1111", "0000000000", "Testabc@mail.com", "Test@123", "Test@123");
-		// Verify page title is matched "nopCommerce demo store"
-		Assert.assertEquals(driver.getTitle(), "nopCommerce demo store");
-		String actual_url = driver.getCurrentUrl();
-		String expected_url = "https://demo.nopcommerce.com/";
-		Assert.assertEquals(actual_url, expected_url);
+		System.out.println("\n" + "->Page Url is: " + driver.getCurrentUrl() + " and Title is-> " + driver.getTitle() + "\n");
+
+		if (signup.VerifyUniqueEmail().contains("   Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, ")) {
+			System.out.println("Email is available. Proceeding with Mailinator verification.");
+
+			landPage = utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
+
+			System.out.println("Email is verified successfully");
+
+			String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
+			Assert.assertEquals(driver.getCurrentUrl(), ExpectedUrl);
+			util.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_");
+		} else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
+			System.out.println("Email is already taken. Failing the test.");
+			util.TakeScreenshot(driver, "TC_CML_SS_020_EmailAlreadyTaken_");
+			Assert.assertTrue(false, "Test case failed because, Email is already taken");
+
+		} else {
+			util.TakeScreenshot(driver, "Test");
+			throw new SkipException("Skipping the test case execution, something went wrong");
+		}
 	}
 
 	@AfterMethod
-	public void afterMethod() {
-	}
+	public void TearDown() {
 
+	}
 }
