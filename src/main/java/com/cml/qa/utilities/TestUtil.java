@@ -10,12 +10,12 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 
 public class TestUtil extends TestBaseClass {
 
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 10;
-//	public static JavascriptExecutor js;
 
 	LocalDateTime date = LocalDateTime.now();
 
@@ -28,8 +28,15 @@ public class TestUtil extends TestBaseClass {
 
 	// Take Screenshot
 	public void TakeScreenshot(WebDriver webdriver, String filename) throws IOException {
-		TakesScreenshot src = ((TakesScreenshot) webdriver);
-		File srcfile = src.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(srcfile, new File(".//Screenshot//" + formattedDate + filename + ".png"));
+
+		try {
+			TakesScreenshot src = ((TakesScreenshot) webdriver);
+			File srcfile = src.getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(srcfile, new File(".//Screenshot//" + formattedDate + filename + ".png"));
+		} catch (WebDriverException e) {
+			throw new RuntimeException(e);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

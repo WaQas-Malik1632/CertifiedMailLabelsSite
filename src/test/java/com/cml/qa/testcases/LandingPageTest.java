@@ -36,8 +36,12 @@ public class LandingPageTest extends TestBaseClass {
 
 	@Test
 	public void VerifyPageTitle() throws IOException {
-		String LandingPageClassTitle=landPage.VerifyLandingPageUIElements();
-		Assert.assertEquals(LandingPageClassTitle,"Certified Mail Labels");
+		try {
+			String LandingPageClassTitle=landPage.VerifyLandingPageUIElements();
+			Assert.assertEquals(LandingPageClassTitle,"Certified Mail Labels");
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	@AfterMethod

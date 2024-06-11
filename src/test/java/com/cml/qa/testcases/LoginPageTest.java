@@ -52,8 +52,12 @@ public class LoginPageTest extends TestBaseClass {
 	@Severity(SeverityLevel.BLOCKER)
 	public void TC_CML_SS_010() throws IOException {
 		log.info("*************** Execution of Login Page Tests 'CML_LOGIN_001' Started  *****************");
-		dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
-		Assert.assertTrue(true, "Login Test Passed");
+		try {
+			dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
+			Assert.assertTrue(true, "Login Test Passed");
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 		log.info("******************** Ending 'CML_LOGIN_001' Test  *************************");
 	}
 
