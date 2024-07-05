@@ -1,6 +1,0 @@
-20:37:05.215 [main] INFO  - ***************** Starting Login Page Test cases execution  ******************
-20:37:05.227 [main] INFO  - ******************** Browser initialization started  *********************
-20:37:07.213 [main] INFO  - **** Launching the Chrome Browser  ****
-20:37:13.936 [main] INFO  - **** Entering the Application Url ****
-20:37:15.501 [main] INFO  - *************** Execution of Login Page Tests 'CML_LOGIN_001' Started  *****************
-20:37:17.257 [main] INFO  - ******************** Ending 'CML_LOGIN_001' Test  *************************

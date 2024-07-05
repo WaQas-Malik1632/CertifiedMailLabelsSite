@@ -1,5 +1,4 @@
 package com.cml.qa.base;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -22,7 +21,6 @@ public class TestBaseClass {
 
 	public TestBaseClass() throws IOException {
 		log= LogManager.getLogger(TestBaseClass.class);
-
 		prop = new Properties();
 		FileInputStream ip = new FileInputStream("D:/Automation Sites/CertifiedMailLabelsSite/src/main/java/com/cml/qa/config/config.properties");
 		prop.load(ip);
@@ -30,19 +28,20 @@ public class TestBaseClass {
 
 	public static void intialization() {
 		String browserName = prop.getProperty("browser");
-		log.info("******************** Browser initialization started  *********************");
+		log.info("**** Browser initialization started ****");
+
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-			log.info("**** Launching the Chrome Browser  ****");
+			log.info("**** Launching the Chrome Browser ****");
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-			log.info("**** Launching the Firefox Browser  ****");
+			log.info("**** Launching the Firefox Browser ****");
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-			log.info("**** Launching the Edge Browser  ****");
+			log.info("**** Launching the Edge Browser ****");
 		} else {
 			System.out.println("\n" + "You have entered Invalid Browser Name" + "\n");
 			log.warn("Hi, this is warning message");
@@ -50,7 +49,7 @@ public class TestBaseClass {
 			log.fatal("This is fatal error message");
 		}
 		driver.get(prop.getProperty("url"));
-		log.info("**** Entering the Application Url ****");
+		log.info("**** Entering the CML Application Url into browser ****");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
