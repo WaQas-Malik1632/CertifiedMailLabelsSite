@@ -97,7 +97,7 @@ public class SignUpPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_");
         } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
             System.out.println("Email is already taken. Failing the test.");
-            log.info("Email is already taken. Failing the test.");
+            log.info("Email is already taken. Test failed.");
             util.TakeScreenshot(driver, "TC_CML_SS_020_EmailAlreadyTaken_");
             Assert.assertTrue(false, "Test case failed because, Email is already taken");
         } else {
