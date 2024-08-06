@@ -1,9 +1,5 @@
-15:37:28.421 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - **** Starting Dashboard Page Test cases execution ****
-15:37:28.438 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-15:37:30.438 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-15:37:35.177 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-15:37:38.853 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started
-15:37:38.896 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Page Title has been successfully verified
-15:37:38.896 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - User is landed on the Dashboard page successfully
-
-15:37:38.896 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - **** Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Ended ****
+14:16:31.186 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - **** Starting Dashboard Page Test cases execution ****
+14:16:31.201 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+14:16:33.235 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
+14:16:38.444 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+14:16:42.760 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started
