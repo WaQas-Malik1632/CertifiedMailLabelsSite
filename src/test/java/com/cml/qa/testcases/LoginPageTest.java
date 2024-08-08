@@ -29,13 +29,15 @@ public class LoginPageTest extends TestBaseClass {
     public static Logger log;
 
     public LoginPageTest() throws IOException {
+
         log = LogManager.getLogger(LoginPageTest.class);
         super();
+        log.info("**** Starting Login Page Test cases execution ****");
     }
 
     @BeforeMethod
     public void beforeMethod() throws IOException {
-        log.info("**** Starting Login Page Test cases execution ****");
+
         util = new TestUtil();
         intialization();
         login = new LoginPageClass();
@@ -43,8 +45,8 @@ public class LoginPageTest extends TestBaseClass {
     }
 
     // Validate that parent user can login to the system using valid credentials
-    @Test(invocationCount = 1, priority = 1, enabled = true, description = "CML_LOGIN_001")
-    @Description("CML_LOGIN_001->Verify that user can login successfully as parent user->Email=TestUserOne@mailinator.com, password=Pass@123")
+    @Test(invocationCount = 1, priority = 1, enabled = true, description = "TC_CML_SS_010")
+    @Description("TC_CML_SS_010->Verify that user can login successfully as parent user->Email=TestUserOne@mailinator.com, password=Pass@123")
     @Epic("LOGIN->EP001")
     @Feature("LOGIN->Feature:001")
     @Story("Login TestCases")
@@ -53,17 +55,24 @@ public class LoginPageTest extends TestBaseClass {
     public void TC_CML_SS_010() throws IOException {
 
         try {
+            log.info("Execution of Login Page Tests 'TC_CML_SS_010' Started");
             dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
-            Assert.assertTrue(true, "Login Test Passed");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            String ExpectedUrl = "https://staging.certifiedmaillabels.com/user/dashboard";
+            String ActualUrl = driver.getCurrentUrl();
+            Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
+            log.info("\n" + "User logged in successfully" + "\n");
+            log.info("User landed on Dashboard Page->Page Url has been successfully verified");
+        } catch (AssertionError e) {
+            log.error("Login Failed->These credentials do not match our records" + "\n"+e.getMessage());
+            util.TakeScreenshot(driver," Screenshot_Login TestCase 'TC_CML_SS_010' ");
+            throw e; // Re-throw the assertion error to ensure the test fails
         }
-        log.info("Ending the execution of 'CML_LOGIN_001'");
+        log.info("Execution of 'TC_CML_SS_010' Ended");
     }
 
     // Verify that user cannot login with invalid username or password
-    @Test(invocationCount = 1, priority = 3, enabled = false, description = "CML_LOGIN_002")
-    @Description("CML_LOGIN_002->Verify that user cannot login with invalid username or password")
+    @Test(invocationCount = 1, priority = 3, enabled = true, description = "TC_CML_SS_168")
+    @Description("TC_CML_SS_168->Verify that user cannot login with invalid username or password")
     @Epic("LOGIN->EP001")
     @Feature("LOGIN->Feature:001")
     @Story("Login TestCases")
@@ -71,23 +80,25 @@ public class LoginPageTest extends TestBaseClass {
     @Severity(SeverityLevel.CRITICAL)
     public void TC_CML_SS_168() throws IOException {
 
-        log.info("Execution of Login Page Tests 'CML_LOGIN_002' Started");
+        log.info("Execution of Login Page Tests 'TC_CML_SS_168' Started");
+        log.info("Entering Email and Password");
         dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
         Assert.assertTrue(true, "Login Test Passed");
         String ExpectedUrl = "https://staging.certifiedmaillabels.com/login";
         String ActualUrl = driver.getCurrentUrl();
         try {
             Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
-            System.out.println("\n" + "Login Failed->These credentials do not match our records. Password is case-sensitive." + "\n");
+            log.info("\n" + "These credentials do not match our records. Password is case-sensitive." + "\n");
         } catch (AssertionError e) {
-            System.out.println("User logged in successfully" + "\n");
+            log.info("User logged in successfully" + "\n"+e.getMessage());
             util.TakeScreenshot(driver, " _Login Test Failure Screenshot_ ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
+        log.info("Execution of Login Page Test 'TC_CML_SS_168' Ended");
     }
 
-    @Test(priority = 2, invocationCount = 1, enabled = false, description = "CML_LOGIN_003")
-    @Description("CML_LOGIN_003->Verify that user is able to validate Login Page Title")
+    @Test(priority = 2, invocationCount = 1, enabled = true, description = "TC_CML_SS_004")
+    @Description("TC_CML_SS_004->Verify that user is able to validate Login Page Title")
     @Epic("LOGIN->EP001")
     @Feature("LOGIN->Feature:001")
     @Story("Login Page TestCases")
@@ -95,19 +106,20 @@ public class LoginPageTest extends TestBaseClass {
     @Severity(SeverityLevel.CRITICAL)
     public void TC_CML_SS_004() {
 
-        log.info("Execution of Login Page Tests 'CML_LOGIN_003' Started");
+        log.info("Execution of Login Page Tests 'TC_CML_SS_004' Started");
         String LoginTitle = login.VerifyLoginTitle();
         try {
             Assert.assertEquals(LoginTitle, "Login", "Login title does not match");
-            System.out.println("Login title has been successfully verified");
+            log.info("\"Login title has been successfully verified\"");
         } catch (AssertionError e) {
-            System.out.println("Login title verification failed: " + e.getMessage());
+            log.info("Login title verification failed: " + e.getMessage());
             throw e; // Re-throw the assertion error to ensure the test fails
         }
+        log.info("Execution of Login Page Tests 'TC_CML_SS_004' Ended");
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = false, description = "CML_LOGIN_004")
-    @Description("CML_LOGIN_004->Verify that user is able to validate Login Page Logo")
+    @Test(priority = 4, invocationCount = 1, enabled = true, description = "TC_CML_SS_005")
+    @Description("TC_CML_SS_005->Verify that user is able to validate Login Page Logo")
     @Epic("LOGIN->EP001")
     @Feature("LOGIN->Feature:001")
     @Story("Login Page TestCases")
@@ -115,15 +127,16 @@ public class LoginPageTest extends TestBaseClass {
     @Severity(SeverityLevel.CRITICAL)
     public void TC_CML_SS_005() {
 
-        log.info("**** Execution of Login Page Tests 'CML_LOGIN_004' Started ****");
+        log.info("**** Execution of Login Page Tests 'TC_CML_SS_005' Started ****");
         boolean flag = login.VerifyLoginPageLogo();
         try {
             Assert.assertTrue(flag, "Login page logo verification failed");
-            System.out.println("Login page logo has been successfully verified");
+            log.info("Login page logo has been successfully verified");
         } catch (AssertionError e) {
-            System.out.println("Login page logo verification failed: " + e.getMessage());
+            log.error("Login page logo verification failed: " + e.getMessage());
             throw e; // Re-throw the assertion error to ensure the test fails
         }
+        log.info("Execution of Login Page Tests 'TC_CML_SS_005' Ended");
     }
 
     @AfterMethod

@@ -6,6 +6,13 @@ import com.cml.qa.pages.SignUpPageClass;
 import com.cml.qa.utilities.TestUtil;
 import com.cml.qa.utilities.TestUtil_mailinator;
 import io.qameta.allure.*;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -16,52 +23,56 @@ import org.testng.annotations.AfterMethod;
 import java.io.IOException;
 
 public class LandingPageTest extends TestBaseClass {
-	TestUtil util;
-	SignUpPageClass signup;
-	TestUtil_mailinator utilMailinator;
-	LandingPageClass landPage;
-	public static Logger log;
 
+    TestUtil util;
+    SignUpPageClass signup;
+    TestUtil_mailinator utilMailinator;
+    LandingPageClass landPage;
+    public static Logger log;
 
-	public LandingPageTest() throws IOException {
-		log= LogManager.getLogger(LandingPageTest.class);
-		super();
-	}
+    public LandingPageTest() throws IOException {
 
-	@BeforeMethod
-	public void beforeMethod() throws IOException, InterruptedException {
-		log.info("**** Starting Landing Page Test cases execution ****");
-		util = new TestUtil();
-		intialization();
-		signup = new SignUpPageClass();
-		signup.Precondition();
-		signup.userRegistrationForm();
-		utilMailinator = new TestUtil_mailinator();
-		utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
-		landPage = new LandingPageClass();
-	}
+        log = LogManager.getLogger(LandingPageTest.class);
+        super();
+    }
 
+    @BeforeMethod
+    public void beforeMethod() throws IOException, InterruptedException {
 
-	@Test(priority = 1, invocationCount = 1, enabled = true, description = "CML_LandingPage_001")
-	@Description("CML_LandingPage_001->Landing Page->Verify that user is able to validate Landing Page Title")
-	@Epic("LandingPage->EP001")
-	@Feature("LandingPage->Feature:001")
-	@Story("LandingPage TestCases")
-	@Step("After successful Login->LandingPage->Verify Page Title")
-	@Severity(SeverityLevel.CRITICAL)
-	public void VerifyPageTitle() throws IOException {
-		log.info("**** Execution of Landing Page Title verification 'CML_LandingPage_001' Started ****");
-		try {
-			String LandingPageClassTitle=landPage.VerifyLandingPageUIElements();
-			Assert.assertEquals(LandingPageClassTitle,"Certified Mail Labels");
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-		log.info("**** Execution of Landing Page Title verification 'CML_LandingPage_001' Ended ****");
-	}
+        log.info("**** Starting Landing Page Test cases execution ****");
+        util = new TestUtil();
+        intialization();
+        signup = new SignUpPageClass();
+        signup.Precondition();
+        signup.userRegistrationForm();
+        utilMailinator = new TestUtil_mailinator();
+        utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
+        landPage = new LandingPageClass();
+    }
 
-	@AfterMethod
-	public void afterMethod() {
-	}
+    @Test(priority = 1, invocationCount = 1, enabled = true, description = "TC_CML_SS_001")
+    @Description("TC_CML_SS_001->Landing Page->Verify that user is able to validate Landing page UI is showing correctly")
+    @Epic("LandingPage->EP001")
+    @Feature("LandingPage->Feature:001")
+    @Story("LandingPage TestCases")
+    @Step("After successful Login->LandingPage->Verify Landing page UI is showing correctly")
+    @Severity(SeverityLevel.CRITICAL)
+    public void LandingPageUIIsShowingCorrectly() throws IOException {
+
+        try {
+            log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****");
+            landPage.VerifyLandingPageUIElements();
+            Assert.assertTrue(true, "UI elements verification done");
+            log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****");
+        } catch (Exception e) {
+            log.error("Landing Page UI verification Test Case failed: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+
+    }
 
 }

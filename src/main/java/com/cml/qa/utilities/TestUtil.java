@@ -33,6 +33,7 @@ public class TestUtil extends TestBaseClass {
 			TakesScreenshot src = ((TakesScreenshot) webdriver);
 			File srcfile = src.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(srcfile, new File(".//Screenshot//" + formattedDate + filename + ".png"));
+			log.info("Screenshot has been taken as this Test case is failed");
 		} catch (WebDriverException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {

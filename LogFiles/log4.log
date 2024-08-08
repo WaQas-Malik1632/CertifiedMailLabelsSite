@@ -1,5 +1,42 @@
-14:16:31.186 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - **** Starting Dashboard Page Test cases execution ****
-14:16:31.201 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-14:16:33.235 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-14:16:38.444 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-14:16:42.760 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started
+17:45:17.953 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Starting Login Page Test cases execution ****
+17:45:18.175 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+17:45:20.479 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
+17:45:26.760 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+17:45:28.854 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_010' Started
+17:45:28.854 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+17:45:29.072 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+17:45:31.044 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+17:45:31.102 [main]INFO  com.cml.qa.testcases.LoginPageTest - 
+User logged in successfully
+
+17:45:31.102 [main]INFO  com.cml.qa.testcases.LoginPageTest - User landed on Dashboard Page->Page Url has been successfully verified
+17:45:31.102 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of 'TC_CML_SS_010' Ended
+17:45:31.123 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+17:45:32.340 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
+17:45:37.458 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+17:45:39.719 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Started
+17:45:39.832 [main]INFO  com.cml.qa.pages.LoginPageClass - 
+Login Page Title is:Login
+
+17:45:39.848 [main]INFO  com.cml.qa.testcases.LoginPageTest - "Login title has been successfully verified"
+17:45:39.848 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Ended
+17:45:39.880 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+17:45:41.042 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
+17:45:45.679 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+17:45:50.487 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_168' Started
+17:45:50.487 [main]INFO  com.cml.qa.testcases.LoginPageTest - Entering Email and Password
+17:45:50.488 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+17:45:50.744 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+17:45:52.597 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+17:45:52.650 [main]INFO  com.cml.qa.testcases.LoginPageTest - User logged in successfully
+URL verification Passed:  expected [https://staging.certifiedmaillabels.com/login] but found [https://staging.certifiedmaillabels.com/user/dashboard]
+17:45:52.812 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+17:45:52.885 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+17:45:54.589 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
+17:46:01.497 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+17:46:03.146 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Execution of Login Page Tests 'TC_CML_SS_005' Started ****
+17:46:03.268 [main]INFO  com.cml.qa.pages.LoginPageClass - 
+CML Site Logo is visible:true
+
+17:46:03.283 [main]INFO  com.cml.qa.testcases.LoginPageTest - Login page logo has been successfully verified
+17:46:03.284 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_005' Ended

@@ -50,20 +50,19 @@ public class DashboardPageTestClass extends TestBaseClass {
 	@Story("Dashboard Page TestCases")
 	@Step("Login->Dashboard->Verify Page Title")
 	@Severity(SeverityLevel.CRITICAL)
-	public void VerifyDashboardPageTitle() {
+	public void VerifyDashboardPageTitle() throws IOException {
 		log.info("Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started");
 		String DashboardPageTitleIs = dashboard.DashboardTitleVerify();
 		try {
 			Assert.assertEquals(DashboardPageTitleIs, "Dashboard");
-			System.out.println("->Page Title has been successfully verified");
 			log.info("Page Title has been successfully verified");
-			System.out.println("User is landed on the Dashboard page successfully" + "\n");
 			log.info("User is landed on the Dashboard page successfully" + "\n");
 		} catch (AssertionError e) {
-			System.out.println("User doesn't login->Dashboard Page Title Verification Failed" + "\n");
+			log.info("User doesn't login due to Invalid credentials->Dashboard Page Title Verification Failed" + "\n"+e.getMessage());
+			util.TakeScreenshot(driver," Screenshot_DashboardPage TestCase 'CML_DASHBOARD_001'");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}
-		log.info("**** Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Ended ****");
+		log.info("** Execution of Dashboard Page Title Verification 'CML_DASHBOARD_001' Ended **");
 	}
 
 	@AfterMethod
