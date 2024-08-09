@@ -58,7 +58,7 @@ public class DashboardPageTestClass extends TestBaseClass {
 			log.info("Page Title has been successfully verified");
 			log.info("User is landed on the Dashboard page successfully" + "\n");
 		} catch (AssertionError e) {
-			log.info("User doesn't login due to Invalid credentials->Dashboard Page Title Verification Failed" + "\n"+e.getMessage());
+			log.error("User doesn't login due to Invalid credentials->Dashboard Page Title Verification Failed" + "\n"+e.getMessage());
 			util.TakeScreenshot(driver," Screenshot_DashboardPage TestCase 'CML_DASHBOARD_001'");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}

@@ -66,7 +66,7 @@ public class SignUpPageTest extends TestBaseClass {
             Assert.assertEquals(SignUpTitleVerify, "Register", "SignUp title does not match");
             log.info("SignUp title has been successfully verified");
         } catch (AssertionError e) {
-            log.info("SignUp title verification failed: " +e.getMessage());
+            log.error("SignUp title verification failed: " +e.getMessage());
             util.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'CML_REG_001'");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
@@ -91,12 +91,12 @@ public class SignUpPageTest extends TestBaseClass {
         if (signup.VerifyUniqueEmail().contains("   Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, ")) {
             log.info("Email is available. Proceeding with Mailinator verification");
             landPage = utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
-            log.info("mail is verified successfully");
+            log.info("email verified successfully");
             String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
             Assert.assertEquals(driver.getCurrentUrl(), ExpectedUrl);
-            util.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_");
+            util.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_ 'TC_CML_SS_020' ");
         } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
-            log.info("Email is already taken->Test failed.");
+            log.error("Email is already taken->Test failed.");
             util.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
             Assert.assertTrue(false, "Test case failed because, Email is already taken");
         } else {

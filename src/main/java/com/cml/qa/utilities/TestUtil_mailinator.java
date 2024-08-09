@@ -51,8 +51,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 		log = LogManager.getLogger(TestUtil_mailinator.class);
 	}
 
-	public LandingPageClass MailinatorLinkVerificationAndLoginNewUser()
-			throws InterruptedException, IOException {
+	public LandingPageClass MailinatorLinkVerificationAndLoginNewUser() throws InterruptedException, IOException {
 		// After signup, user can click to resend the email link again
 		// linkTextClick_VerifyEmail.click();
 

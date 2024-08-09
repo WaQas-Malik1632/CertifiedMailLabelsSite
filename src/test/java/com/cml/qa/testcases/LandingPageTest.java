@@ -57,7 +57,7 @@ public class LandingPageTest extends TestBaseClass {
     @Story("LandingPage TestCases")
     @Step("After successful Login->LandingPage->Verify Landing page UI is showing correctly")
     @Severity(SeverityLevel.CRITICAL)
-    public void LandingPageUIIsShowingCorrectly() throws IOException {
+    public void TC_CML_SS_001() throws IOException {
 
         try {
             log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****");
@@ -66,6 +66,7 @@ public class LandingPageTest extends TestBaseClass {
             log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****");
         } catch (Exception e) {
             log.error("Landing Page UI verification Test Case failed: " + e.getMessage());
+            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_001' ");
             throw new RuntimeException(e);
         }
     }

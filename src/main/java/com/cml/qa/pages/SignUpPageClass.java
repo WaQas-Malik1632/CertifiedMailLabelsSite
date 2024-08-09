@@ -145,7 +145,7 @@ public class SignUpPageClass extends TestBaseClass {
                 ZipCode.sendKeys(zip);
                 log.info("ZIP Code is : " + zip);
             } else {
-                log.info("Unable to extract state and zip code");
+                log.error("Unable to extract state and zip code");
             }
         }
 

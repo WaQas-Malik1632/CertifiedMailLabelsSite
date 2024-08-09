@@ -1,42 +1,47 @@
-17:45:17.953 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Starting Login Page Test cases execution ****
-17:45:18.175 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-17:45:20.479 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-17:45:26.760 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-17:45:28.854 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_010' Started
-17:45:28.854 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
-17:45:29.072 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
-17:45:31.044 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
-17:45:31.102 [main]INFO  com.cml.qa.testcases.LoginPageTest - 
-User logged in successfully
+16:00:22.079 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test cases execution ****
+16:00:22.097 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+16:00:30.742 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
+16:00:34.156 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:00:36.283 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Georgianna
+16:00:36.366 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Johnston
+16:00:36.462 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Ms. Tiera Herman ->FullName Without Space: MsTieraHerman
+16:00:36.784 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
+16:00:36.786 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: Apt. 922 996 Dewey Ports, Jerilyntown, OR 75688
+16:00:36.786 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : Jerilyntown
+16:00:36.945 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : OR
+16:00:37.115 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+Selected State Option is:OR
+16:00:37.185 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 75688
+16:00:37.359 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: 821-751-3271
+16:00:37.500 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: MsTieraHerman@mailinator.com
+16:00:37.607 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
+16:00:43.048 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+User is navigating to the Mailinator for the Email verification 
 
-17:45:31.102 [main]INFO  com.cml.qa.testcases.LoginPageTest - User landed on Dashboard Page->Page Url has been successfully verified
-17:45:31.102 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of 'TC_CML_SS_010' Ended
-17:45:31.123 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-17:45:32.340 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-17:45:37.458 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-17:45:39.719 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Started
-17:45:39.832 [main]INFO  com.cml.qa.pages.LoginPageClass - 
-Login Page Title is:Login
+16:00:47.009 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+16:00:53.322 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=mstieraherman-1723201242-20208934012
 
-17:45:39.848 [main]INFO  com.cml.qa.testcases.LoginPageTest - "Login title has been successfully verified"
-17:45:39.848 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Ended
-17:45:39.880 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-17:45:41.042 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-17:45:45.679 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-17:45:50.487 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_168' Started
-17:45:50.487 [main]INFO  com.cml.qa.testcases.LoginPageTest - Entering Email and Password
-17:45:50.488 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
-17:45:50.744 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
-17:45:52.597 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
-17:45:52.650 [main]INFO  com.cml.qa.testcases.LoginPageTest - User logged in successfully
-URL verification Passed:  expected [https://staging.certifiedmaillabels.com/login] but found [https://staging.certifiedmaillabels.com/user/dashboard]
-17:45:52.812 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
-17:45:52.885 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-17:45:54.589 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-17:46:01.497 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-17:46:03.146 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Execution of Login Page Tests 'TC_CML_SS_005' Started ****
-17:46:03.268 [main]INFO  com.cml.qa.pages.LoginPageClass - 
-CML Site Logo is visible:true
+16:00:53.405 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=mstieraherman-1723201242-20208934012
+->Title is-> Mailinator
 
-17:46:03.283 [main]INFO  com.cml.qa.testcases.LoginPageTest - Login page logo has been successfully verified
-17:46:03.284 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_005' Ended
+16:00:54.774 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
+16:00:54.775 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+16:00:55.054 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+16:00:56.364 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+16:00:57.774 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+-> Landing page Url is: https://staging.certifiedmaillabels.com/ and Title is-> USPS Certified Mail Labels
+
+16:00:57.802 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - ->User logged in and directed on landing page successfully and URL verification done
+
+16:00:58.072 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****
+16:00:58.072 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH1: USPS Certified Mail Labels
+16:00:58.235 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyPageHeadingH2 is: Address and Print USPS Certified Mail® Labels Online!
+16:00:58.282 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image is present: true
+16:00:58.301 [main]INFO  com.cml.qa.pages.LandingPageClass - Scrolling the window vertically
+16:00:58.351 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify USPS CML Image Paragraph Text is: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:00:58.386 [main]INFO  com.cml.qa.pages.LandingPageClass - Heading2Text_PrintCMLOrSendMailLablesOnline is: Print Certified Mail Labels OR Send Certified Mail Online!
+16:00:58.413 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image and Text both are present: [[ChromeDriver: chrome on windows (cdc5e31e34717ae31a1eccbabab8cdaa)] -> xpath: //div[contains(text(),'Create USPS Certified Mail® labels, Priority Mail ')]//img[@alt='Certified Mail Labels']]
+16:00:58.515 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Get Started Today Image is present: true
+16:00:58.516 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****

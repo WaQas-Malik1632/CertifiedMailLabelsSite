@@ -90,8 +90,8 @@ public class LoginPageTest extends TestBaseClass {
             Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
             log.info("\n" + "These credentials do not match our records. Password is case-sensitive." + "\n");
         } catch (AssertionError e) {
-            log.info("User logged in successfully" + "\n"+e.getMessage());
-            util.TakeScreenshot(driver, " _Login Test Failure Screenshot_ ");
+            log.error("User logged in successfully" + "\n"+e.getMessage());
+            util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_168' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of Login Page Test 'TC_CML_SS_168' Ended");
@@ -104,7 +104,7 @@ public class LoginPageTest extends TestBaseClass {
     @Story("Login Page TestCases")
     @Step("Login->Verify Login Page Title")
     @Severity(SeverityLevel.CRITICAL)
-    public void TC_CML_SS_004() {
+    public void TC_CML_SS_004() throws IOException {
 
         log.info("Execution of Login Page Tests 'TC_CML_SS_004' Started");
         String LoginTitle = login.VerifyLoginTitle();
@@ -112,7 +112,8 @@ public class LoginPageTest extends TestBaseClass {
             Assert.assertEquals(LoginTitle, "Login", "Login title does not match");
             log.info("\"Login title has been successfully verified\"");
         } catch (AssertionError e) {
-            log.info("Login title verification failed: " + e.getMessage());
+            log.error("Login title verification failed: " + e.getMessage());
+            util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_004' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of Login Page Tests 'TC_CML_SS_004' Ended");
@@ -125,7 +126,7 @@ public class LoginPageTest extends TestBaseClass {
     @Story("Login Page TestCases")
     @Step("Login->Verify Login Page Logo")
     @Severity(SeverityLevel.CRITICAL)
-    public void TC_CML_SS_005() {
+    public void TC_CML_SS_005() throws IOException {
 
         log.info("**** Execution of Login Page Tests 'TC_CML_SS_005' Started ****");
         boolean flag = login.VerifyLoginPageLogo();
@@ -134,6 +135,7 @@ public class LoginPageTest extends TestBaseClass {
             log.info("Login page logo has been successfully verified");
         } catch (AssertionError e) {
             log.error("Login page logo verification failed: " + e.getMessage());
+            util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_005' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of Login Page Tests 'TC_CML_SS_005' Ended");
