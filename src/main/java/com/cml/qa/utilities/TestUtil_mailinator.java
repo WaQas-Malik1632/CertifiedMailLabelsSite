@@ -88,8 +88,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 
 		// WebDriver control is shifted under the parent window
 		driver.switchTo().window(ParentWindowId);
-		log.info("\n" + "->After switching window-> Url is :" + driver.getCurrentUrl() + "\n"
-				+ "->Title is-> " + driver.getTitle() + "\n");
+		log.info("\n" + "->After switching window-> Url is :" + driver.getCurrentUrl() + "\n" + "->Title is-> " + driver.getTitle() + "\n");
 
 		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
