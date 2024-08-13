@@ -28,6 +28,8 @@ public class TestUtil extends TestBaseClass {
 
 	// Take Screenshot
 	public void TakeScreenshot(WebDriver webdriver, String filename) throws IOException {
+		//  String ParentWindow = driver.getWindowHandle();
+		// driver.switchTo().window(ParentWindow);
 
 		try {
 			TakesScreenshot src = ((TakesScreenshot) webdriver);

@@ -5,7 +5,6 @@ import com.cml.qa.pages.LandingPageClass;
 import com.cml.qa.pages.SignUpPageClass;
 import com.cml.qa.utilities.TestUtil;
 import com.cml.qa.utilities.TestUtil_mailinator;
-import io.qameta.allure.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
