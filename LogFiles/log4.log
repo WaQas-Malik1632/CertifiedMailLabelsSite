@@ -1,55 +1,146 @@
-18:11:31.748 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test cases execution ****
-18:11:31.766 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-18:11:35.048 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-18:11:43.173 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-18:11:45.418 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Carmel
-18:11:45.693 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Douglas
-18:11:45.924 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Marcellus Lubowitz ->FullName Without Space: MarcellusLubowitz
-18:11:46.898 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
-18:11:46.905 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: Apt. 668 47070 Christiansen Causeway, Garnetport, VA 07846-5453
-18:11:46.906 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : Garnetport
-18:11:47.158 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : VA
-18:11:47.397 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
-Selected State Option is:VA
-18:11:47.547 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 07846-5453
-18:11:47.926 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: (455) 569-1721
-18:11:48.310 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: MarcellusLubowitz@mailinator.com
-18:11:48.465 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
-18:11:53.318 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+19:56:36.965 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Starting Login Page Test cases execution ****
+19:56:37.085 [main]INFO  com.cml.qa.testcases.SignUpPageTest - **** Starting SignUp Page Test Cases Execution ****
+19:56:37.663 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+19:56:44.337 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+19:56:48.519 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:56:50.062 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_010' Started
+19:56:50.063 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+19:56:50.285 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+19:56:52.160 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+19:56:52.193 [main]INFO  com.cml.qa.testcases.LoginPageTest - 
+User logged in successfully
+
+19:56:52.193 [main]INFO  com.cml.qa.testcases.LoginPageTest - User landed on Dashboard Page->Page Url has been successfully verified
+19:56:52.193 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of 'TC_CML_SS_010' Ended
+19:56:52.254 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+19:56:55.032 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+19:56:58.263 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:56:59.691 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Started
+19:56:59.742 [main]INFO  com.cml.qa.pages.LoginPageClass - 
+Login Page Title is:Login
+
+19:56:59.763 [main]INFO  com.cml.qa.testcases.LoginPageTest - "Login title has been successfully verified"
+19:56:59.763 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Ended
+19:56:59.790 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+19:57:03.028 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+19:57:06.624 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:57:07.931 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_168' Started
+19:57:07.932 [main]INFO  com.cml.qa.testcases.LoginPageTest - Entering Email and Password
+19:57:07.932 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+19:57:08.105 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+19:57:11.496 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+19:57:11.512 [main]ERROR com.cml.qa.testcases.LoginPageTest - User logged in successfully
+URL verification Passed:  expected [https://staging.certifiedmaillabels.com/login] but found [https://staging.certifiedmaillabels.com/user/dashboard]
+19:57:11.616 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+19:57:11.659 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+19:57:14.290 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+19:57:17.571 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:57:19.031 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Execution of Login Page Tests 'TC_CML_SS_005' Started ****
+19:57:19.157 [main]INFO  com.cml.qa.pages.LoginPageClass - 
+CML Site Logo is visible:true
+
+19:57:19.171 [main]INFO  com.cml.qa.testcases.LoginPageTest - Login page logo has been successfully verified
+19:57:19.172 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_005' Ended
+19:57:19.182 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+19:57:24.023 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
+19:57:34.968 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:57:41.076 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Execution of SignUp Page Title verification 'CML_REG_001' Started
+19:57:41.937 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+SignUp Page Title is:Register
+
+19:57:41.953 [main]INFO  com.cml.qa.testcases.SignUpPageTest - SignUp title has been successfully verified
+19:57:41.954 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Execution of SignUp Page Title verification 'CML_REG_001' Ended
+19:57:42.139 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+19:57:47.309 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
+19:57:54.753 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:57:58.572 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Execution of SignUp Page Title verification 'TC_CML_SS_020' Started
+19:57:59.280 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Moises
+19:58:00.278 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Spinka
+19:58:00.515 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Charleen Streich ->FullName Without Space: CharleenStreich
+19:58:01.424 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
+19:58:01.435 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: 8781 Quincy Village, North Freeman, RI 55315-9943
+19:58:01.436 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : North Freeman
+19:58:01.688 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : RI
+19:58:01.873 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+Selected State Option is:RI
+19:58:01.990 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 55315-9943
+19:58:02.215 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: 393-133-1316
+19:58:02.403 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: CharleenStreich@mailinator.com
+19:58:02.539 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
+19:58:05.558 [main]INFO  com.cml.qa.testcases.SignUpPageTest - 
+->Page Url is: https://staging.certifiedmaillabels.com/login and Title is-> Login
+
+19:58:05.606 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Email is available. Proceeding with Mailinator verification
+19:58:07.791 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 User is navigating to the Mailinator for the Email verification 
 
-18:11:57.337 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
-18:12:03.881 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=marcelluslubowitz-1723727510-8715107012
+19:58:11.756 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+19:58:18.269 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=charleenstreich-1723733888-8913564012
 
-18:12:04.120 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=marcelluslubowitz-1723727510-8715107012
+19:58:18.408 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=charleenstreich-1723733888-8913564012
 ->Title is-> Mailinator
 
-18:12:05.584 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
-18:12:05.585 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
-18:12:06.269 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
-18:12:09.074 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
-18:12:10.688 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+19:58:19.781 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
+19:58:19.787 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+19:58:20.148 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+19:58:22.475 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+19:58:25.184 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 -> Landing page Url is: https://staging.certifiedmaillabels.com/ and Title is-> USPS Certified Mail Labels
 
-18:12:10.700 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - ->User logged in and directed on landing page successfully and URL verification done
+19:58:25.192 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - ->User logged in and directed on landing page successfully and URL verification done
 
-18:12:10.973 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****
-18:12:10.973 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH1: USPS Certified Mail Labels
-18:12:11.072 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyPageHeadingH2 is: Address and Print USPS Certified Mail® Labels Online!
-18:12:11.134 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image is present: true
-18:12:11.159 [main]INFO  com.cml.qa.pages.LandingPageClass - Scrolling the window vertically
-18:12:11.226 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify USPS CML Image Paragraph Text is: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
-18:12:11.288 [main]INFO  com.cml.qa.pages.LandingPageClass - Heading2Text_is: Print Certified Mail Labels OR Send Certified Mail Online!
-18:12:16.349 [main]INFO  com.cml.qa.pages.LandingPageClass - Video is available on the Page: true
-'Video is ready and can be played':false
-18:12:16.410 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image and Text both are present: true
-18:12:16.456 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Get Started Today Image is present: true
-18:12:16.771 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link1 is : Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
-Attribute is: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed
-18:12:23.758 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link2 is :Certified Mail Labels: How USPS Certified Mail Works
-Attribute is: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works
-18:12:27.279 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link3 is :Certified Mail Envelopes: Secure and Admissible
-Attribute is: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible
-18:12:30.945 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****
+19:58:25.192 [main]INFO  com.cml.qa.testcases.SignUpPageTest - email verified successfully
+19:58:25.512 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+19:58:25.512 [main]INFO  com.cml.qa.testcases.SignUpPageTest - **** Execution of Register successfully as parent user 'TC_CML_SS_020' Ended ****
+19:58:25.560 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test cases execution ****
+19:58:25.561 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+19:58:29.779 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
+19:58:42.452 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:58:47.193 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Fausto
+19:58:47.333 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Kovacek
+19:58:47.588 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Silva Bogisich ->FullName Without Space: SilvaBogisich
+19:58:47.941 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
+19:58:47.947 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: Apt. 751 546 Parker Courts, South Wanda, DE 10311
+19:58:47.947 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : South Wanda
+19:58:48.218 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : DE
+19:58:48.568 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+Selected State Option is:DE
+19:58:48.720 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 10311
+19:58:48.900 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: 365-051-8108
+19:58:49.088 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: SilvaBogisich@mailinator.com
+19:58:49.288 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
+19:58:53.685 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+User is navigating to the Mailinator for the Email verification 
+
+19:58:57.733 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+19:59:04.141 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=silvabogisich-1723733931-10793360013
+
+19:59:04.269 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=silvabogisich-1723733931-10793360013
+->Title is-> Mailinator
+
+19:59:06.361 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
+19:59:06.362 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+19:59:06.728 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+19:59:08.993 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+19:59:10.043 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+-> Landing page Url is: https://staging.certifiedmaillabels.com/user/dashboard and Title is-> Dashboard
+
+19:59:10.048 [main]ERROR com.cml.qa.utilities.TestUtil_mailinator - Login Failed->These credentials do not match our records
+
+19:59:10.197 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+19:59:10.245 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - **** Starting Dashboard Page Test cases execution ****
+19:59:10.246 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+19:59:16.047 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
+19:59:29.724 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+19:59:32.997 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+19:59:33.264 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+19:59:35.466 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+19:59:35.479 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started
+19:59:35.541 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Page Title has been successfully verified
+19:59:35.541 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - User is landed on the Dashboard page successfully
+
+19:59:35.541 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - ** Execution of Dashboard Page Title Verification 'CML_DASHBOARD_001' Ended **

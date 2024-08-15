@@ -44,7 +44,8 @@ public class SignUpPageTest extends TestBaseClass {
     public void beforeMethod() throws IOException {
 
         util = new TestUtil();
-        intialization();
+       intialization();
+      //Headless_Intialization();
         loginPage = new LoginPageClass();
         signup = new SignUpPageClass();
         signup.Precondition();
@@ -52,7 +53,7 @@ public class SignUpPageTest extends TestBaseClass {
         landPage = new LandingPageClass();
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = false, description = "CML_REG_001")
+    @Test(priority = 1, invocationCount = 1, enabled = true, description = "CML_REG_001")
     @Description("CML_REG_001->SignUp Page->Verify that user is able to validate signUp Page Title")
     @Epic("SignUp->EP001")
     @Feature("SignUp->Feature:001")

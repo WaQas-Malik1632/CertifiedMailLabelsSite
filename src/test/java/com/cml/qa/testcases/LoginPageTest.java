@@ -39,7 +39,8 @@ public class LoginPageTest extends TestBaseClass {
     public void beforeMethod() throws IOException {
 
         util = new TestUtil();
-        intialization();
+        //intialization();
+        Headless_Intialization();
         login = new LoginPageClass();
         login.PreRequisiteLinkClickLogin();
     }

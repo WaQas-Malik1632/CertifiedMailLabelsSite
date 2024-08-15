@@ -41,6 +41,7 @@ public class LandingPageTest extends TestBaseClass {
         log.info("**** Starting Landing Page Test cases execution ****");
         util = new TestUtil();
         intialization();
+      //Headless_Intialization();
         signup = new SignUpPageClass();
         signup.Precondition();
         signup.userRegistrationForm();

@@ -38,6 +38,7 @@ public class DashboardPageTestClass extends TestBaseClass {
 		log.info("**** Starting Dashboard Page Test cases execution ****");
 		util = new TestUtil();
 		intialization();
+		//Headless_Intialization();
 		login = new LoginPageClass();
 		login.PreRequisiteLinkClickLogin();
 		dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
