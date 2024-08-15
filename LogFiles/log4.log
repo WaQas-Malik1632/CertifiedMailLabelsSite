@@ -1,53 +1,55 @@
-12:49:34.303 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test cases execution ****
-12:49:34.319 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-12:49:36.731 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
-12:49:42.343 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-12:49:44.670 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Renay
-12:49:44.731 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: McDermott
-12:49:44.800 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Kaley Hayes ->FullName Without Space: KaleyHayes
-12:49:45.161 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
-12:49:45.163 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: Suite 331 273 Stacey Skyway, Quinnfort, AK 72114-8897
-12:49:45.164 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : Quinnfort
-12:49:45.285 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : AK
-12:49:45.418 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
-Selected State Option is:AK
-12:49:45.505 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 72114-8897
-12:49:45.643 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: 013-728-4613
-12:49:45.787 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: KaleyHayes@mailinator.com
-12:49:45.926 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
-12:49:49.210 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+18:11:31.748 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test cases execution ****
+18:11:31.766 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+18:11:35.048 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Chrome Browser ****
+18:11:43.173 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+18:11:45.418 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Carmel
+18:11:45.693 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Douglas
+18:11:45.924 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Marcellus Lubowitz ->FullName Without Space: MarcellusLubowitz
+18:11:46.898 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
+18:11:46.905 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: Apt. 668 47070 Christiansen Causeway, Garnetport, VA 07846-5453
+18:11:46.906 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : Garnetport
+18:11:47.158 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : VA
+18:11:47.397 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+Selected State Option is:VA
+18:11:47.547 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 07846-5453
+18:11:47.926 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: (455) 569-1721
+18:11:48.310 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: MarcellusLubowitz@mailinator.com
+18:11:48.465 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
+18:11:53.318 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 User is navigating to the Mailinator for the Email verification 
 
-12:49:53.917 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
-12:50:00.234 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=kaleyhayes-1723535390-3917693012
+18:11:57.337 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
+18:12:03.881 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=marcelluslubowitz-1723727510-8715107012
 
-12:50:00.295 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=kaleyhayes-1723535390-3917693012
+18:12:04.120 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=marcelluslubowitz-1723727510-8715107012
 ->Title is-> Mailinator
 
-12:50:01.258 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
-12:50:01.259 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
-12:50:01.572 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
-12:50:02.785 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
-12:50:04.011 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+18:12:05.584 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
+18:12:05.585 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+18:12:06.269 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+18:12:09.074 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+18:12:10.688 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 -> Landing page Url is: https://staging.certifiedmaillabels.com/ and Title is-> USPS Certified Mail Labels
 
-12:50:04.017 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - ->User logged in and directed on landing page successfully and URL verification done
+18:12:10.700 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - ->User logged in and directed on landing page successfully and URL verification done
 
-12:50:04.125 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****
-12:50:04.125 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH1: USPS Certified Mail Labels
-12:50:04.186 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyPageHeadingH2 is: Address and Print USPS Certified Mail® Labels Online!
-12:50:04.221 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image is present: true
-12:50:04.231 [main]INFO  com.cml.qa.pages.LandingPageClass - Scrolling the window vertically
-12:50:04.275 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify USPS CML Image Paragraph Text is: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
-12:50:04.302 [main]INFO  com.cml.qa.pages.LandingPageClass - Heading2Text_is: Print Certified Mail Labels OR Send Certified Mail Online!
-12:50:04.326 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image and Text both are present: true
-12:50:04.351 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Get Started Today Image is present: true
-12:50:04.531 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link1 is : Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
-12:50:08.784 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Link1 Url is: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed
-12:50:08.939 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link2 is :Certified Mail Labels: How USPS Certified Mail Works
-12:50:10.649 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Link2 Url is: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works
-12:50:10.887 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link3 is :Certified Mail Envelopes: Secure and Admissible
-12:50:12.814 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Link3 Url is: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible
-12:50:12.815 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****
+18:12:10.973 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****
+18:12:10.973 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH1: USPS Certified Mail Labels
+18:12:11.072 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyPageHeadingH2 is: Address and Print USPS Certified Mail® Labels Online!
+18:12:11.134 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image is present: true
+18:12:11.159 [main]INFO  com.cml.qa.pages.LandingPageClass - Scrolling the window vertically
+18:12:11.226 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify USPS CML Image Paragraph Text is: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+18:12:11.288 [main]INFO  com.cml.qa.pages.LandingPageClass - Heading2Text_is: Print Certified Mail Labels OR Send Certified Mail Online!
+18:12:16.349 [main]INFO  com.cml.qa.pages.LandingPageClass - Video is available on the Page: true
+'Video is ready and can be played':false
+18:12:16.410 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image and Text both are present: true
+18:12:16.456 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Get Started Today Image is present: true
+18:12:16.771 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link1 is : Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
+Attribute is: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed
+18:12:23.758 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link2 is :Certified Mail Labels: How USPS Certified Mail Works
+Attribute is: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works
+18:12:27.279 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text for Link3 is :Certified Mail Envelopes: Secure and Admissible
+Attribute is: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible
+18:12:30.945 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****

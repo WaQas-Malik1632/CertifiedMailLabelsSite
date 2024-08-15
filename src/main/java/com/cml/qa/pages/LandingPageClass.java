@@ -39,6 +39,12 @@ public class LandingPageClass extends TestBaseClass {
     @FindBy(linkText = "Certified Mail Labels")
     @CacheLookup
     WebElement VerifyLinkText_CertifiedMailLabels;
+
+    //@FindBy(xpath = "//div[@role='main']")
+    @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div/div[1]/div[1]/div[1]/iframe")
+    @CacheLookup
+    WebElement VerifyVideo;
+
     @FindBy(xpath = "//div[contains(text(),'Create USPS Certified Mail® labels, Priority Mail ')]//img[@alt='Certified Mail Labels']")
     @CacheLookup
     WebElement VerifyImageAndTextCombined;
@@ -62,7 +68,7 @@ public class LandingPageClass extends TestBaseClass {
         PageFactory.initElements(driver, this);
     }
 
-    public HashMap<String, String> VerifyLandingPageUIElements() {
+    public HashMap<String, String> VerifyLandingPageUIElements() throws InterruptedException {
 
         HashMap<String, String> elements = new HashMap<>();
         elements.put("VerifyPageHeadingH1", "USPS Certified Mail Labels");
@@ -77,7 +83,7 @@ public class LandingPageClass extends TestBaseClass {
         boolean imagePresent = VerifyUSPSCertifiedMailLabelsImage.isDisplayed();
         Assert.assertTrue(imagePresent, "The Image is not displayed on the page.");
         log.info("Verify Image is present: " + imagePresent);
-        js.executeScript("window.scrollBy(0, 1250)", "");
+        js.executeScript("window.scrollBy(0, 1200)", "");
         log.info("Scrolling the window vertically");
 
         elements.put("VerifyUSPSCMLImagePText", "Skip the trip to the Post Office…");
@@ -95,23 +101,30 @@ public class LandingPageClass extends TestBaseClass {
         elements.put("VerifyLink2_SendCertifiedMail", "Send Certified Mail");
         String AttributeUrl2 = VerifyLinkText_SendCertifiedMail.getAttribute("href");
         VerifyLinkText_SendCertifiedMail.click();
-        log.info("Text for Link 2 is :" +VerifyLinkText_SendCertifiedMail.getText()+ "And " +AttributeUrl2);
+        log.info("Text for Link 2 is :" +VerifyLinkText_SendCertifiedMail.getText()+"\n"+"Attribute is: "+AttributeUrl2);
         driver.navigate().to("https://staging.sendcertifiedmail.com/");
         String ExpectedLink1Url2Text="https://staging.sendcertifiedmail.com/";
         Assert.assertEquals(driver.getCurrentUrl(),ExpectedLink1Url2Text);
-        log.info("Link2 Url is: " + driver.getCurrentUrl());
         driver.navigate().back();
 
         elements.put("VerifyLink1_PrintCertifiedMail", "Certified Mail Labels");
         VerifyLinkText_CertifiedMailLabels.click();
         String AttributeUrl1 = VerifyLinkText_CertifiedMailLabels.getAttribute("href");
-        log.info("Text for Link 1 is : " +VerifyLinkText_CertifiedMailLabels.getText());
+        log.info("Text for Link 1 is : " +VerifyLinkText_CertifiedMailLabels.getText()+"\n"+"Attribute is: "+AttributeUrl1);
         driver.navigate().to("https://staging.certifiedmaillabels.com/");
         String ExpectedLink1UrlText="https://staging.certifiedmaillabels.com/";
         Assert.assertEquals(driver.getCurrentUrl(),ExpectedLink1UrlText);
-        log.info("Link1 Url is: " + driver.getCurrentUrl());
         //js.executeScript("window.scrollBy(0, 1050)", "");
          */
+        elements.put("VerifyVideo", "VerifyVideoIsDisplayed");
+        boolean VideoIsPresent = VerifyVideo.isDisplayed();
+        Thread.sleep(5000);
+        boolean canPlay = (Boolean) js.executeScript(
+                "return arguments[0].readyState === 4;", VerifyVideo);
+      //  Assert.assertTrue(canPlay, "The video is not ready to be played.");
+        Assert.assertTrue(VideoIsPresent, "The Image is not displayed on the page.");
+        log.info("Video is available on the Page: " + VideoIsPresent+"\n"+"'Video is ready and can be played':"+ canPlay);
+
         elements.put("VerifyImageAndTextCombined", "Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.");
         boolean imageAndTextCombinedPresent = VerifyImageAndTextCombined.isDisplayed();
         Assert.assertTrue(imageAndTextCombinedPresent, "The Image is not displayed on the page.");
@@ -126,31 +139,29 @@ public class LandingPageClass extends TestBaseClass {
         elements.put("VerifyLink1", "Certified Mail Labels: Why Is My USPS Certified Mail Delayed?");
         VerifyLink1.click();
         String AttUrl3 = VerifyLink1.getAttribute("href");
-        log.info("Link Text for Link1 is : " + VerifyLink1.getText());
+        log.info("Link Text for Link1 is : " + VerifyLink1.getText()+"\n"+"Attribute is: "+AttUrl3);
         driver.navigate().to("https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed");
         String ExpectedLink1Url = "https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed";
         Assert.assertEquals(driver.getCurrentUrl(), ExpectedLink1Url);
-        log.info("Verify Link1 Url is: " + driver.getCurrentUrl());
         driver.navigate().back();
 
         elements.put("VerifyLink2", "Certified Mail Labels: How USPS Certified Mail Works");
         VerifyLink2.click();
         String AttUrl4 = VerifyLink2.getAttribute("href");
-        log.info("Link Text for Link2 is :" + VerifyLink2.getText());
+        log.info("Link Text for Link2 is :" + VerifyLink2.getText()+"\n"+"Attribute is: "+AttUrl4);
         driver.navigate().to("https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works");
         String ExpectedLink2Url = "https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works";
         Assert.assertEquals(driver.getCurrentUrl(), ExpectedLink2Url);
-        log.info("Verify Link2 Url is: " + driver.getCurrentUrl());
         driver.navigate().back();
 
         elements.put("VerifyLink3", "Certified Mail Envelopes: Secure and Admissible");
         VerifyLink3.click();
         String AttUrl5 = VerifyLink3.getAttribute("href");
-        log.info("Link Text for Link3 is :" + VerifyLink3.getText());
+        log.info("Link Text for Link3 is :" + VerifyLink3.getText()+"\n"+"Attribute is: " +AttUrl5);
         driver.navigate().to("https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible");
         String ExpectedLink3Url = "https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible";
         Assert.assertEquals(driver.getCurrentUrl(), ExpectedLink3Url);
-        log.info("Verify Link3 Url is: " + driver.getCurrentUrl());
+
         return elements;
     }
 }
