@@ -81,9 +81,9 @@ public class LandingPageClass extends TestBaseClass {
 
         elements.put("VerifyUSPSCertifiedMailLabelsImage", String.valueOf(VerifyUSPSCertifiedMailLabelsImage.isDisplayed()));
         boolean imagePresent = VerifyUSPSCertifiedMailLabelsImage.isDisplayed();
-
+        String ImagePresentSrc=VerifyUSPSCertifiedMailLabelsImage.getAttribute("src");
         Assert.assertTrue(imagePresent, "The Image is not displayed on the page.");
-        log.info("Verify Image is present: " + imagePresent);
+        log.info("Verify Image is present: " + imagePresent +" And Its Source Url is: "  +ImagePresentSrc);
         js.executeScript("window.scrollBy(0, 1200)", "");
         log.info("Scrolling the window vertically");
 
@@ -99,18 +99,16 @@ public class LandingPageClass extends TestBaseClass {
 
         elements.put("VerifyVideo", "VerifyVideoIsDisplayed");
         boolean VideoIsPresent = VerifyVideo.isDisplayed();
+        String VideoIsPresentSrc=VerifyVideo.getAttribute("src");
         Thread.sleep(5000);
-        boolean canPlay = (Boolean) js.executeScript(
-                "return arguments[0].readyState === 4;", VerifyVideo);
-      //  Assert.assertTrue(canPlay, "The video is not ready to be played.");
         Assert.assertTrue(VideoIsPresent, "The Image is not displayed on the page.");
-        log.info("Video is available on the Page: " + VideoIsPresent+"\n"+"'Video is ready and can be played':"+ canPlay);
+        log.info("Video is available on the Page: " + VideoIsPresent+"\n"+" and Video Source Url is: " +VideoIsPresentSrc);
 
         elements.put("VerifyImageAndTextCombined", "Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.");
         boolean imageAndTextCombinedPresent = VerifyImageAndTextCombined.isDisplayed();
+        String imageAndTextCombinedPresentSrc=VerifyImageAndTextCombined.getAttribute("src");
         Assert.assertTrue(imageAndTextCombinedPresent, "The Image is not displayed on the page.");
-        log.info("Verify Image and Text both are present: " + imageAndTextCombinedPresent);
-
+        log.info("Verify Image and Text both are present: " + imageAndTextCombinedPresent+ "Image Source Url is: " +imageAndTextCombinedPresentSrc);
         elements.put("VerifyImage", "Get Started Today Image");
         boolean GetStartedImageVerify = VerifyImage.isDisplayed();
         Assert.assertTrue(GetStartedImageVerify, "The Image is not displayed on the page.");
