@@ -50,7 +50,7 @@ public class LandingPageTest extends TestBaseClass {
         landPage = new LandingPageClass();
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = true, description = "TC_CML_SS_001")
+    @Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_001")
     @Description("TC_CML_SS_001->Landing Page->Verify that user is able to validate Landing page UI is showing correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -67,6 +67,27 @@ public class LandingPageTest extends TestBaseClass {
         } catch (Exception e) {
             log.error("Landing Page UI verification Test Case failed: " + e.getMessage());
             util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_001' ");
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test(priority = 2, invocationCount = 1, enabled = true, description = "TC_CML_SS_002")
+    @Description("TC_CML_SS_002->Landing Page->Verify that right side bar links are working correctly")
+    @Epic("LandingPage->EP001")
+    @Feature("LandingPage->Feature:001")
+    @Story("LandingPage TestCases")
+    @Step("After successful Login->LandingPage->Verify Landing page UI is showing correctly")
+    @Severity(SeverityLevel.BLOCKER)
+    public void TC_CML_SS_002() throws IOException {
+
+        try {
+            log.info("**** Execution of Landing Page right side bar links 'TC_CML_SS_002' Started ****");
+            landPage.RightSideBarLinks();
+            Assert.assertTrue(true, "Right side links verification done");
+            log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_002' Ended ****");
+        } catch (Exception e) {
+            log.error("Landing Page Right side bar links verification Test Case failed: " + e.getMessage());
+            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_002' ");
             throw new RuntimeException(e);
         }
     }
