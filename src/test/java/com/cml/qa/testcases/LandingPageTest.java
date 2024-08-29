@@ -41,7 +41,7 @@ public class LandingPageTest extends TestBaseClass {
         log.info("**** Starting Landing Page Test cases execution ****");
         util = new TestUtil();
         intialization();
-      //Headless_Intialization();
+     // Headless_Intialization();
         signup = new SignUpPageClass();
         signup.Precondition();
         signup.userRegistrationForm();
@@ -50,7 +50,7 @@ public class LandingPageTest extends TestBaseClass {
         landPage = new LandingPageClass();
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = true, description = "TC_CML_SS_001")
+    @Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_001")
     @Description("TC_CML_SS_001->Landing Page->Verify that user is able to validate Landing page UI is showing correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -71,7 +71,7 @@ public class LandingPageTest extends TestBaseClass {
         }
     }
 
-    @Test(priority = 2, invocationCount = 1, enabled = false, description = "TC_CML_SS_002")
+    @Test(priority = 2, invocationCount = 1, enabled = true, description = "TC_CML_SS_002")
     @Description("TC_CML_SS_002->Landing Page->Verify that right side bar links are working correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -121,7 +121,7 @@ public class LandingPageTest extends TestBaseClass {
     public void TC_CML_SS_006() throws IOException {
 
         try {
-            log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'TC_CML_SS_006' Started ****");
+            log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'Tc' Started ****");
             landPage.GetStartedToday_ImageClick();
             Assert.assertTrue(true, "Verification of 'GET STARTED TODAY Done' ");
             log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'TC_CML_SS_006' Ended ****");

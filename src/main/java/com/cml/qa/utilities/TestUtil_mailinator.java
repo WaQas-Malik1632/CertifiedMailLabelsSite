@@ -100,10 +100,9 @@ public class TestUtil_mailinator extends TestBaseClass {
 
 		// driver.navigate().refresh();
 		driver.get(driver.getCurrentUrl());
-		log.info("\n" + "-> Landing page Url is: " + driver.getCurrentUrl() + " and Title is-> "+ driver.getTitle() + "\n");
 
 		// Verify page url after Email verification is matched or not
-		log.info("\n" + "-> Landing page URL is: " + driver.getCurrentUrl() + " and Title is -> " + driver.getTitle() + "\n");
+		log.info("\n" + "-> Landing page URL is: " + driver.getCurrentUrl());
 
 // Verify the page URL after email verification is matched or not
 		String expectedUrl = "https://staging.certifiedmaillabels.com/";
@@ -114,7 +113,7 @@ public class TestUtil_mailinator extends TestBaseClass {
 			if (actualUrl.equals("https://staging.certifiedmaillabels.com/user/dashboard")) {
 				log.info("URL is 'https://staging.certifiedmaillabels.com/user/dashboard', navigating back and refreshing the page.");
 				driver.navigate().back();  // Navigate back to the previous page
-				Thread.sleep(2000);        // Wait for a moment to ensure navigation completes
+				Thread.sleep(2000);
 				driver.navigate().refresh();  // Refresh the page
 				Thread.sleep(2000);        // Wait for the refresh to complete
 			}

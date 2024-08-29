@@ -103,10 +103,13 @@ public class LandingPageClass extends TestBaseClass {
         elements.put("VerifyVideo", VerifyVideo);
         elements.put("VerifyImageAndTextCombined", VerifyImageAndTextCombined);
         elements.put("VerifyImage", VerifyImage);
+
         elements.put("VerifyLink1", VerifyLink1);
         elements.put("VerifyLink2", VerifyLink2);
         elements.put("VerifyLink3", VerifyLink3);
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         // Verify Page Headings
         WebElement pageHeadingH1 = elements.get("VerifyPageHeadingH1");
         WebElement pageHeadingH2 = elements.get("VerifyPageHeadingH2");
@@ -116,35 +119,41 @@ public class LandingPageClass extends TestBaseClass {
         String actualTextH2 = wait.until(ExpectedConditions.visibilityOf(pageHeadingH2)).getText().trim();
         Assert.assertEquals(actualTextH2, PAGE_HEADING_H2_EXPECTED, "Text mismatch for PageHeadingH2");
         log.info("PageHeadingH2 is: " + actualTextH2);
+
         // Verify USPS Certified Mail Labels Image
         WebElement uspsImage = elements.get("VerifyUSPSCertifiedMailLabelsImage");
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(uspsImage)).isDisplayed(), "The Image is not displayed on the page.");
         String actualSrc = uspsImage.getAttribute("src").trim();
         Assert.assertEquals(actualSrc, USPSCML_IMAGE_SRC_EXPECTED, "Image source URL mismatch.");
         log.info("Image is present and Its Source URL is: " + actualSrc);
+
         // Scroll down and verify paragraph text
         js.executeScript("window.scrollBy(0, 1200)", "");
         WebElement pTagText = elements.get("VerifyPTAG_SkipTheTripText");
         String actualPTagText = wait.until(ExpectedConditions.visibilityOf(pTagText)).getText().trim();
         Assert.assertEquals(actualPTagText, P_TAG_SKIP_TEXT_EXPECTED, "Text mismatch for VerifyUSPSCMLImagePText");
         log.info("VerifyUSPSCMLImagePText is: " + actualPTagText);
+
         // Verify H2 Text
         WebElement h2Text = elements.get("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline");
         String actualH2Text = wait.until(ExpectedConditions.visibilityOf(h2Text)).getText().trim();
         Assert.assertEquals(actualH2Text, H2_TEXT_EXPECTED, "Text mismatch for VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline");
         log.info("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline is: " + actualH2Text);
+
         // Verify Video
         WebElement videoElement = elements.get("VerifyVideo");
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(videoElement)).isDisplayed(), "Video is not displayed on the page.");
         String videoSrc = videoElement.getAttribute("src");
         Assert.assertNotNull(videoSrc, "Video source URL is missing.");
         log.info("Video is available on the Page and its Source URL is: " + videoSrc);
+
         // Verify Image and Text Combined
         WebElement imageAndTextElement = elements.get("VerifyImageAndTextCombined");
         String actualImageAndText = wait.until(ExpectedConditions.visibilityOf(imageAndTextElement)).getAttribute("src");
         Assert.assertEquals(actualImageAndText, IMAGE_AND_TEXT_COMBINED_EXPECTED, "Text mismatch for Image and Text Combined");
-        //  log.info("Image and Text Combined is: " + actualImageAndText);
+
         log.info("Verify Image and Text both are present and Src Url is: " + actualImageAndText);
+
         // Verify Get Started Image
         WebElement getStartedImage = elements.get("VerifyImage");
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(getStartedImage)).isDisplayed(), "Get Started Image is not displayed on the page.");
@@ -153,57 +162,61 @@ public class LandingPageClass extends TestBaseClass {
         log.info("Get Started Image is present and Its Source URL is: " + getStartedImageSrc);
 
         // Get the bottomLinks container
-        //  WebElement bottomLinks = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div[2]"));
-        //  List<WebElement> allLinks = bottomLinks.findElements(By.xpath(".//a"));
+
         log.info("-----Verification of Bottom link started-----");
 
-        // Define expected URLs for each link
-        String expectedUrlLink1 = "https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed";
-        String expectedUrlLink2 = "https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works";
-        String expectedUrlLink3 = "https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible";
+        // Define the expected URLs and element keys
+        String[] expectedUrls = {
+                "https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed",
+                "https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works",
+                "https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissiblesss"};
 
-        WebElement link1 = elements.get("VerifyLink1");
-        String linkText1 = link1.getText();
-        String actualUrl1 = link1.getAttribute("href");
-        log.info("Expected URL: " + expectedUrlLink1 + " | Actual URL from href: " + actualUrl1);
-        // link1 = elements.get("VerifyLink1");
-        link1.click();
-        driver.navigate().to("https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed");
-        wait.until(ExpectedConditions.urlToBe(expectedUrlLink1));
-        Assert.assertEquals(driver.getCurrentUrl(), expectedUrlLink1, "URL mismatch for Link 1: " + linkText1);
-        log.info("Link 1 verification passed: " + linkText1);
-        driver.navigate().back();
-        Thread.sleep(2000); // Wait for the page to reload properly
+        String[] linkKeys = {"VerifyLink1", "VerifyLink2", "VerifyLink3"};
 
+        for (int i = 0; i < expectedUrls.length; i++) {
+            String expectedUrl = expectedUrls[i];
+            String linkKey = linkKeys[i];
 
-        WebElement link2 = elements.get("VerifyLink2");
-        String linkText2 = link2.getText();
-        String actualUrl2 = link2.getAttribute("href");
-        log.info("Expected URL: " + expectedUrlLink2 + " | Actual URL from href: " + actualUrl2);
-        // link2 = elements.get("VerifyLink2");
-        link2.click();
-        driver.navigate().to("https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works");
-        wait.until(ExpectedConditions.urlToBe(expectedUrlLink2));
-        Assert.assertEquals(driver.getCurrentUrl(), expectedUrlLink2, "URL mismatch for Link 2: " + linkText2);
-        log.info("Link 2 verification passed: " + linkText2);
-        driver.navigate().back();
-        Thread.sleep(2000); // Wait for the page to reload properly
+            // Get the link element from the elements map
+            WebElement link = elements.get(linkKey);
+            String linkText = link.getText();
+            String actualUrl = link.getAttribute("href");
+            log.info("Expected URL: " + expectedUrl + " | Actual URL from href: " + actualUrl);
 
+            try {
+                link.click();
+                // Locate the parent div element
+                WebElement parentDiv = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div"));
 
-        WebElement link3 = elements.get("VerifyLink3");
-        String linkText3 = link3.getText();
-        String actualUrl3 = link3.getAttribute("href");
-        log.info("Expected URL: " + expectedUrlLink3 + " | Actual URL from href: " + actualUrl3);
-        //   link3 = elements.get("VerifyLink3");
-        link3.click();
-        driver.navigate().to("https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible");
-        //   wait.until(ExpectedConditions.urlToBe(expectedUrlLink3));
-        Assert.assertEquals(driver.getCurrentUrl(), expectedUrlLink3, "URL mismatch for Link 3: " + linkText3);
-        driver.navigate().back();
-        log.info("Link 3 verification passed: " + linkText3);
+                // Find all child elements inside the parent div
+                List<WebElement> allElementsInsideLink = parentDiv.findElements(By.xpath(".//*"));
+
+                js.executeScript("window.scrollBy(0, 200)", "");
+
+                // Log details of each element inside the link
+                for (WebElement element : allElementsInsideLink) {
+                    String tagName = element.getTagName();
+                    String text = element.getText();
+                    log.info("Tag Name: " + tagName + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + text);
+                }
+
+                // Navigate to the expected URL and verify
+                driver.navigate().to(expectedUrl);
+                wait.until(ExpectedConditions.urlToBe(expectedUrl));
+                Assert.assertEquals(driver.getCurrentUrl(), expectedUrl, "URL mismatch for Link: " + linkText);
+                log.info("Link verification passed: " + linkText);
+
+                log.info("-----Verification of link ended-----"+link.getText());
+            } catch (Exception e) {
+                log.error("Error during verification of link: " + linkText, e);
+            } finally {
+                // Navigate back to the main page to ensure proper reloading for the next iteration
+                driver.navigate().back();
+                Thread.sleep(2000); // Wait for the page to reload properly
+            }
+        }
 
         log.info("-----Verification of Bottom link ended-----");
-
 
         return elements;
     }
@@ -250,6 +263,7 @@ public class LandingPageClass extends TestBaseClass {
                 List<WebElement> allElementsInsideParentDiv = pageContent.findElements(By.xpath(".//*[not(self::br)]"));
                 for (WebElement element : allElementsInsideParentDiv) {
                     Thread.sleep(1000);
+
                     //Scroll the whole page
                     //js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
                     log.info("Tag Name: " + element.getTagName() + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + element.getText());
