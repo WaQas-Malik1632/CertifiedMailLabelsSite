@@ -9,25 +9,26 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
+import java.time.Duration;
+import java.util.*;
 
 public class LandingPageClass extends TestBaseClass {
 
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     JavascriptExecutor js = (JavascriptExecutor) driver;
-    //Page Center elements
     public static Logger log;
+    //Page Center elements
     @FindBy(xpath = "//h1[normalize-space()='USPS Certified Mail Labels']")
     @CacheLookup
     WebElement VerifyPageHeadingH1;
-    String Expected_PageHeadingH1 = "USPS Certified Mail Labels";
     @FindBy(xpath = "//h2[contains(text(),'Address and Print USPS Certified Mail® Labels Onli')]")
     @CacheLookup
     WebElement VerifyPageHeadingH2;
-    String Expected_PageHeadingH2 = "Address and Print USPS Certified Mail® Labels Online!";
     @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div/div[1]/div[1]/h2[1]/a/img")
     @CacheLookup
     WebElement VerifyUSPSCertifiedMailLabelsImage;
@@ -43,14 +44,13 @@ public class LandingPageClass extends TestBaseClass {
     @FindBy(linkText = "Certified Mail Labels")
     @CacheLookup
     WebElement VerifyLinkText_CertifiedMailLabels;
-    //@FindBy(xpath = "//div[@role='main']")
     @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div/div[1]/div[1]/div[1]/iframe")
     @CacheLookup
     WebElement VerifyVideo;
     @FindBy(xpath = "//div[contains(text(),'Create USPS Certified Mail® labels, Priority Mail ')]//img[@alt='Certified Mail Labels']")
     @CacheLookup
     WebElement VerifyImageAndTextCombined;
-    @FindBy(xpath = "//img[@alt='Certified Mail Labels | Get Started for Free Today']")
+    @FindBy(xpath = "//img[@alt='Certified Mail Labels | GET STARTED FOR FREE TODAY']")
     @CacheLookup
     WebElement VerifyImage;
     @FindBy(linkText = "Certified Mail Labels: Why Is My USPS Certified Mail Delayed?")
@@ -66,6 +66,14 @@ public class LandingPageClass extends TestBaseClass {
     @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div/div[2]/aside/ul")
     @CacheLookup
     WebElement ListOfLinks;
+    //Click on CML Logo
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div[2]/div/div[1]/div/div/a/img")
+    @CacheLookup
+    WebElement CMLLogoClick;
+    //Click on GET STARTED TODAY-Right side Image
+    @FindBy(xpath = "//img[@alt='Certified Mail Labels | Get Started for Free Today']")
+    @CacheLookup
+    WebElement VerifyImageGetStartedToday;
 
     public LandingPageClass() throws IOException {
 
@@ -74,82 +82,129 @@ public class LandingPageClass extends TestBaseClass {
         PageFactory.initElements(driver, this);
     }
 
-    public HashMap<String, String> VerifyLandingPageUIElements() throws InterruptedException {
+    // Define expected values as constants
+    final String PAGE_HEADING_H1_EXPECTED = "USPS Certified Mail Labels";
+    final String PAGE_HEADING_H2_EXPECTED = "Address and Print USPS Certified Mail® Labels Online!";
+    final String P_TAG_SKIP_TEXT_EXPECTED = "Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.";
+    final String H2_TEXT_EXPECTED = "Print Certified Mail Labels OR Send Certified Mail Online!";
+    final String IMAGE_AND_TEXT_COMBINED_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/usps_certified_mail_envelopes_with_return_receipt_electronic_250x166.jpg";
+    final String USPSCML_IMAGE_SRC_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/July%202024%20USPS%20Rates%20Certified%20Mail%20Labels%20.jpg";
+    final String GET_STARTED_IMAGE_TEXT_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/Get-Started-Now-Certified-Mail-Labels-600.jpg";
 
-        HashMap<String, String> elements = new HashMap<>();
-        elements.put("VerifyPageHeadingH1", "USPS Certified Mail Labels");
-        log.info("PageHeadingH1: " + Expected_PageHeadingH1);
-        Assert.assertEquals(Expected_PageHeadingH1, VerifyPageHeadingH1.getText());
+    public HashMap<String, WebElement> VerifyLandingPageUIElements() throws InterruptedException {
 
-        elements.put("VerifyPageHeadingH2", "Address and Print USPS Certified Mail® Labels Online!");
-        Assert.assertEquals(Expected_PageHeadingH2, VerifyPageHeadingH2.getText());
-        log.info("VerifyPageHeadingH2 is: " + VerifyPageHeadingH2.getText());
-
-        elements.put("VerifyUSPSCertifiedMailLabelsImage", String.valueOf(VerifyUSPSCertifiedMailLabelsImage.isDisplayed()));
-        boolean imagePresent = VerifyUSPSCertifiedMailLabelsImage.isDisplayed();
-        String ImagePresentSrc = VerifyUSPSCertifiedMailLabelsImage.getAttribute("src");
-        Assert.assertTrue(imagePresent, "The Image is not displayed on the page.");
-        log.info("Verify Image is present: " + imagePresent + " And Its Source Url is: " + ImagePresentSrc);
+        HashMap<String, WebElement> elements = new HashMap<>();
+        // Store WebElements in the HashMap
+        elements.put("VerifyPageHeadingH1", VerifyPageHeadingH1);
+        elements.put("VerifyPageHeadingH2", VerifyPageHeadingH2);
+        elements.put("VerifyUSPSCertifiedMailLabelsImage", VerifyUSPSCertifiedMailLabelsImage);
+        elements.put("VerifyPTAG_SkipTheTripText", VerifyPTAG_SkipTheTripText);
+        elements.put("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline", VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline);
+        elements.put("VerifyVideo", VerifyVideo);
+        elements.put("VerifyImageAndTextCombined", VerifyImageAndTextCombined);
+        elements.put("VerifyImage", VerifyImage);
+        elements.put("VerifyLink1", VerifyLink1);
+        elements.put("VerifyLink2", VerifyLink2);
+        elements.put("VerifyLink3", VerifyLink3);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // Verify Page Headings
+        WebElement pageHeadingH1 = elements.get("VerifyPageHeadingH1");
+        WebElement pageHeadingH2 = elements.get("VerifyPageHeadingH2");
+        String actualTextH1 = wait.until(ExpectedConditions.visibilityOf(pageHeadingH1)).getText().trim();
+        Assert.assertEquals(actualTextH1, PAGE_HEADING_H1_EXPECTED, "Text mismatch for PageHeadingH1");
+        log.info("PageHeadingH1 is: " + actualTextH1);
+        String actualTextH2 = wait.until(ExpectedConditions.visibilityOf(pageHeadingH2)).getText().trim();
+        Assert.assertEquals(actualTextH2, PAGE_HEADING_H2_EXPECTED, "Text mismatch for PageHeadingH2");
+        log.info("PageHeadingH2 is: " + actualTextH2);
+        // Verify USPS Certified Mail Labels Image
+        WebElement uspsImage = elements.get("VerifyUSPSCertifiedMailLabelsImage");
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(uspsImage)).isDisplayed(), "The Image is not displayed on the page.");
+        String actualSrc = uspsImage.getAttribute("src").trim();
+        Assert.assertEquals(actualSrc, USPSCML_IMAGE_SRC_EXPECTED, "Image source URL mismatch.");
+        log.info("Image is present and Its Source URL is: " + actualSrc);
+        // Scroll down and verify paragraph text
         js.executeScript("window.scrollBy(0, 1200)", "");
-        log.info("Scrolling the window vertically");
+        WebElement pTagText = elements.get("VerifyPTAG_SkipTheTripText");
+        String actualPTagText = wait.until(ExpectedConditions.visibilityOf(pTagText)).getText().trim();
+        Assert.assertEquals(actualPTagText, P_TAG_SKIP_TEXT_EXPECTED, "Text mismatch for VerifyUSPSCMLImagePText");
+        log.info("VerifyUSPSCMLImagePText is: " + actualPTagText);
+        // Verify H2 Text
+        WebElement h2Text = elements.get("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline");
+        String actualH2Text = wait.until(ExpectedConditions.visibilityOf(h2Text)).getText().trim();
+        Assert.assertEquals(actualH2Text, H2_TEXT_EXPECTED, "Text mismatch for VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline");
+        log.info("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline is: " + actualH2Text);
+        // Verify Video
+        WebElement videoElement = elements.get("VerifyVideo");
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(videoElement)).isDisplayed(), "Video is not displayed on the page.");
+        String videoSrc = videoElement.getAttribute("src");
+        Assert.assertNotNull(videoSrc, "Video source URL is missing.");
+        log.info("Video is available on the Page and its Source URL is: " + videoSrc);
+        // Verify Image and Text Combined
+        WebElement imageAndTextElement = elements.get("VerifyImageAndTextCombined");
+        String actualImageAndText = wait.until(ExpectedConditions.visibilityOf(imageAndTextElement)).getAttribute("src");
+        Assert.assertEquals(actualImageAndText, IMAGE_AND_TEXT_COMBINED_EXPECTED, "Text mismatch for Image and Text Combined");
+        //  log.info("Image and Text Combined is: " + actualImageAndText);
+        log.info("Verify Image and Text both are present and Src Url is: " + actualImageAndText);
+        // Verify Get Started Image
+        WebElement getStartedImage = elements.get("VerifyImage");
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(getStartedImage)).isDisplayed(), "Get Started Image is not displayed on the page.");
+        String getStartedImageSrc = getStartedImage.getAttribute("src").trim();
+        Assert.assertEquals(getStartedImageSrc, GET_STARTED_IMAGE_TEXT_EXPECTED, "Image source URL mismatch for Get Started Image.");
+        log.info("Get Started Image is present and Its Source URL is: " + getStartedImageSrc);
 
-        elements.put("VerifyUSPSCMLImagePText", "Skip the trip to the Post Office…");
-        String Expected_VerifyPTAG_SkipTheTripText = "Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.";
-        Assert.assertEquals(VerifyPTAG_SkipTheTripText.getText(), Expected_VerifyPTAG_SkipTheTripText);
-        log.info("Verify USPS CML Image Paragraph Text is: " + VerifyPTAG_SkipTheTripText.getText());
+        // Get the bottomLinks container
+        //  WebElement bottomLinks = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div[2]"));
+        //  List<WebElement> allLinks = bottomLinks.findElements(By.xpath(".//a"));
+        log.info("-----Verification of Bottom link started-----");
 
-        elements.put("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline", "Print Certified Mail Labels OR Send Certified Mail Online!");
-        String Expected_VerifyH2Text_PrintCMLOrSendMailLablesOnline = "Print Certified Mail Labels OR Send Certified Mail Online!";
-        Assert.assertEquals(VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline.getText(), Expected_VerifyH2Text_PrintCMLOrSendMailLablesOnline);
-        log.info("Heading2Text_is: " + VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline.getText());
+        // Define expected URLs for each link
+        String expectedUrlLink1 = "https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed";
+        String expectedUrlLink2 = "https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works";
+        String expectedUrlLink3 = "https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible";
 
-        elements.put("VerifyVideo", "VerifyVideoIsDisplayed");
-        boolean VideoIsPresent = VerifyVideo.isDisplayed();
-        String VideoIsPresentSrc = VerifyVideo.getAttribute("src");
-        Thread.sleep(5000);
-        Assert.assertTrue(VideoIsPresent, "The Image is not displayed on the page.");
-        log.info("Video is available on the Page: " + VideoIsPresent + "\n" + " and Video Source Url is: " + VideoIsPresentSrc);
-
-        elements.put("VerifyImageAndTextCombined", "Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.");
-        boolean imageAndTextCombinedPresent = VerifyImageAndTextCombined.isDisplayed();
-        String imageAndTextCombinedPresentSrc = VerifyImageAndTextCombined.getAttribute("src");
-        Assert.assertTrue(imageAndTextCombinedPresent, "The Image is not displayed on the page.");
-        log.info("Verify Image and Text both are present: " + imageAndTextCombinedPresent + "Image Source Url is: " + imageAndTextCombinedPresentSrc);
-
-        elements.put("VerifyImage", "Get Started Today Image");
-        boolean GetStartedImageVerify = VerifyImage.isDisplayed();
-        Assert.assertTrue(GetStartedImageVerify, "The Image is not displayed on the page.");
-        log.info("Verify Get Started Today Image is present: " + GetStartedImageVerify);
-
-        //Verify bottom links are working fine or not
-        elements.put("VerifyLink1", "Certified Mail Labels: Why Is My USPS Certified Mail Delayed?");
-        VerifyLink1.click();
-        String AttUrl3 = VerifyLink1.getAttribute("href");
-        log.info("Link Text for Link1 is : " + VerifyLink1.getText() + "\n" + "Attribute is: " + AttUrl3);
+        WebElement link1 = elements.get("VerifyLink1");
+        String linkText1 = link1.getText();
+        String actualUrl1 = link1.getAttribute("href");
+        log.info("Expected URL: " + expectedUrlLink1 + " | Actual URL from href: " + actualUrl1);
+        // link1 = elements.get("VerifyLink1");
+        link1.click();
         driver.navigate().to("https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed");
-        String ExpectedLink1Url = "https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed";
-        Assert.assertEquals(driver.getCurrentUrl(), ExpectedLink1Url);
+        wait.until(ExpectedConditions.urlToBe(expectedUrlLink1));
+        Assert.assertEquals(driver.getCurrentUrl(), expectedUrlLink1, "URL mismatch for Link 1: " + linkText1);
+        log.info("Link 1 verification passed: " + linkText1);
         driver.navigate().back();
+        Thread.sleep(2000); // Wait for the page to reload properly
 
-        elements.put("VerifyLink2", "Certified Mail Labels: How USPS Certified Mail Works");
-        VerifyLink2.click();
-        String AttUrl4 = VerifyLink2.getAttribute("href");
-        log.info("Link Text for Link2 is :" + VerifyLink2.getText() + "\n" + "Attribute is: " + AttUrl4);
+
+        WebElement link2 = elements.get("VerifyLink2");
+        String linkText2 = link2.getText();
+        String actualUrl2 = link2.getAttribute("href");
+        log.info("Expected URL: " + expectedUrlLink2 + " | Actual URL from href: " + actualUrl2);
+        // link2 = elements.get("VerifyLink2");
+        link2.click();
         driver.navigate().to("https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works");
-        String ExpectedLink2Url = "https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works";
-        Assert.assertEquals(driver.getCurrentUrl(), ExpectedLink2Url);
+        wait.until(ExpectedConditions.urlToBe(expectedUrlLink2));
+        Assert.assertEquals(driver.getCurrentUrl(), expectedUrlLink2, "URL mismatch for Link 2: " + linkText2);
+        log.info("Link 2 verification passed: " + linkText2);
         driver.navigate().back();
-        try {
-            elements.put("VerifyLink3", "Certified Mail Envelopes: Secure and Admissible");
-            VerifyLink3.click();
-            String AttUrl5 = VerifyLink3.getAttribute("href");
-            log.info("Link Text for Link3 is :" + VerifyLink3.getText() + "\n" + "Attribute is: " + AttUrl5);
-            driver.navigate().to("https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible");
-            String ExpectedLink3Url = "https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible";
-            Assert.assertEquals(driver.getCurrentUrl(), ExpectedLink3Url);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Thread.sleep(2000); // Wait for the page to reload properly
+
+
+        WebElement link3 = elements.get("VerifyLink3");
+        String linkText3 = link3.getText();
+        String actualUrl3 = link3.getAttribute("href");
+        log.info("Expected URL: " + expectedUrlLink3 + " | Actual URL from href: " + actualUrl3);
+        //   link3 = elements.get("VerifyLink3");
+        link3.click();
+        driver.navigate().to("https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible");
+        //   wait.until(ExpectedConditions.urlToBe(expectedUrlLink3));
+        Assert.assertEquals(driver.getCurrentUrl(), expectedUrlLink3, "URL mismatch for Link 3: " + linkText3);
+        driver.navigate().back();
+        log.info("Link 3 verification passed: " + linkText3);
+
+        log.info("-----Verification of Bottom link ended-----");
+
+
         return elements;
     }
 
@@ -171,7 +226,7 @@ public class LandingPageClass extends TestBaseClass {
             js.executeScript("window.scrollBy(0, 60)", "");
 
             // Check if the link opens in a new tab (target='_blank')
-            if ("_blank".equals(linkTarget)) {
+            if("_blank".equals(linkTarget)) {
                 log.info("Link opens in a new tab, switching to the new tab to verify content.");
 
                 // Store the current window handle
@@ -187,7 +242,6 @@ public class LandingPageClass extends TestBaseClass {
                         break;
                     }
                 }
-
                 // Wait for the new tab content to load
                 Thread.sleep(3000);
 
@@ -195,6 +249,9 @@ public class LandingPageClass extends TestBaseClass {
                 WebElement pageContent = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div"));
                 List<WebElement> allElementsInsideParentDiv = pageContent.findElements(By.xpath(".//*[not(self::br)]"));
                 for (WebElement element : allElementsInsideParentDiv) {
+                    Thread.sleep(1000);
+                    //Scroll the whole page
+                    //js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
                     log.info("Tag Name: " + element.getTagName() + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + element.getText());
                 }
                 log.info("====Link opened and its relevant content verified===="+linkText);
@@ -214,6 +271,9 @@ public class LandingPageClass extends TestBaseClass {
                 WebElement pageContent = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div"));
                 List<WebElement> allElementsInsideParentDiv = pageContent.findElements(By.xpath(".//*[not(self::br)]"));
                 for (WebElement element : allElementsInsideParentDiv) {
+                    Thread.sleep(1000);
+                    //Scroll the whole page
+                    //js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
                     log.info("Tag Name: " + element.getTagName() + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + element.getText());
                 }
                 log.info("====Link opened and its relevant content verified===="+linkText);
@@ -223,12 +283,27 @@ public class LandingPageClass extends TestBaseClass {
             }
         }
     }
+    public void VerifyCMLLogo() throws InterruptedException {
 
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(CMLLogoClick)).isDisplayed(), "The Image is not displayed on the page.");
+        log.info("Logo is present: " + CMLLogoClick.isDisplayed() + "  and Its Source URL is: " + CMLLogoClick.getAttribute("src"));
 
+        CMLLogoClick.click();
 
+        String expectedUrlAfterClickOnLogo = "https://staging.certifiedmaillabels.com/";
+        Assert.assertEquals(driver.getCurrentUrl(), expectedUrlAfterClickOnLogo, "Page URL mismatch.");
+        log.info("After Clicking on CML Logo, its Page URL is: " + expectedUrlAfterClickOnLogo);
+    }
+    public void GetStartedToday_ImageClick(){
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(VerifyImageGetStartedToday)).isDisplayed(), "'Get Started Today' Image is not displayed on the page.");
+        String getStartedImageSrc = VerifyImageGetStartedToday.getAttribute("src");
+        log.info("Get Started Image is present and Its Source URL is: " + getStartedImageSrc);
+        VerifyImageGetStartedToday.click();
+     //   String ClickGetStartedImage_ExpectedURl= "https://staging.certifiedmaillabels.com/register";
+        String ClickGetStartedImage_ExpectedURl= "https://staging.certifiedmaillabels.com/";
+        Assert.assertEquals(getStartedImageSrc, GET_STARTED_IMAGE_TEXT_EXPECTED, "Image source URL mismatch for Get Started Image.");
+        Assert.assertEquals(driver.getCurrentUrl(),ClickGetStartedImage_ExpectedURl, "Image source URL mismatch for Get Started Image.");
 
-
-
-
-
+        log.info("Get Started Image clicked and Page Url is: " + ClickGetStartedImage_ExpectedURl);
+    }
 }

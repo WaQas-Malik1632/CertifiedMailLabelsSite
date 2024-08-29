@@ -103,17 +103,31 @@ public class TestUtil_mailinator extends TestBaseClass {
 		log.info("\n" + "-> Landing page Url is: " + driver.getCurrentUrl() + " and Title is-> "+ driver.getTitle() + "\n");
 
 		// Verify page url after Email verification is matched or not
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
-		String ActualUrl = driver.getCurrentUrl();
+		log.info("\n" + "-> Landing page URL is: " + driver.getCurrentUrl() + " and Title is -> " + driver.getTitle() + "\n");
+
+// Verify the page URL after email verification is matched or not
+		String expectedUrl = "https://staging.certifiedmaillabels.com/";
+		String actualUrl = driver.getCurrentUrl();
+
 		try {
-			Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
-			log.info("->User logged in and directed on landing page successfully and URL verification done" + "\n");
+			// Check if the current URL is "https://staging.certifiedmaillabels.com/user/dashboard"
+			if (actualUrl.equals("https://staging.certifiedmaillabels.com/user/dashboard")) {
+				log.info("URL is 'https://staging.certifiedmaillabels.com/user/dashboard', navigating back and refreshing the page.");
+				driver.navigate().back();  // Navigate back to the previous page
+				Thread.sleep(2000);        // Wait for a moment to ensure navigation completes
+				driver.navigate().refresh();  // Refresh the page
+				Thread.sleep(2000);        // Wait for the refresh to complete
+			}
+			// Verify that the current URL matches the expected URL
+			Assert.assertEquals(actualUrl, expectedUrl, "URL verification passed: ");
+			log.info("-> User logged in and directed to the landing page successfully. URL verification done." + "\n");
 
 		} catch (AssertionError e) {
-			log.error("Login Failed->These credentials do not match our records" + "\n");
+			log.error("Login Failed -> These credentials do not match our records" + "\n");
 			util.TakeScreenshot(driver, " _Signup Page Screenshot_ ");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}
+
 		return new LandingPageClass();
 	}
 }

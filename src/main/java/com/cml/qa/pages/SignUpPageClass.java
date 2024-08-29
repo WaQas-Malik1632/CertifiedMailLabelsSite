@@ -148,7 +148,6 @@ public class SignUpPageClass extends TestBaseClass {
                 log.error("Unable to extract state and zip code");
             }
         }
-
         // Enter Phone number
         Phone.sendKeys(fakeData.phoneNumber().cellPhone());
         log.info("Phone Number: " + fakeData.phoneNumber().cellPhone());

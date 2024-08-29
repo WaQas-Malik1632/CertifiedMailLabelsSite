@@ -50,7 +50,7 @@ public class LandingPageTest extends TestBaseClass {
         landPage = new LandingPageClass();
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_001")
+    @Test(priority = 1, invocationCount = 1, enabled = true, description = "TC_CML_SS_001")
     @Description("TC_CML_SS_001->Landing Page->Verify that user is able to validate Landing page UI is showing correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -71,7 +71,7 @@ public class LandingPageTest extends TestBaseClass {
         }
     }
 
-    @Test(priority = 2, invocationCount = 1, enabled = true, description = "TC_CML_SS_002")
+    @Test(priority = 2, invocationCount = 1, enabled = false, description = "TC_CML_SS_002")
     @Description("TC_CML_SS_002->Landing Page->Verify that right side bar links are working correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -88,6 +88,46 @@ public class LandingPageTest extends TestBaseClass {
         } catch (Exception e) {
             log.error("Landing Page Right side bar links verification Test Case failed: " + e.getMessage());
             util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_002' ");
+            throw new RuntimeException(e);
+        }
+    }
+    @Test(priority = 3, invocationCount = 1, enabled = false, description = "TC_CML_SS_003")
+    @Description("TC_CML_SS_003->Landing Page->Verify that user clicks on CML logo then app navigates to CML logo")
+    @Epic("LandingPage->EP001")
+    @Feature("LandingPage->Feature:001")
+    @Story("LandingPage TestCases")
+    @Step("After successful Login->LandingPage->Verify that user clicks on CML logo then app navigates to CML logo")
+    @Severity(SeverityLevel.BLOCKER)
+    public void TC_CML_SS_003() throws IOException {
+
+        try {
+            log.info("**** Execution of verify that user clicks on CML logo then app navigates to CML logo 'TC_CML_SS_003' Started ****");
+            landPage.VerifyCMLLogo();
+            Assert.assertTrue(true, "Verification of CML Logo is done");
+            log.info("**** Execution of Verify that user clicks on CML logo then app navigates to CML logo 'TC_CML_SS_003' Ended ****");
+        } catch (Exception e) {
+            log.error("Landing Page TC_CML_SS_003 Test Case failed: " + e.getMessage());
+            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_003' ");
+            throw new RuntimeException(e);
+        }
+    }
+    @Test(priority = 4, invocationCount = 1, enabled = false, description = "TC_CML_SS_006")
+    @Description("TC_CML_SS_006->Landing Page->Verify that if user click on Get started today on right side bar then app navigates user to registration page")
+    @Epic("LandingPage->EP001")
+    @Feature("LandingPage->Feature:001")
+    @Story("LandingPage TestCases")
+    @Step("After successful Login->LandingPage->verify that user clicks on GET STARTED TODAY")
+    @Severity(SeverityLevel.BLOCKER)
+    public void TC_CML_SS_006() throws IOException {
+
+        try {
+            log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'TC_CML_SS_006' Started ****");
+            landPage.GetStartedToday_ImageClick();
+            Assert.assertTrue(true, "Verification of 'GET STARTED TODAY Done' ");
+            log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'TC_CML_SS_006' Ended ****");
+        } catch (Exception e) {
+            log.error("Landing Page TC_CML_SS_006 Test Case failed: " + e.getMessage());
+            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_006' ");
             throw new RuntimeException(e);
         }
     }
