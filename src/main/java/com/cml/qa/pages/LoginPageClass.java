@@ -69,27 +69,12 @@ public class LoginPageClass extends TestBaseClass {
         log.info("Entering Password into the Password field");
         password.sendKeys(Pass);
         js.executeScript("window.scrollBy(0, 200)", "");
-        // Scroll the windows to the specific element
-        // js1.executeScript("arguments[0].click();", btnLoginSubmit);
+
         // If user wants to check the RememberMe
         rememberMe.click();
         btnLoginSubmit.click();
         log.info("Clicked the Login button");
-        /*
-         * String ExpectedUrl =
-         * "https://staging.certifiedmaillabels.com/user/dashboard"; String ActualUrl =
-         * driver.getCurrentUrl();
-         *
-         * try { Assert.assertEquals(ActualUrl, ExpectedUrl,
-         * "URL verification Passed: ");
-         * log.info("\n"+"User logged in successfully" + "\n");
-         * log.info("User landed on Dashboard Page->Page Url has been successfully verified");}
-         * catch (AssertionError e) {
-         * log.info("Login Failed->These credentials do not match our records"+ "\n")
-         * // util.TakeScreenshot(driver," _Login Test Failure Screenshot_ ");
-         * throw e; // Re-throw the assertion error to ensure the test fails }
-         */
-        // After successful login->User should return Dashboard Page
+
         return dashboard = new DashboardPageClass();
     }
 

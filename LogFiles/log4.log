@@ -1,78 +1,185 @@
-16:18:35.893 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test Cases Execution ****
-16:18:35.907 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-16:18:40.397 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
-16:18:47.099 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-16:18:49.989 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Daniell
-16:18:50.114 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Wunsch
-16:18:50.274 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Irving Olson Sr. ->FullName Without Space: IrvingOlsonSr
-16:18:51.058 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
-16:18:51.061 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: 85351 Emmerich Run, O'Connerburgh, HI 56043-0184
-16:18:51.061 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : O'Connerburgh
-16:18:51.293 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : HI
-16:18:51.494 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
-Selected State Option is:HI
-16:18:51.657 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 56043-0184
-16:18:51.887 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: 424.969.1216
-16:18:52.078 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: IrvingOlsonSr@mailinator.com
-16:18:52.246 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
-16:18:57.708 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+16:45:33.541 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Starting Login Page Test cases execution ****
+16:45:33.709 [main]INFO  com.cml.qa.testcases.SignUpPageTest - **** Starting SignUp Page Test Cases Execution ****
+16:45:33.877 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+16:45:39.041 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+16:45:47.785 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:45:51.357 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_010' Started
+16:45:51.359 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+16:45:52.078 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+16:45:55.369 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+16:45:55.427 [main]INFO  com.cml.qa.testcases.LoginPageTest - 
+User logged in successfully
+
+16:45:55.443 [main]INFO  com.cml.qa.testcases.LoginPageTest - User landed on Dashboard Page->Page Url has been successfully verified
+16:45:55.443 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of 'TC_CML_SS_010' Ended
+16:45:55.645 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+16:45:59.613 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+16:46:09.942 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:46:12.160 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Started
+16:46:12.216 [main]INFO  com.cml.qa.pages.LoginPageClass - 
+Login Page Title is:Login
+
+16:46:12.303 [main]INFO  com.cml.qa.testcases.LoginPageTest - "Login title has been successfully verified"
+16:46:12.304 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_004' Ended
+16:46:12.316 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+16:46:17.084 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+16:46:26.650 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:46:28.891 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_168' Started
+16:46:28.892 [main]INFO  com.cml.qa.testcases.LoginPageTest - Entering Email and Password
+16:46:28.893 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+16:46:29.268 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+16:46:32.581 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+16:46:32.595 [main]ERROR com.cml.qa.testcases.LoginPageTest - User logged in successfully
+URL verification Passed:  expected [https://staging.certifiedmaillabels.com/login] but found [https://staging.certifiedmaillabels.com/user/dashboard]
+16:46:32.894 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+16:46:38.271 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+16:46:48.181 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:46:51.154 [main]INFO  com.cml.qa.testcases.LoginPageTest - **** Execution of Login Page Tests 'TC_CML_SS_005' Started ****
+16:46:51.228 [main]INFO  com.cml.qa.pages.LoginPageClass - 
+CML Site Logo is visible:true
+
+16:46:51.246 [main]INFO  com.cml.qa.testcases.LoginPageTest - Login page logo has been successfully verified
+16:46:51.246 [main]INFO  com.cml.qa.testcases.LoginPageTest - Execution of Login Page Tests 'TC_CML_SS_005' Ended
+16:46:51.258 [main]INFO  com.cml.qa.testcases.LoginPageTest - ----All the test cases of Login Page has been executed----
+16:46:51.275 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - **** Starting Dashboard Page Test cases execution ****
+16:46:51.276 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+16:46:56.284 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+16:47:05.917 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:47:08.668 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+16:47:08.801 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+16:47:11.500 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+16:47:11.519 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started
+16:47:11.645 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - Page Title has been successfully verified
+16:47:11.645 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - User is landed on the Dashboard page successfully
+
+16:47:11.645 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - ** Execution of Dashboard Page Title Verification 'CML_DASHBOARD_001' Ended **
+16:47:11.653 [main]INFO  com.cml.qa.testcases.DashboardPageTestClass - ----All the test cases of Dashboard Page has been executed----
+16:47:11.676 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+16:47:17.435 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+16:47:23.676 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:47:26.625 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Execution of SignUp Page Title verification 'CML_REG_001' Started
+16:47:26.670 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+SignUp Page Title is:Register
+
+16:47:26.681 [main]INFO  com.cml.qa.testcases.SignUpPageTest - SignUp title has been successfully verified
+16:47:26.681 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Execution of SignUp Page Title verification 'CML_REG_001' Ended
+16:47:26.688 [main]INFO  com.cml.qa.base.TestBaseClass - **** Headless Browser initialization started ****
+16:47:29.744 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Headless Edge Browser ****
+16:47:39.893 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:47:42.106 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Execution of SignUp Page Title verification 'TC_CML_SS_020' Started
+16:47:42.643 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Teresita
+16:47:42.853 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Sipes
+16:47:42.971 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Reva Beer Jr. ->FullName Without Space: RevaBeerJr
+16:47:43.304 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
+16:47:43.311 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: 9167 Stracke Station, North Angel, NV 10984
+16:47:43.314 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : North Angel
+16:47:43.623 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : NV
+16:47:43.782 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+Selected State Option is:NV
+16:47:43.885 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 10984
+16:47:44.063 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: (921) 731-6968
+16:47:44.221 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: RevaBeerJr@mailinator.com
+16:47:44.345 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
+16:47:46.584 [main]INFO  com.cml.qa.testcases.SignUpPageTest - 
+->Page Url is: https://staging.certifiedmaillabels.com/login and Title is-> Login
+
+16:47:46.617 [main]INFO  com.cml.qa.testcases.SignUpPageTest - Email is available. Proceeding with Mailinator verification
+16:47:48.662 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 User is navigating to the Mailinator for the Email verification 
 
-16:19:07.953 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=irvingolsonsr-1725535134-18469800012
+16:47:59.033 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=revabeerjr-1725536866-18523641012
 
-16:19:08.095 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=irvingolsonsr-1725535134-18469800012
+16:47:59.158 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=revabeerjr-1725536866-18523641012
 ->Title is-> Mailinator
 
-16:19:10.276 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
-16:19:10.278 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
-16:19:10.882 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
-16:19:13.472 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
-16:19:14.822 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+16:48:00.636 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
+16:48:00.637 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+16:48:00.828 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+16:48:02.209 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+16:48:04.352 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 -> Landing page URL is: https://staging.certifiedmaillabels.com/
-16:19:14.833 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - -> User logged in and directed to the landing page successfully. URL verification done.
+16:48:04.366 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - -> User logged in and directed to the landing page successfully. URL verification done.
 
-16:19:14.894 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****
-16:19:14.948 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH1 is: USPS Certified Mail Labels
-16:19:15.012 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH2 is: Address and Print USPS Certified Mail® Labels Online!
-16:19:15.120 [main]INFO  com.cml.qa.pages.LandingPageClass - Image is present and Its Source URL is: https://cml-ckeditor.s3.amazonaws.com/July%202024%20USPS%20Rates%20Certified%20Mail%20Labels%20.jpg
-16:19:15.222 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyUSPSCMLImagePText is: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
-16:19:15.261 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline is: Print Certified Mail Labels OR Send Certified Mail Online!
-16:19:15.305 [main]INFO  com.cml.qa.pages.LandingPageClass - Video is available on the Page and its Source URL is: https://player.vimeo.com/video/728311825?h=b6fbc949f2&title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&player_id=0&app_id=58479
-16:19:15.346 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image and Text both are present and Src Url is: https://cml-ckeditor.s3.amazonaws.com/usps_certified_mail_envelopes_with_return_receipt_electronic_250x166.jpg
-16:19:15.529 [main]INFO  com.cml.qa.pages.LandingPageClass - Get Started Image is present and Its Source URL is: https://cml-ckeditor.s3.amazonaws.com/Get-Started-Now-Certified-Mail-Labels-600.jpg
-16:19:15.529 [main]INFO  com.cml.qa.pages.LandingPageClass - -----Verification of Bottom link started-----
-16:19:15.582 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed | Actual URL from href: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed
-16:19:15.921 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
-16:19:15.955 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-16:19:15.987 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:16.037 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
-16:19:16.323 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
-16:19:16.355 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
-16:19:16.405 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
-16:19:16.440 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
-16:19:16.485 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
-16:19:16.517 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
-16:19:16.566 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
-16:19:16.643 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
-16:19:16.681 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:16.742 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-16:19:16.897 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
-16:19:16.931 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-16:19:16.981 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:18.216 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
-16:19:18.226 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
+16:48:04.369 [main]INFO  com.cml.qa.testcases.SignUpPageTest - email verified successfully
+16:48:04.811 [main]INFO  com.cml.qa.testcases.SignUpPageTest - **** Execution of Register successfully as parent user 'TC_CML_SS_020' Ended ****
+16:48:04.815 [main]INFO  com.cml.qa.testcases.SignUpPageTest - ----All the test cases of SignUp Page has been executed----
+16:48:04.836 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test Cases Execution ****
+16:48:04.838 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+16:48:10.877 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
+16:48:17.038 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:48:26.171 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Cindy
+16:48:26.289 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Wilderman
+16:48:26.454 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Gale Satterfield ->FullName Without Space: GaleSatterfield
+16:48:26.910 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
+16:48:26.912 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: Suite 256 82962 Ali Summit, Perrychester, WI 82904
+16:48:26.913 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : Perrychester
+16:48:27.037 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : WI
+16:48:27.173 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+Selected State Option is:WI
+16:48:27.282 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 82904
+16:48:27.442 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: 527-954-9310
+16:48:27.631 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: GaleSatterfield@mailinator.com
+16:48:27.738 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
+16:48:35.251 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+User is navigating to the Mailinator for the Email verification 
+
+16:48:47.066 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=galesatterfield-1725536909-18524936012
+
+16:48:47.188 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=galesatterfield-1725536909-18524936012
+->Title is-> Mailinator
+
+16:48:48.707 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
+16:48:48.708 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+16:48:49.914 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+16:48:52.497 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+16:48:53.468 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+-> Landing page URL is: https://staging.certifiedmaillabels.com/
+16:48:53.475 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - -> User logged in and directed to the landing page successfully. URL verification done.
+
+16:48:53.485 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****
+16:48:53.569 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH1 is: USPS Certified Mail Labels
+16:48:53.639 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH2 is: Address and Print USPS Certified Mail® Labels Online!
+16:48:53.730 [main]INFO  com.cml.qa.pages.LandingPageClass - Image is present and Its Source URL is: https://cml-ckeditor.s3.amazonaws.com/July%202024%20USPS%20Rates%20Certified%20Mail%20Labels%20.jpg
+16:48:53.811 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyUSPSCMLImagePText is: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:48:53.984 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline is: Print Certified Mail Labels OR Send Certified Mail Online!
+16:48:54.287 [main]INFO  com.cml.qa.pages.LandingPageClass - Video is available on the Page and its Source URL is: https://player.vimeo.com/video/728311825?h=b6fbc949f2&title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&player_id=0&app_id=58479
+16:48:54.330 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image and Text both are present and Src Url is: https://cml-ckeditor.s3.amazonaws.com/usps_certified_mail_envelopes_with_return_receipt_electronic_250x166.jpg
+16:48:54.379 [main]INFO  com.cml.qa.pages.LandingPageClass - Get Started Image is present and Its Source URL is: https://cml-ckeditor.s3.amazonaws.com/Get-Started-Now-Certified-Mail-Labels-600.jpg
+16:48:54.380 [main]INFO  com.cml.qa.pages.LandingPageClass - -----Verification of Bottom link started-----
+16:48:54.475 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed | Actual URL from href: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed
+16:48:54.907 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
+16:48:54.935 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:48:54.975 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:48:55.027 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:48:55.126 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
+16:48:55.158 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:48:55.190 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
+16:48:55.233 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
+16:48:55.277 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
+16:48:55.316 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
+16:48:55.351 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
+16:48:55.412 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
+16:48:55.457 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:48:55.501 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
+16:48:55.561 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:48:55.595 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:48:55.628 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:48:57.917 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
+16:48:57.933 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
 org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
   (Session info: MicrosoftEdge=128.0.2739.63)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [bfe2448c4367e69fc2cf7da9049c7aee, getElementText {id=f.01F451E9D627164BB80D6104355FB590.d.F124ACFD65CF757CEC7D6444B4F2405C.e.105}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64066}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64066/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (bfe2448c4367e69fc2cf7da9049c7aee)] -> link text: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?]
-Session ID: bfe2448c4367e69fc2cf7da9049c7aee
+Command: [1cccb71f72be51ba34e2c7673a69f7f6, getElementText {id=f.47A0D6F24814DB9212EF2DECF5302675.d.8DB0222A6D9EEFDDF7D22A32BF22279E.e.109}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:50648}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50648/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (1cccb71f72be51ba34e2c7673a69f7f6)] -> link text: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?]
+Session ID: 1cccb71f72be51ba34e2c7673a69f7f6
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
@@ -88,9 +195,9 @@ Session ID: bfe2448c4367e69fc2cf7da9049c7aee
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51) ~[selenium-support-4.22.0.jar:?]
-	at jdk.proxy2/jdk.proxy2.$Proxy36.getText(Unknown Source) ~[?:?]
+	at jdk.proxy2/jdk.proxy2.$Proxy35.getText(Unknown Source) ~[?:?]
 	at com.cml.qa.pages.LandingPageClass.VerifyLandingPageUIElements(LandingPageClass.java:209) ~[classes/:?]
-	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:63) ~[test-classes/:?]
+	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:64) ~[test-classes/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.0.jar:7.10.0]
@@ -116,36 +223,36 @@ Session ID: bfe2448c4367e69fc2cf7da9049c7aee
 	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.0.jar:7.10.0]
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
-16:19:20.878 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works | Actual URL from href: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works
-16:19:21.072 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
-16:19:21.151 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-16:19:21.246 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:21.289 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
-16:19:21.364 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
-16:19:21.483 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
-16:19:21.530 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
-16:19:21.573 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
-16:19:21.610 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
-16:19:21.641 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
-16:19:21.679 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
-16:19:21.718 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
-16:19:21.756 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:21.801 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-16:19:21.828 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
-16:19:21.854 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-16:19:21.882 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:23.898 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Labels: How USPS Certified Mail Works
-16:19:23.902 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Labels: How USPS Certified Mail Works
+16:49:00.245 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works | Actual URL from href: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works
+16:49:00.432 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
+16:49:00.483 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:49:00.554 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:49:00.586 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:49:00.614 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
+16:49:00.640 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:49:00.685 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
+16:49:00.721 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
+16:49:00.839 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
+16:49:00.994 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
+16:49:01.024 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
+16:49:01.074 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
+16:49:01.135 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:49:01.276 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
+16:49:01.309 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:49:01.385 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:49:01.560 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:49:02.683 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Labels: How USPS Certified Mail Works
+16:49:02.696 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Labels: How USPS Certified Mail Works
 org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
   (Session info: MicrosoftEdge=128.0.2739.63)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [bfe2448c4367e69fc2cf7da9049c7aee, getElementText {id=f.01F451E9D627164BB80D6104355FB590.d.F124ACFD65CF757CEC7D6444B4F2405C.e.130}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64066}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64066/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (bfe2448c4367e69fc2cf7da9049c7aee)] -> link text: Certified Mail Labels: How USPS Certified Mail Works]
-Session ID: bfe2448c4367e69fc2cf7da9049c7aee
+Command: [1cccb71f72be51ba34e2c7673a69f7f6, getElementText {id=f.47A0D6F24814DB9212EF2DECF5302675.d.8DB0222A6D9EEFDDF7D22A32BF22279E.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:50648}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50648/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (1cccb71f72be51ba34e2c7673a69f7f6)] -> link text: Certified Mail Labels: How USPS Certified Mail Works]
+Session ID: 1cccb71f72be51ba34e2c7673a69f7f6
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
@@ -161,9 +268,9 @@ Session ID: bfe2448c4367e69fc2cf7da9049c7aee
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51) ~[selenium-support-4.22.0.jar:?]
-	at jdk.proxy2/jdk.proxy2.$Proxy36.getText(Unknown Source) ~[?:?]
+	at jdk.proxy2/jdk.proxy2.$Proxy35.getText(Unknown Source) ~[?:?]
 	at com.cml.qa.pages.LandingPageClass.VerifyLandingPageUIElements(LandingPageClass.java:209) ~[classes/:?]
-	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:63) ~[test-classes/:?]
+	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:64) ~[test-classes/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.0.jar:7.10.0]
@@ -189,36 +296,36 @@ Session ID: bfe2448c4367e69fc2cf7da9049c7aee
 	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.0.jar:7.10.0]
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
-16:19:26.540 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissiblesss | Actual URL from href: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible
-16:19:26.892 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
-16:19:26.922 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-16:19:26.956 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:26.992 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
-16:19:27.252 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
-16:19:27.556 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
-16:19:27.710 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
-16:19:27.748 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
-16:19:27.787 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
-16:19:27.823 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
-16:19:27.906 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
-16:19:27.965 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
-16:19:28.069 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:28.110 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-16:19:28.135 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
-16:19:28.162 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-16:19:28.194 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-16:19:29.167 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Envelopes: Secure and Admissible
-16:19:29.172 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Envelopes: Secure and Admissible
+16:49:05.006 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissiblesss | Actual URL from href: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible
+16:49:05.440 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
+16:49:05.488 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:49:05.523 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:49:05.636 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:49:05.670 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
+16:49:05.703 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:49:05.781 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
+16:49:05.834 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
+16:49:05.870 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
+16:49:05.904 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
+16:49:05.954 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
+16:49:05.990 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
+16:49:06.041 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:49:06.176 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
+16:49:06.225 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:49:06.260 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:49:06.292 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:49:07.637 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Envelopes: Secure and Admissible
+16:49:07.642 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Envelopes: Secure and Admissible
 org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
   (Session info: MicrosoftEdge=128.0.2739.63)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [bfe2448c4367e69fc2cf7da9049c7aee, getElementText {id=f.01F451E9D627164BB80D6104355FB590.d.F124ACFD65CF757CEC7D6444B4F2405C.e.143}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64066}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64066/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (bfe2448c4367e69fc2cf7da9049c7aee)] -> link text: Certified Mail Envelopes: Secure and Admissible]
-Session ID: bfe2448c4367e69fc2cf7da9049c7aee
+Command: [1cccb71f72be51ba34e2c7673a69f7f6, getElementText {id=f.47A0D6F24814DB9212EF2DECF5302675.d.8DB0222A6D9EEFDDF7D22A32BF22279E.e.148}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:50648}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50648/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (1cccb71f72be51ba34e2c7673a69f7f6)] -> link text: Certified Mail Envelopes: Secure and Admissible]
+Session ID: 1cccb71f72be51ba34e2c7673a69f7f6
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
@@ -234,9 +341,9 @@ Session ID: bfe2448c4367e69fc2cf7da9049c7aee
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51) ~[selenium-support-4.22.0.jar:?]
-	at jdk.proxy2/jdk.proxy2.$Proxy36.getText(Unknown Source) ~[?:?]
+	at jdk.proxy2/jdk.proxy2.$Proxy35.getText(Unknown Source) ~[?:?]
 	at com.cml.qa.pages.LandingPageClass.VerifyLandingPageUIElements(LandingPageClass.java:209) ~[classes/:?]
-	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:63) ~[test-classes/:?]
+	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:64) ~[test-classes/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.0.jar:7.10.0]
@@ -262,6 +369,6 @@ Session ID: bfe2448c4367e69fc2cf7da9049c7aee
 	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.0.jar:7.10.0]
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
-16:19:31.222 [main]INFO  com.cml.qa.pages.LandingPageClass - -----Verification of Bottom link ended-----
-16:19:31.222 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****
-16:19:31.230 [main]INFO  com.cml.qa.testcases.LandingPageTest - All the test cases of Landing Page has been executed successfully
+16:49:10.125 [main]INFO  com.cml.qa.pages.LandingPageClass - -----Verification of Bottom link ended-----
+16:49:10.126 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****
+16:49:10.130 [main]INFO  com.cml.qa.testcases.LandingPageTest - ----All the test cases of Landing Page has been executed----

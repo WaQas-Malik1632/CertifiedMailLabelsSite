@@ -15,6 +15,7 @@ import io.qameta.allure.Story;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
@@ -27,7 +28,6 @@ public class DashboardPageTestClass extends TestBaseClass {
 	DashboardPageClass dashboard;
 	public static Logger log;
 
-
 	public DashboardPageTestClass() throws IOException {
 		log= LogManager.getLogger(DashboardPageTestClass.class);
 		super();
@@ -37,8 +37,8 @@ public class DashboardPageTestClass extends TestBaseClass {
 	public void beforeMethod() throws IOException {
 		log.info("**** Starting Dashboard Page Test cases execution ****");
 		util = new TestUtil();
-		intialization();
-		//Headless_Intialization();
+		//intialization();
+		Headless_Intialization();
 		login = new LoginPageClass();
 		login.PreRequisiteLinkClickLogin();
 		dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
@@ -66,7 +66,8 @@ public class DashboardPageTestClass extends TestBaseClass {
 		log.info("** Execution of Dashboard Page Title Verification 'CML_DASHBOARD_001' Ended **");
 	}
 
-	@AfterMethod
-	public void afterMethod() {
+	@AfterClass
+	public void TearDown() {
+		log.info("----All the test cases of Dashboard Page has been executed----");
 	}
 }

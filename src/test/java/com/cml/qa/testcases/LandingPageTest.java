@@ -15,6 +15,7 @@ import io.qameta.allure.Story;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
@@ -68,6 +69,7 @@ public class LandingPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_001' ");
             throw new RuntimeException(e);
         }
+        log.info("**** Execution of Test 'TC_CML_SS_001' Ended ****");
     }
 
     @Test(priority = 4, invocationCount = 1, enabled = false, description = "TC_CML_SS_002")
@@ -89,6 +91,8 @@ public class LandingPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_002' ");
             throw new RuntimeException(e);
         }
+        log.info("**** Execution of Test 'TC_CML_SS_003' Ended ****");
+
     }
     @Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_003")
     @Description("TC_CML_SS_003->Landing Page->Verify that user clicks on CML logo then app navigates to CML logo")
@@ -109,6 +113,7 @@ public class LandingPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_003' ");
             throw new RuntimeException(e);
         }
+        log.info("**** Execution of Test 'TC_CML_SS_003' Ended ****");
     }
     @Test(priority = 2, invocationCount = 1, enabled = false, description = "TC_CML_SS_006")
     @Description("TC_CML_SS_006->Landing Page->Verify that if user click on Get started today on right side bar then app navigates user to registration page")
@@ -120,7 +125,7 @@ public class LandingPageTest extends TestBaseClass {
     public void TC_CML_SS_006() throws IOException {
 
         try {
-            log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'Tc' Started ****");
+            log.info("**** Execution of Test 'TC_CML_SS_006' 'Verify that user clicks on GET STARTED TODAY' Started ****");
             landPage.GetStartedToday_ImageClick();
             Assert.assertTrue(true, "Verification of 'GET STARTED TODAY Done' ");
             log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'TC_CML_SS_006' Ended ****");
@@ -129,11 +134,12 @@ public class LandingPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_006' ");
             throw new RuntimeException(e);
         }
+        log.info("**** Execution of Test 'TC_CML_SS_006' Ended ****");
     }
 
-    @AfterMethod
-    public void afterClass() {
-        log.info("All the test cases of Landing Page has been executed successfully");
+    @AfterClass
+    public void TearDown() {
+        log.info("----All the test cases of Landing Page has been executed----");
     }
 
 }

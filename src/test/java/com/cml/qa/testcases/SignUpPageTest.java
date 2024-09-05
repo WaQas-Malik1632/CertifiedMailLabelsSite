@@ -7,6 +7,7 @@ import com.cml.qa.utilities.TestUtil_mailinator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import com.cml.qa.base.TestBaseClass;
 import com.cml.qa.pages.SignUpPageClass;
@@ -44,8 +45,8 @@ public class SignUpPageTest extends TestBaseClass {
     public void beforeMethod() throws IOException {
 
         util = new TestUtil();
-       intialization();
-      //Headless_Intialization();
+      // intialization();
+        Headless_Intialization();
         loginPage = new LoginPageClass();
         signup = new SignUpPageClass();
         signup.Precondition();
@@ -85,6 +86,7 @@ public class SignUpPageTest extends TestBaseClass {
     public void TC_CML_SS_020() throws InterruptedException, IOException {
 
         log.info("Execution of SignUp Page Title verification 'TC_CML_SS_020' Started");
+
         loginPage = signup.userRegistrationForm();
 
         log.info("\n" + "->Page Url is: " + driver.getCurrentUrl() + " and Title is-> " + driver.getTitle() + "\n");
@@ -95,22 +97,26 @@ public class SignUpPageTest extends TestBaseClass {
             log.info("email verified successfully");
             String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
             Assert.assertEquals(driver.getCurrentUrl(), ExpectedUrl);
+
             util.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_ 'TC_CML_SS_020' ");
+
         } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
             log.error("Email is already taken->Test failed.");
+
             util.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
             Assert.assertTrue(false, "Test case failed because, Email is already taken");
+
         } else {
             //	throw new SkipException("Skipping the test case execution, something went wrong");
             log.error("Skipping the test case execution, something went wrong");
             util.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
         }
-        log.info("**** Execution of Register successfully as parent user 'TC_CML_SS_020' Ended ****");
+        log.info("**** Execution of User Registration successfully as parent user 'TC_CML_SS_020' Ended ****");
     }
 
-    @AfterMethod
+    @AfterClass
     public void TearDown() {
-
+        log.info("----All the test cases of SignUp Page has been executed----");
     }
 
 }

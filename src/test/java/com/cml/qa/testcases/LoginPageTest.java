@@ -4,6 +4,7 @@ import com.cml.qa.pages.DashboardPageClass;
 import com.cml.qa.utilities.TestUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import com.cml.qa.base.TestBaseClass;
 import com.cml.qa.pages.LoginPageClass;
@@ -68,7 +69,7 @@ public class LoginPageTest extends TestBaseClass {
             util.TakeScreenshot(driver," Screenshot_Login TestCase 'TC_CML_SS_010' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
-        log.info("Execution of 'TC_CML_SS_010' Ended");
+        log.info("Execution of Test 'TC_CML_SS_010' Ended");
     }
 
     // Verify that user cannot login with invalid username or password
@@ -95,7 +96,7 @@ public class LoginPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_168' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
-        log.info("Execution of Login Page Test 'TC_CML_SS_168' Ended");
+        log.info("Execution of Test 'TC_CML_SS_168' Ended");
     }
 
     @Test(priority = 2, invocationCount = 1, enabled = true, description = "TC_CML_SS_004")
@@ -117,7 +118,7 @@ public class LoginPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_004' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
-        log.info("Execution of Login Page Tests 'TC_CML_SS_004' Ended");
+        log.info("Execution of Test 'TC_CML_SS_004' Ended");
     }
 
     @Test(priority = 4, invocationCount = 1, enabled = true, description = "TC_CML_SS_005")
@@ -139,12 +140,12 @@ public class LoginPageTest extends TestBaseClass {
             util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_005' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
-        log.info("Execution of Login Page Tests 'TC_CML_SS_005' Ended");
+        log.info("Execution of Test 'TC_CML_SS_005' Ended");
     }
 
-    @AfterMethod
-    public void afterMethod() {
-
+    @AfterClass
+    public void TearDown() {
+        log.info("----All the test cases of Login Page has been executed----");
     }
 
 }
