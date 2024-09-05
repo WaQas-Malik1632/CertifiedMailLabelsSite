@@ -7,7 +7,6 @@
 			<class name="com.cml.qa.testcases.DashboardPageTestClass"/>
 			<class name="com.cml.qa.testcases.SignUpPageTest" />
 			<class name="com.cml.qa.testcases.LandingPageTest"/>
-
 		</classes>
 	</test> <!--Smoke Suit Test -->
 </suite> <!--Smoke Suit-CML Site Automation Test Cases -->

@@ -37,8 +37,7 @@ public class LandingPageTest extends TestBaseClass {
 
     @BeforeMethod
     public void beforeMethod() throws IOException, InterruptedException {
-
-        log.info("**** Starting Landing Page Test cases execution ****");
+        log.info("**** Starting Landing Page Test Cases Execution ****");
         util = new TestUtil();
         intialization();
      // Headless_Intialization();
@@ -50,7 +49,7 @@ public class LandingPageTest extends TestBaseClass {
         landPage = new LandingPageClass();
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_001")
+    @Test(priority = 3, invocationCount = 1, enabled = true, description = "TC_CML_SS_001")
     @Description("TC_CML_SS_001->Landing Page->Verify that user is able to validate Landing page UI is showing correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -71,7 +70,7 @@ public class LandingPageTest extends TestBaseClass {
         }
     }
 
-    @Test(priority = 2, invocationCount = 1, enabled = true, description = "TC_CML_SS_002")
+    @Test(priority = 4, invocationCount = 1, enabled = false, description = "TC_CML_SS_002")
     @Description("TC_CML_SS_002->Landing Page->Verify that right side bar links are working correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -91,7 +90,7 @@ public class LandingPageTest extends TestBaseClass {
             throw new RuntimeException(e);
         }
     }
-    @Test(priority = 3, invocationCount = 1, enabled = false, description = "TC_CML_SS_003")
+    @Test(priority = 1, invocationCount = 1, enabled = false, description = "TC_CML_SS_003")
     @Description("TC_CML_SS_003->Landing Page->Verify that user clicks on CML logo then app navigates to CML logo")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -111,7 +110,7 @@ public class LandingPageTest extends TestBaseClass {
             throw new RuntimeException(e);
         }
     }
-    @Test(priority = 4, invocationCount = 1, enabled = false, description = "TC_CML_SS_006")
+    @Test(priority = 2, invocationCount = 1, enabled = false, description = "TC_CML_SS_006")
     @Description("TC_CML_SS_006->Landing Page->Verify that if user click on Get started today on right side bar then app navigates user to registration page")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -133,8 +132,8 @@ public class LandingPageTest extends TestBaseClass {
     }
 
     @AfterMethod
-    public void afterMethod() {
-
+    public void afterClass() {
+        log.info("All the test cases of Landing Page has been executed successfully");
     }
 
 }

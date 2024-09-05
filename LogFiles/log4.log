@@ -1,314 +1,267 @@
-17:28:10.821 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test cases execution ****
-17:28:10.836 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
-17:28:15.224 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
-17:28:22.191 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
-17:28:24.967 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Alden
-17:28:25.127 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Fritsch
-17:28:25.362 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Mohammed Weissnat ->FullName Without Space: MohammedWeissnat
-17:28:25.935 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
-17:28:25.938 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: 85752 Olive Drive, Williamsonborough, OH 70312
-17:28:25.940 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : Williamsonborough
-17:28:26.159 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : OH
-17:28:26.363 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
-Selected State Option is:OH
-17:28:26.521 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 70312
-17:28:26.708 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: (325) 856-9645
-17:28:26.914 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: MohammedWeissnat@mailinator.com
-17:28:27.076 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
-17:28:32.032 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+16:18:35.893 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Starting Landing Page Test Cases Execution ****
+16:18:35.907 [main]INFO  com.cml.qa.base.TestBaseClass - **** Browser initialization started ****
+16:18:40.397 [main]INFO  com.cml.qa.base.TestBaseClass - **** Launching the Edge Browser ****
+16:18:47.099 [main]INFO  com.cml.qa.base.TestBaseClass - **** Entering the CML Application Url into browser ****
+16:18:49.989 [main]INFO  com.cml.qa.pages.SignUpPageClass - First Name: Daniell
+16:18:50.114 [main]INFO  com.cml.qa.pages.SignUpPageClass - Last Name: Wunsch
+16:18:50.274 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Name: Irving Olson Sr. ->FullName Without Space: IrvingOlsonSr
+16:18:51.058 [main]INFO  com.cml.qa.pages.SignUpPageClass - Scrolling the window vertically
+16:18:51.061 [main]INFO  com.cml.qa.pages.SignUpPageClass - Full Address: 85351 Emmerich Run, O'Connerburgh, HI 56043-0184
+16:18:51.061 [main]INFO  com.cml.qa.pages.SignUpPageClass - City is : O'Connerburgh
+16:18:51.293 [main]INFO  com.cml.qa.pages.SignUpPageClass - State Name is : HI
+16:18:51.494 [main]INFO  com.cml.qa.pages.SignUpPageClass - 
+Selected State Option is:HI
+16:18:51.657 [main]INFO  com.cml.qa.pages.SignUpPageClass - ZIP Code is : 56043-0184
+16:18:51.887 [main]INFO  com.cml.qa.pages.SignUpPageClass - Phone Number: 424.969.1216
+16:18:52.078 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered Email Address: IrvingOlsonSr@mailinator.com
+16:18:52.246 [main]INFO  com.cml.qa.pages.SignUpPageClass - Entered password: Pass@123
+16:18:57.708 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 User is navigating to the Mailinator for the Email verification 
 
-17:28:36.088 [main]INFO  com.cml.qa.base.TestBaseClass - Screenshot has been taken as this Test case is failed
-17:28:42.470 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=mohammedweissnat-1724934508-2249400012
+16:19:07.953 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->Title is: Mailinator and Link is-> https://www.mailinator.com/v4/public/inboxes.jsp?msgid=irvingolsonsr-1725535134-18469800012
 
-17:28:42.570 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
-->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=mohammedweissnat-1724934508-2249400012
+16:19:08.095 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+->After switching window-> Url is :https://www.mailinator.com/v4/public/inboxes.jsp?msgid=irvingolsonsr-1725535134-18469800012
 ->Title is-> Mailinator
 
-17:28:43.964 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
-17:28:43.965 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
-17:28:44.335 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
-17:28:45.744 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
-17:28:47.029 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
+16:19:10.276 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - Login with the newly Registered user
+16:19:10.278 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Email into the Email field
+16:19:10.882 [main]INFO  com.cml.qa.pages.LoginPageClass - Entering Password into the Password field
+16:19:13.472 [main]INFO  com.cml.qa.pages.LoginPageClass - Clicked the Login button
+16:19:14.822 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - 
 -> Landing page URL is: https://staging.certifiedmaillabels.com/
-17:28:47.037 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - -> User logged in and directed to the landing page successfully. URL verification done.
+16:19:14.833 [main]INFO  com.cml.qa.utilities.TestUtil_mailinator - -> User logged in and directed to the landing page successfully. URL verification done.
 
-17:28:47.100 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page right side bar links 'TC_CML_SS_002' Started ****
-17:28:47.145 [main]INFO  com.cml.qa.pages.LandingPageClass - Number of elements in the specific <ul>: 18
-17:28:47.195 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text: 2024 Certified Mail Rates | Link: https://staging.certifiedmaillabels.com/usps-postal-rates | Target: _self
-17:28:52.361 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h1 | IsDisplayed: true | Text: 2024 USPS Certified Mail Rates
-17:28:53.406 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-17:28:54.432 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:28:55.467 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:28:57.251 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: New USPS Certified Mail® Rates began July 14, 2024:
-17:28:58.297 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: New USPS Certified Mail® Rates began 
-17:28:59.329 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: July 14, 2024:
-17:29:00.429 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: The U.S. Postal Service postal rates increased on Sunday, July 14, 2024. The rate change was approved by the Postal Regulatory Commission (PRC) on April 9, 2023, and went into effect on Sunday, July 14, 2024, at 12:01 AM.
-17:29:01.877 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: The postage meter rate to send a 1-ounce USPS Certified Mail® letter with a Return Receipt (old-fashioned Green Card) is $9.64. If you use Certified Mail Labels with Electronic Delivery Confirmation, the cost can be reduced to $6.49. Additional options such as Return Receipt Electronic Signatures cost $2.62. First Class postage stamps cost $0.73 at the Post Office.
-17:29:02.920 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: In summary, purchasing your Certified Mail Labels online and skipping a trip to the Post Office can save you $3.15 per mailing off the old-fashioned green cards and forms.
-17:29:03.945 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: How Much Does Certified Mail® Service Cost
-17:29:05.011 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: table | IsDisplayed: true | Text: USPS Postage Rates & Special Services New Rates (July 2024)   Old Rates (January 2023)
-Certified Mail Fee $4.85 $4.40
-Electronic Delivery Confirmation Receipt $0.95 $0.90
-Return Receipt Green Card (Old Fashioned Green Card) $4.10 $3.65
-Return Receipt Electronic Signature (PDF) (replaces Green Card) $2.62 $2.32
-First Class Postage (1 OZ) (Metered Rate) $0.69 $0.64
-Additional OZ First Class Postage (*Under 3.5 OZ) $0.28 $0.24
-Flats 1 OZ rate (9″ X 12″ or 10' X 13') $1.50 $1.39
-Flats rate over 1 OZ. and Letter Rates over 3.5 OZ. 2 oz.  $1.77 
-3 oz.  $2.04 
-4  oz. $2.31 
-5  oz. $2.59 
-6  oz. $2.87 
-7  oz. $3.15 
-8  oz. $3.43 
-9  oz. $3.71
-10 oz. $4.01 
-11 oz. $4.31 
-12 oz. $4.61 
-13 oz. $4.91 2 oz.  $1.63 
-3 oz.  $1.87 
-4  oz. $2.11 
-5  oz. $2.35 
-6  oz. $2.59 
-7  oz. $2.83 
-8  oz. $3.07 
-9  oz. $3.31 
-10 oz. $3.55 
-11 oz. $3.79 
-12 oz. $4.03 
-13 oz. $4.27
-Restricted Delivery $7.90 $7.25
-17:29:06.049 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: thead | IsDisplayed: true | Text: USPS Postage Rates & Special Services New Rates (July 2024)   Old Rates (January 2023)
-17:29:07.095 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: USPS Postage Rates & Special Services New Rates (July 2024)   Old Rates (January 2023)
-17:29:08.130 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: th | IsDisplayed: true | Text: USPS Postage Rates & Special Services
-17:29:09.160 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: th | IsDisplayed: true | Text: New Rates (July 2024)  
-17:29:10.196 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: th | IsDisplayed: true | Text: Old Rates (January 2023)
-17:29:11.242 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tbody | IsDisplayed: true | Text: Certified Mail Fee $4.85 $4.40
-Electronic Delivery Confirmation Receipt $0.95 $0.90
-Return Receipt Green Card (Old Fashioned Green Card) $4.10 $3.65
-Return Receipt Electronic Signature (PDF) (replaces Green Card) $2.62 $2.32
-First Class Postage (1 OZ) (Metered Rate) $0.69 $0.64
-Additional OZ First Class Postage (*Under 3.5 OZ) $0.28 $0.24
-Flats 1 OZ rate (9″ X 12″ or 10' X 13') $1.50 $1.39
-Flats rate over 1 OZ. and Letter Rates over 3.5 OZ. 2 oz.  $1.77 
-3 oz.  $2.04 
-4  oz. $2.31 
-5  oz. $2.59 
-6  oz. $2.87 
-7  oz. $3.15 
-8  oz. $3.43 
-9  oz. $3.71
-10 oz. $4.01 
-11 oz. $4.31 
-12 oz. $4.61 
-13 oz. $4.91 2 oz.  $1.63 
-3 oz.  $1.87 
-4  oz. $2.11 
-5  oz. $2.35 
-6  oz. $2.59 
-7  oz. $2.83 
-8  oz. $3.07 
-9  oz. $3.31 
-10 oz. $3.55 
-11 oz. $3.79 
-12 oz. $4.03 
-13 oz. $4.27
-Restricted Delivery $7.90 $7.25
-17:29:12.272 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Certified Mail Fee $4.85 $4.40
-17:29:13.309 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Certified Mail Fee
-17:29:14.348 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $4.85
-17:29:15.375 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $4.40
-17:29:16.412 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Electronic Delivery Confirmation Receipt $0.95 $0.90
-17:29:17.449 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Electronic Delivery Confirmation Receipt
-17:29:18.488 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $0.95
-17:29:19.553 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $0.90
-17:29:20.600 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Return Receipt Green Card (Old Fashioned Green Card) $4.10 $3.65
-17:29:21.659 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Return Receipt Green Card (Old Fashioned Green Card)
-17:29:22.692 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $4.10
-17:29:23.721 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $3.65
-17:29:24.747 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Return Receipt Electronic Signature (PDF) (replaces Green Card) $2.62 $2.32
-17:29:25.782 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Return Receipt Electronic Signature (PDF) (replaces Green Card)
-17:29:26.818 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $2.62
-17:29:27.869 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $2.32
-17:29:28.912 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: First Class Postage (1 OZ) (Metered Rate) $0.69 $0.64
-17:29:29.959 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: First Class Postage (1 OZ) (Metered Rate)
-17:29:30.992 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $0.69
-17:29:32.048 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $0.64
-17:29:33.085 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Additional OZ First Class Postage (*Under 3.5 OZ) $0.28 $0.24
-17:29:34.199 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Additional OZ First Class Postage (*Under 3.5 OZ)
-17:29:35.224 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $0.28
-17:29:36.254 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $0.24
-17:29:37.298 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Flats 1 OZ rate (9″ X 12″ or 10' X 13') $1.50 $1.39
-17:29:38.335 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Flats 1 OZ rate (9″ X 12″ or 10' X 13')
-17:29:39.376 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $1.50
-17:29:40.405 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $1.39
-17:29:41.431 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Flats rate over 1 OZ. and Letter Rates over 3.5 OZ. 2 oz.  $1.77 
-3 oz.  $2.04 
-4  oz. $2.31 
-5  oz. $2.59 
-6  oz. $2.87 
-7  oz. $3.15 
-8  oz. $3.43 
-9  oz. $3.71
-10 oz. $4.01 
-11 oz. $4.31 
-12 oz. $4.61 
-13 oz. $4.91 2 oz.  $1.63 
-3 oz.  $1.87 
-4  oz. $2.11 
-5  oz. $2.35 
-6  oz. $2.59 
-7  oz. $2.83 
-8  oz. $3.07 
-9  oz. $3.31 
-10 oz. $3.55 
-11 oz. $3.79 
-12 oz. $4.03 
-13 oz. $4.27
-17:29:42.499 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Flats rate over 1 OZ. and Letter Rates over 3.5 OZ.
-17:29:43.533 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: 2 oz.  $1.77 
-3 oz.  $2.04 
-4  oz. $2.31 
-5  oz. $2.59 
-6  oz. $2.87 
-7  oz. $3.15 
-8  oz. $3.43 
-9  oz. $3.71
-10 oz. $4.01 
-11 oz. $4.31 
-12 oz. $4.61 
-13 oz. $4.91
-17:29:44.569 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: 2 oz.  $1.63 
-3 oz.  $1.87 
-4  oz. $2.11 
-5  oz. $2.35 
-6  oz. $2.59 
-7  oz. $2.83 
-8  oz. $3.07 
-9  oz. $3.31 
-10 oz. $3.55 
-11 oz. $3.79 
-12 oz. $4.03 
-13 oz. $4.27
-17:29:45.598 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: Restricted Delivery $7.90 $7.25
-17:29:46.642 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: Restricted Delivery
-17:29:47.691 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $7.90
-17:29:49.158 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: $7.25
-17:29:50.186 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: This postal rate increase began Sunday, July 14, 2024, at 12:01 AM.
-17:29:51.225 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:29:52.264 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:29:53.306 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 2024 USPS CERTIFIED MAIL RATE INCREASE SUMMARY:
-17:29:54.336 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: 2024 USPS CERTIFIED MAIL RATE INCREASE SUMMARY:
-17:29:55.370 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: ul | IsDisplayed: true | Text: Certified Mail with Electronic Delivery Confirmation $6.49  (Electronic Delivery Confirmation Report Example). A USPS Special Service that provides the sender with a mailing receipt or proof of mailing and an electronic verification the article was delivered or that a delivery attempt was made. Customers receive 'Electronic Delivery Confirmation' which is a printed report that displays the postage transaction, date of mailing, Certified Mail receipt, USPS mail piece acceptance, in-route tracking, and the final delivery date and time or delivery attempts.  This report is available by email for each mailing, plus a copy for compliance reporting is kept inside your account for 10 years.
-  Certified Mail with Return Receipt Requested (Signature) $9.11 (Return Receipt Electronic Signature) and the Electronic Delivery Confirmation as proof of mailing and compliance. The Certified Mail service includes what is described above plus the Return Receipt Electronic Signature from USPS displaying who signed for the delivery at the delivery address. Customers can receive both Electronic Delivery Confirmation and the Return Receipt Signature by email. A receipt of the transaction including USPS postage purchase, Special Service, mail piece acceptance, tracking, and the delivery or the delivery attempt is also kept in your account for 10 years to print as proof of compliance.
-  Certified Mail with Return Receipt Signature with RESTRICTED DELIVERY $17.01 (RRE-Signature Signed by the addressee or authorized agent + Electronic Delivery Confirmation Report). The Certified Mail Special Service described above plus additional evidence of the delivery of the letter. USPS enables the delivery of the item only to the addressee or addressee’s authorized agent. The addressee must be an individual (or natural person) specified by name. Restricted Delivery may be used only when combined with Certified Mail, Insured Mail over $200, and Registered Mail. Customers receive Electronic Delivery Confirmation by email (see the attached report). A record of the transaction including USPS postage, Special Service, mail piece acceptance, tracking, and delivery or the delivery attempt record is kept in your account for 10 years.
-17:29:56.394 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: li | IsDisplayed: true | Text: Certified Mail with Electronic Delivery Confirmation $6.49  (Electronic Delivery Confirmation Report Example). A USPS Special Service that provides the sender with a mailing receipt or proof of mailing and an electronic verification the article was delivered or that a delivery attempt was made. Customers receive 'Electronic Delivery Confirmation' which is a printed report that displays the postage transaction, date of mailing, Certified Mail receipt, USPS mail piece acceptance, in-route tracking, and the final delivery date and time or delivery attempts.  This report is available by email for each mailing, plus a copy for compliance reporting is kept inside your account for 10 years.
- 
-17:29:57.430 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Electronic Delivery Confirmation Report Example
-17:29:58.469 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: li | IsDisplayed: true | Text: Certified Mail with Return Receipt Requested (Signature) $9.11 (Return Receipt Electronic Signature) and the Electronic Delivery Confirmation as proof of mailing and compliance. The Certified Mail service includes what is described above plus the Return Receipt Electronic Signature from USPS displaying who signed for the delivery at the delivery address. Customers can receive both Electronic Delivery Confirmation and the Return Receipt Signature by email. A receipt of the transaction including USPS postage purchase, Special Service, mail piece acceptance, tracking, and the delivery or the delivery attempt is also kept in your account for 10 years to print as proof of compliance.
- 
-17:29:59.494 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Return Receipt Electronic Signature
-17:30:00.517 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: li | IsDisplayed: true | Text: Certified Mail with Return Receipt Signature with RESTRICTED DELIVERY $17.01 (RRE-Signature Signed by the addressee or authorized agent + Electronic Delivery Confirmation Report). The Certified Mail Special Service described above plus additional evidence of the delivery of the letter. USPS enables the delivery of the item only to the addressee or addressee’s authorized agent. The addressee must be an individual (or natural person) specified by name. Restricted Delivery may be used only when combined with Certified Mail, Insured Mail over $200, and Registered Mail. Customers receive Electronic Delivery Confirmation by email (see the attached report). A record of the transaction including USPS postage, Special Service, mail piece acceptance, tracking, and delivery or the delivery attempt record is kept in your account for 10 years.
-17:30:01.552 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: USPS Certified Mail rates increased to $4.85 per mailing.  The cost of using the old-fashioned green cards with the traditional U.S. Postal Service Return Receipt service (PS Form 3811) is $4.10 per mailing. The cost of using the Return Receipt Signature Electronic increased to $2.62 per mailing.
-17:30:02.590 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: You can save money by using Certified Mail® Labels with Electronic Delivery Confirmation.  This provides proof of mailing, in-route letter tracking, and final evidence of USPS delivery information authored by the U.S. Postal Service.  This report also works for compliance reporting.  It provides evidence of mailing timely, proof that postage and fees were properly paid, in-route letter tracking, and the final USPS proof of delivery.  This report is used for compliance mailings to IRS Certified Mail, financial services, healthcare, property management, asset recovery, collection, and other critical forms of notification.
-17:30:03.898 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: USPS Certified Mail® Return Receipt Requested service can only be purchased at the time of mailing. USPS has discontinued the Return Receipt After Mailing product.
-17:30:04.935 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:30:05.967 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:30:05.967 [main]INFO  com.cml.qa.pages.LandingPageClass - ====Link opened and its relevant content verified====2024 Certified Mail Rates
-17:30:06.141 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text: How Does it Work | Link: https://staging.certifiedmaillabels.com/how-does-it-work | Target: 
-17:30:13.058 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-17:30:14.117 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:30:15.150 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: What is Certified Mail®? Certified Mail® is a United States Postal Service (USPS) service that provides the sender with proof of mailing and proof of delivery or delivery attempt. This proof includes:
-17:30:16.186 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: What is Certified Mail®? 
-17:30:17.220 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: What is Certified Mail®?
-17:30:18.256 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: ul | IsDisplayed: true | Text: The date an item was mailed
-USPS tracking
-Delivery confirmation
-17:30:19.338 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: li | IsDisplayed: true | Text: The date an item was mailed
-17:30:20.363 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: li | IsDisplayed: true | Text: USPS tracking
-17:30:21.394 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: li | IsDisplayed: true | Text: Delivery confirmation
-17:30:22.426 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: How Does Certified Mail Labels Work? Certified Mail provides the mailer with 'proof' which includes the date an item was mailed, letter tracking, and delivery confirmation.  Certified Mail requires a signature upon delivery to provide proof the item was delivered. Certified Mail is used primarily for important legal and compliance mail, regulatory, and notice to owners' mailings. 
-17:30:23.463 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: How Does Certified Mail Labels Work? 
-17:30:24.499 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: What is a Certified Mail Label? We call it a ‘label’ but it is just a plain sheet of paper that prints on your color printer. It is designed to be folded and glued onto the outside of your envelope. You may also purchase our approved USPS Certified Mail Envelopes and print on just a black ink laser printer for automated mailings. Nothing to glue, tape, or affix. This envelope contains the green USPS Certified Mail banner and large cellophane window so that USPS barcode readers can easily sort and process the Certified Mail as an automated transaction for expedited delivery.
-17:30:25.527 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: What is a Certified Mail Label? 
-17:30:26.561 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-17:30:27.582 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:30:28.607 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:30:29.641 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Step 1 Create a New Account: Create an account by using the Sign-Up For Free Registration page. It costs nothing to create an account. There are no monthly fees or contracts. You simply register by using your name, address, phone number, and email. Then create a password for your account.
-17:30:30.703 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Step 1 Create a New Account:
-17:30:31.725 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: Step 1 Create a New Account:
-17:30:32.759 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Sign-Up For Free Registration
-17:30:34.086 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: Sign-Up For Free Registration
-17:30:35.250 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Step 2  Set-Up Payment Account: Each Certified Mail label uses real USPS Postage and the actual Certified Mail tracking numbers and barcodes. You can pay for the postage label after you select the postage weight and USPS delivery services you want. We accept all major banks and credit cards (Visa, MasterCard, AMX, Discover), paper checks, eChecks, and bank wires. You can also set up Auto Invoicing to replenish your postage account. Every time a label is purchased it deducts that cost from your online account balance. New customers needing to purchase more than $25 in postage daily should verify their accounts. This verification is done on the phone and takes about 3 minutes. It helps protect your Credit Card and will allow you to add $100, $250, $500, or more onto your account.
-17:30:36.280 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Step 2  Set-Up Payment Account:
-17:30:37.315 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: Step 2  Set-Up Payment Account:
-17:30:38.348 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: To verify your account and Credit Card, call us during business hours Mon - Fri  9 AM – 6 PM Eastern.
- Phone: 800-406-1792, Ask for Account Verification.
-17:30:39.383 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: span | IsDisplayed: true | Text: To verify your account and Credit Card, call us during business hours Mon - Fri  9 AM – 6 PM Eastern.
- Phone: 800-406-1792, Ask for Account Verification.
-17:30:40.418 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: To verify your account and Credit Card, call us during business hours Mon - Fri  9 AM – 6 PM Eastern.
- Phone: 800-406-1792, Ask for Account Verification.
-17:30:41.449 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Step 3  Print the Step-by-Step Instructions:  Follow our quick start step-by-step instructions on our Getting Started Instructions.
-17:30:42.486 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: Step 3  Print the Step-by-Step Instructions:
-17:30:43.517 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Getting Started Instructions
-17:30:44.551 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: In seconds, you can print USPS Certified Mail, Return Receipt Electronic, Restricted Delivery, and even Priority Mail labels online with USPS PC Postage and skip the trip to the Post Office!
-17:30:45.576 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: You can also track the delivery of each of your USPS items. Our Electronic Delivery Confirmation Report™ can be sent directly to your email. We also archive the proof of delivery, tracking files, and Return Receipt Signatures safely inside your online account for 10 years. You will never misplace your mailing receipts again. FTP access is available for commercial and high-volume mailers.
-17:30:46.613 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Electronic Delivery Confirmation
-17:30:47.637 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Return Receipt Signatures
-17:30:48.800 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: •   No more trips to the Post Office, green cards, forms, labels, or stickers
-•   No postage meter costs, no new equipment, no software to download and install
-•   No lease or long-term contracts
-•   No monthly fees… just pay as you mail
-•   Address letters online, get USPS Address Correction to expedite each letter’s delivery
-•   Get proof of mailing, daily letter tracking, and delivery confirmation by email
-•   10-year off-site data storage keeps all your data secure and easy to locate
-•   Prints labels with the correct USPS Postage
-•   Multi-user system allows for unlimited users
-•   Multi-office, department, or company use
-•   All you need to do is drop your letter in any USPS mailbox  24/7  –  365 days a year
-17:30:49.842 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-17:30:50.871 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:30:51.904 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:30:53.092 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office. Print Certified Mail labels online and save time and money!
-17:30:54.118 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-17:30:55.177 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:30:56.209 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:30:57.234 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: hr | IsDisplayed: true | Text: 
-17:30:58.269 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h4 | IsDisplayed: true | Text: Related Articles
-17:30:59.310 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: table | IsDisplayed: true | Text: What's the US Postal Service rates for Certified Mail?
-
-What's included on the USPS Certified Mail tracking scan?
-
-How to create a USPS shipping label with Excel?
-17:31:00.351 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tbody | IsDisplayed: true | Text: What's the US Postal Service rates for Certified Mail?
-
-What's included on the USPS Certified Mail tracking scan?
-
-How to create a USPS shipping label with Excel?
-17:31:01.394 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: tr | IsDisplayed: true | Text: What's the US Postal Service rates for Certified Mail?
-
-What's included on the USPS Certified Mail tracking scan?
-
-How to create a USPS shipping label with Excel?
-17:31:02.436 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: What's the US Postal Service rates for Certified Mail?
-17:31:03.478 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:31:04.519 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:31:05.550 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: What's the US Postal Service rates for Certified Mail?
-17:31:06.587 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: What's included on the USPS Certified Mail tracking scan?
-17:31:08.010 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:31:09.435 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:31:10.472 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: What's included on the USPS Certified Mail tracking scan?
-17:31:11.518 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: td | IsDisplayed: true | Text: How to create a USPS shipping label with Excel?
-17:31:12.546 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
-17:31:13.568 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:31:14.593 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: How to create a USPS shipping label with Excel?
-17:31:15.619 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
-17:31:15.620 [main]INFO  com.cml.qa.pages.LandingPageClass - ====Link opened and its relevant content verified====How Does it Work
-17:31:15.741 [main]INFO  com.cml.qa.pages.LandingPageClass - Link Text: Create Batch Labels | Link: https://staging.certifiedmaillabels.com/excel-batch-labels | Target: 
-17:31:21.093 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Creating Excel Batch Labels                       
-17:31:22.130 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: strong | IsDisplayed: true | Text: Creating Excel Batch Labels                       
-17:31:23.229 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
-17:31:24.291 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
-17:31:25.329 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:19:14.894 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****
+16:19:14.948 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH1 is: USPS Certified Mail Labels
+16:19:15.012 [main]INFO  com.cml.qa.pages.LandingPageClass - PageHeadingH2 is: Address and Print USPS Certified Mail® Labels Online!
+16:19:15.120 [main]INFO  com.cml.qa.pages.LandingPageClass - Image is present and Its Source URL is: https://cml-ckeditor.s3.amazonaws.com/July%202024%20USPS%20Rates%20Certified%20Mail%20Labels%20.jpg
+16:19:15.222 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyUSPSCMLImagePText is: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:19:15.261 [main]INFO  com.cml.qa.pages.LandingPageClass - VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline is: Print Certified Mail Labels OR Send Certified Mail Online!
+16:19:15.305 [main]INFO  com.cml.qa.pages.LandingPageClass - Video is available on the Page and its Source URL is: https://player.vimeo.com/video/728311825?h=b6fbc949f2&title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&player_id=0&app_id=58479
+16:19:15.346 [main]INFO  com.cml.qa.pages.LandingPageClass - Verify Image and Text both are present and Src Url is: https://cml-ckeditor.s3.amazonaws.com/usps_certified_mail_envelopes_with_return_receipt_electronic_250x166.jpg
+16:19:15.529 [main]INFO  com.cml.qa.pages.LandingPageClass - Get Started Image is present and Its Source URL is: https://cml-ckeditor.s3.amazonaws.com/Get-Started-Now-Certified-Mail-Labels-600.jpg
+16:19:15.529 [main]INFO  com.cml.qa.pages.LandingPageClass - -----Verification of Bottom link started-----
+16:19:15.582 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed | Actual URL from href: https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed
+16:19:15.921 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
+16:19:15.955 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:19:15.987 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:16.037 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:19:16.323 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
+16:19:16.355 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:19:16.405 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
+16:19:16.440 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
+16:19:16.485 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
+16:19:16.517 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
+16:19:16.566 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
+16:19:16.643 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
+16:19:16.681 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:16.742 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
+16:19:16.897 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:19:16.931 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:19:16.981 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:18.216 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
+16:19:18.226 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?
+org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: MicrosoftEdge=128.0.2739.63)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [bfe2448c4367e69fc2cf7da9049c7aee, getElementText {id=f.01F451E9D627164BB80D6104355FB590.d.F124ACFD65CF757CEC7D6444B4F2405C.e.105}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64066}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64066/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (bfe2448c4367e69fc2cf7da9049c7aee)] -> link text: Certified Mail Labels: Why Is My USPS Certified Mail Delayed?]
+Session ID: bfe2448c4367e69fc2cf7da9049c7aee
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191) ~[selenium-remote-driver-4.22.0.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51) ~[selenium-support-4.22.0.jar:?]
+	at jdk.proxy2/jdk.proxy2.$Proxy36.getText(Unknown Source) ~[?:?]
+	at com.cml.qa.pages.LandingPageClass.VerifyLandingPageUIElements(LandingPageClass.java:209) ~[classes/:?]
+	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:63) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.0.jar:7.10.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.0.jar:7.10.0]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
+16:19:20.878 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works | Actual URL from href: https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works
+16:19:21.072 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
+16:19:21.151 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:19:21.246 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:21.289 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:19:21.364 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
+16:19:21.483 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:19:21.530 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
+16:19:21.573 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
+16:19:21.610 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
+16:19:21.641 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
+16:19:21.679 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
+16:19:21.718 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
+16:19:21.756 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:21.801 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
+16:19:21.828 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:19:21.854 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:19:21.882 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:23.898 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Labels: How USPS Certified Mail Works
+16:19:23.902 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Labels: How USPS Certified Mail Works
+org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: MicrosoftEdge=128.0.2739.63)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [bfe2448c4367e69fc2cf7da9049c7aee, getElementText {id=f.01F451E9D627164BB80D6104355FB590.d.F124ACFD65CF757CEC7D6444B4F2405C.e.130}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64066}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64066/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (bfe2448c4367e69fc2cf7da9049c7aee)] -> link text: Certified Mail Labels: How USPS Certified Mail Works]
+Session ID: bfe2448c4367e69fc2cf7da9049c7aee
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191) ~[selenium-remote-driver-4.22.0.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51) ~[selenium-support-4.22.0.jar:?]
+	at jdk.proxy2/jdk.proxy2.$Proxy36.getText(Unknown Source) ~[?:?]
+	at com.cml.qa.pages.LandingPageClass.VerifyLandingPageUIElements(LandingPageClass.java:209) ~[classes/:?]
+	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:63) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.0.jar:7.10.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.0.jar:7.10.0]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
+16:19:26.540 [main]INFO  com.cml.qa.pages.LandingPageClass - Expected URL: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissiblesss | Actual URL from href: https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissible
+16:19:26.892 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Address and Print USPS Certified Mail® Labels Online!
+16:19:26.922 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:19:26.956 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:26.992 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.
+16:19:27.252 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: h2 | IsDisplayed: true | Text: Print Certified Mail Labels OR Send Certified Mail Online!
+16:19:27.556 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:19:27.710 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Certified Mail Labels
+16:19:27.748 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: Send Certified Mail
+16:19:27.787 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: 
+16:19:27.823 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: iframe | IsDisplayed: true | Text: 
+16:19:27.906 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text:  
+16:19:27.965 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: div | IsDisplayed: true | Text: Create USPS Certified Mail® labels, Priority Mail labels and Express Mail labels with USPS Postage online! No more stickers, forms, or lines at the Post Office! Just log on, address, print, and mail! No monthly fees and no special equipment are needed. Pay as you mail, and skip the trip to the Post Office.
+16:19:28.069 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:28.110 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: p | IsDisplayed: true | Text: 
+16:19:28.135 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: br | IsDisplayed: false | Text: 
+16:19:28.162 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: a | IsDisplayed: true | Text: 
+16:19:28.194 [main]INFO  com.cml.qa.pages.LandingPageClass - Tag Name: img | IsDisplayed: true | Text: 
+16:19:29.167 [main]INFO  com.cml.qa.pages.LandingPageClass - Link verification passed: Certified Mail Envelopes: Secure and Admissible
+16:19:29.172 [main]ERROR com.cml.qa.pages.LandingPageClass - Error during verification of link: Certified Mail Envelopes: Secure and Admissible
+org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: MicrosoftEdge=128.0.2739.63)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [bfe2448c4367e69fc2cf7da9049c7aee, getElementText {id=f.01F451E9D627164BB80D6104355FB590.d.F124ACFD65CF757CEC7D6444B4F2405C.e.143}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.63, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64066}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64066/devtoo..., se:cdpVersion: 128.0.2739.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (bfe2448c4367e69fc2cf7da9049c7aee)] -> link text: Certified Mail Envelopes: Secure and Admissible]
+Session ID: bfe2448c4367e69fc2cf7da9049c7aee
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223) ~[selenium-remote-driver-4.22.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191) ~[selenium-remote-driver-4.22.0.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51) ~[selenium-support-4.22.0.jar:?]
+	at jdk.proxy2/jdk.proxy2.$Proxy36.getText(Unknown Source) ~[?:?]
+	at com.cml.qa.pages.LandingPageClass.VerifyLandingPageUIElements(LandingPageClass.java:209) ~[classes/:?]
+	at com.cml.qa.testcases.LandingPageTest.TC_CML_SS_001(LandingPageTest.java:63) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.0.jar:7.10.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.0.jar:7.10.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.0.jar:7.10.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.0.jar:7.10.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.0.jar:7.10.0]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
+16:19:31.222 [main]INFO  com.cml.qa.pages.LandingPageClass - -----Verification of Bottom link ended-----
+16:19:31.222 [main]INFO  com.cml.qa.testcases.LandingPageTest - **** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****
+16:19:31.230 [main]INFO  com.cml.qa.testcases.LandingPageTest - All the test cases of Landing Page has been executed successfully

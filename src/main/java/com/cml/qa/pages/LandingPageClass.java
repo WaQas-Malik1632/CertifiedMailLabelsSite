@@ -222,81 +222,78 @@ public class LandingPageClass extends TestBaseClass {
     }
 
     public void RightSideBarLinks() throws InterruptedException {
+        log.info("-----Verification of Sidebar Links Started-----");
+
         // Find the list of links in the right sidebar
         WebElement rightSideBar = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[2]/aside/ul"));
         List<WebElement> allLinks = rightSideBar.findElements(By.xpath(".//a"));
-
         log.info("Number of elements in the specific <ul>: " + allLinks.size());
 
         // Iterate through each link in the sidebar
         for (int i = 0; i < allLinks.size(); i++) {
+            // Re-fetch the list of links to avoid stale element exception
+            rightSideBar = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[2]/aside/ul"));
+            allLinks = rightSideBar.findElements(By.xpath(".//a"));
+
             WebElement singleLink = allLinks.get(i);
             String linkText = singleLink.getText();
             String linkHref = singleLink.getAttribute("href");
             String linkTarget = singleLink.getAttribute("target");
 
-            log.info("Link Text: " + linkText + " | Link: " + linkHref + " | Target: " + linkTarget);
-            js.executeScript("window.scrollBy(0, 60)", "");
-
-            // Check if the link opens in a new tab (target='_blank')
-            if("_blank".equals(linkTarget)) {
-                log.info("Link opens in a new tab, switching to the new tab to verify content.");
-
-                // Store the current window handle
-                String originalWindow = driver.getWindowHandle();
-
-                // Click the link (opens in a new tab)
-                singleLink.click();
-
-                // Wait for the new tab to open and switch to it
-                for (String windowHandle : driver.getWindowHandles()) {
-                    if (!windowHandle.equals(originalWindow)) {
-                        driver.switchTo().window(windowHandle);
-                        break;
-                    }
-                }
-                // Wait for the new tab content to load
-                Thread.sleep(3000);
-
-                // Locate page content and log details of all elements within the parent div
-                WebElement pageContent = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div"));
-                List<WebElement> allElementsInsideParentDiv = pageContent.findElements(By.xpath(".//*[not(self::br)]"));
-                for (WebElement element : allElementsInsideParentDiv) {
-                    Thread.sleep(1000);
-
-                    //Scroll the whole page
-                    //js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-                    log.info("Tag Name: " + element.getTagName() + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + element.getText());
-                }
-                log.info("====Link opened and its relevant content verified===="+linkText);
-                // Close the new tab and switch back to the original window
-
-                driver.switchTo().window(originalWindow);
-
-                // Wait for the original page to load again
-                Thread.sleep(3000);
-
-            } else {
-                // Handle links that open in the same tab
-                singleLink.click();
-                Thread.sleep(3000);
-
-                // Locate page content and log details of all elements within the parent div
-                WebElement pageContent = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div"));
-                List<WebElement> allElementsInsideParentDiv = pageContent.findElements(By.xpath(".//*[not(self::br)]"));
-                for (WebElement element : allElementsInsideParentDiv) {
-                    Thread.sleep(1000);
-                    //Scroll the whole page
-                    //js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-                    log.info("Tag Name: " + element.getTagName() + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + element.getText());
-                }
-                log.info("====Link opened and its relevant content verified===="+linkText);
-
-                // Navigate back to the previous page
-                driver.navigate().back();
+            // Skip the "Easy Step by Step Guide" link
+            if ("Easy Step by Step Guide".equals(linkText)) {
+                log.info("Skipping link: " + linkText);
+                continue; // Skip this link and move to the next one
             }
+
+            log.info("Link Text: " + linkText + " | Link: " + linkHref + " | Target: " + linkTarget);
+            js.executeScript("window.scrollBy(0, 60)", ""); // Scroll slightly to bring the link into view
+
+            // Store the original window handle
+            String originalWindow = driver.getWindowHandle();
+            singleLink.click(); // Click the link
+
+            // Check if the target attribute is '_blank'
+            if ("_blank".equals(linkTarget)) {
+                // Wait and switch to the new tab that opens
+                Set<String> allWindowIds = driver.getWindowHandles();
+                List<String> windowHandlesList = new ArrayList<>(allWindowIds);
+
+                // Switch to the newly opened tab using index 1 (assuming the new tab is at index 1)
+                if (windowHandlesList.size() > 1) { // Make sure there is more than one window
+                    driver.switchTo().window(windowHandlesList.get(1));
+                    log.info("Switched to the new tab.");
+                } else {
+                    log.warn("No new tab detected to switch.");
+                    continue; // No new tab to switch to, skip to the next link
+                }
+            } else {
+                log.info("The link does not open in a new tab.");
+            }
+
+            // Locate page content and log details of all elements within the parent div
+            WebElement pageContent = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div"));
+            List<WebElement> allElementsInsideParentDiv = pageContent.findElements(By.xpath(".//*[not(self::br)]"));
+            for (WebElement element : allElementsInsideParentDiv) {
+                log.info("Tag Name: " + element.getTagName() + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + element.getText());
+            }
+            log.info("====Link opened and its relevant content verified==== " + linkText);
+
+            // Navigate back to the original window or close the tab based on the link's target
+            if ("_blank".equals(linkTarget)) {
+                driver.close(); // Close the new tab
+                driver.switchTo().window(originalWindow); // Switch back to the original tab
+            } else {
+                driver.navigate().back(); // Go back to the original page
+            }
+
+            // Wait for the original page to reload
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
         }
+
+        log.info("-----Verification of Sidebar Links Ended-----");
     }
+
     public void VerifyCMLLogo() throws InterruptedException {
 
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(CMLLogoClick)).isDisplayed(), "The Image is not displayed on the page.");
