@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="10" name="Smoke Suit-CML Site Automation Test Cases">
-	<test thread-count="10" name="Smoke Suit Test">
+    <test thread-count="2" name="Smoke Test->Login Page" enabled="true">
+        <classes>
+            <class name="com.cml.qa.testcases.LoginPageTest"/>
+        </classes>
+    </test>
+	<test thread-count="2" name="Smoke Test->Dashboard Page" enabled="true">
 		<classes>
-			<class name="com.cml.qa.testcases.LoginPageTest" />
-			<class name="com.cml.qa.testcases.SignUpPageTest" />
-			<class name="com.cml.qa.testcases.LandingPageTest"/>
 			<class name="com.cml.qa.testcases.DashboardPageTestClass"/>
 		</classes>
-	</test> <!--Smoke Suit Test -->
+	</test>
+    <test thread-count="2" name="Smoke Test->SignUp Page" enabled="true">
+        <classes>
+            <class name="com.cml.qa.testcases.SignUpPageTest"/>
+        </classes>
+    </test>
+    <test thread-count="2" name="Smoke Test->Landing Page" enabled="true">
+        <classes>
+            <class name="com.cml.qa.testcases.LandingPageTest"/>
+        </classes>
+    </test>
+	<test thread-count="10" name="Smoke Test->All Classes" enabled="false">
+		<classes>
+			<class name="com.cml.qa.testcases.LoginPageTest"/>
+			<class name="com.cml.qa.testcases.DashboardPageTestClass"/>
+			<class name="com.cml.qa.testcases.SignUpPageTest"/>
+			<class name="com.cml.qa.testcases.LandingPageTest"/>
+		</classes>
+	</test>
 </suite> <!--Smoke Suit-CML Site Automation Test Cases -->

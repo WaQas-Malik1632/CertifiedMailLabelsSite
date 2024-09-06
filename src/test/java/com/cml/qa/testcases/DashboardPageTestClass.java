@@ -12,8 +12,10 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
@@ -24,15 +26,19 @@ public class DashboardPageTestClass extends TestBaseClass {
 	TestUtil util;
 	LoginPageClass login;
 	DashboardPageClass dashboard;
+	public static Logger log;
 
 	public DashboardPageTestClass() throws IOException {
+		log= LogManager.getLogger(DashboardPageTestClass.class);
 		super();
 	}
 
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
+		log.info("**** Starting Dashboard Page Test cases execution ****");
 		util = new TestUtil();
-		intialization();
+		//intialization();
+		Headless_Intialization();
 		login = new LoginPageClass();
 		login.PreRequisiteLinkClickLogin();
 		dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
@@ -40,24 +46,28 @@ public class DashboardPageTestClass extends TestBaseClass {
 
 	@Test(priority = 1, invocationCount = 1, enabled = true, description = "CML_DASHBOARD_001")
 	@Description("CML_DASHBOARD_001->Dashboard Page->Verify that user is able to validate Dashboard Page Title")
-	@Epic("DASHBOARD->EP001")
-	@Feature("DASHBOARD->Feature:001")
+	@Epic("Dashboard->EP001")
+	@Feature("Dashboard->Feature:001")
 	@Story("Dashboard Page TestCases")
 	@Step("Login->Dashboard->Verify Page Title")
 	@Severity(SeverityLevel.CRITICAL)
-	public void VerifyDashboardPageTitle() {
+	public void VerifyDashboardPageTitle() throws IOException {
+		log.info("Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started");
 		String DashboardPageTitleIs = dashboard.DashboardTitleVerify();
 		try {
-			Assert.assertEquals(DashboardPageTitleIs, "Dashboard | Certified Mail Labels", "Dashboard");
-			System.out.println("->Page Title has been successfully verified");
-			System.out.println("User is landed on the Dashboard page successfully" + "\n");
+			Assert.assertEquals(DashboardPageTitleIs, "Dashboard");
+			log.info("Page Title has been successfully verified");
+			log.info("User is landed on the Dashboard page successfully" + "\n");
 		} catch (AssertionError e) {
-			System.out.println("User doesn't login->Dashboard Page Title Verification Failed" + "\n");
+			log.error("User doesn't login due to Invalid credentials->Dashboard Page Title Verification Failed" + "\n"+e.getMessage());
+			util.TakeScreenshot(driver," Screenshot_DashboardPage TestCase 'CML_DASHBOARD_001'");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}
+		log.info("** Execution of Dashboard Page Title Verification 'CML_DASHBOARD_001' Ended **");
 	}
 
-	@AfterMethod
-	public void afterMethod() {
+	@AfterClass
+	public void TearDown() {
+		log.info("----All the test cases of Dashboard Page has been executed----");
 	}
 }

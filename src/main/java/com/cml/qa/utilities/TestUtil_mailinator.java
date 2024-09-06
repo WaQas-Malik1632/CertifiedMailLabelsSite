@@ -4,7 +4,8 @@ import com.cml.qa.base.TestBaseClass;
 import com.cml.qa.pages.LandingPageClass;
 import com.cml.qa.pages.LoginPageClass;
 import com.cml.qa.pages.SignUpPageClass;
-import org.openqa.selenium.By;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -21,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class TestUtil_mailinator extends TestBaseClass {
 	TestUtil util = new TestUtil();
 	LoginPageClass loginPage;
-
+	public static Logger log;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	@FindBy(xpath = "//a[normalize-space()='click resend email']")
@@ -47,20 +48,21 @@ public class TestUtil_mailinator extends TestBaseClass {
 	public TestUtil_mailinator() throws IOException {
 		super();
 		PageFactory.initElements(driver, this);
+		log = LogManager.getLogger(TestUtil_mailinator.class);
 	}
 
-	public LandingPageClass MailinatorLinkVerificationAndLoginNewUser()
-			throws InterruptedException, IOException {
+	public LandingPageClass MailinatorLinkVerificationAndLoginNewUser() throws InterruptedException, IOException {
 		// After signup, user can click to resend the email link again
 		// linkTextClick_VerifyEmail.click();
 
 		driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
-		System.out.println("\n" + "User is navigating to the Mailinator for the Email verification " + "\n");
+		log.info("\n" + "User is navigating to the Mailinator for the Email verification " + "\n");
 
 		// Getting the Id of parent windows here
 		String ParentWindowId = driver.getWindowHandle();
 
-		//====Static is the properties of the class, we don't have to instance of the pageClass====
+		//====Static is the properties of the class, we don't have instance of the pageClass====
+
 		//Pass the Email to Mailinator entered ny the user
 		MailinatorIb.sendKeys(SignUpPageClass.Emailaddress);
 
@@ -82,38 +84,49 @@ public class TestUtil_mailinator extends TestBaseClass {
 
 		Thread.sleep(3000);
 		LinkTextClickToVerifyEmail.click();
-		System.out.println("\n" + "->Title is: " + driver.getTitle() + " and Link is-> " + driver.getCurrentUrl() + "\n");
+		log.info("\n" + "->Title is: " + driver.getTitle() + " and Link is-> " + driver.getCurrentUrl() + "\n");
 
 		// WebDriver control is shifted under the parent window
 		driver.switchTo().window(ParentWindowId);
-
-		System.out.println("\n" + "->After switching window-> Url is :" + driver.getCurrentUrl() + "\n"
-				+ "->Title is-> " + driver.getTitle() + "\n");
+		log.info("\n" + "->After switching window-> Url is :" + driver.getCurrentUrl() + "\n" + "->Title is-> " + driver.getTitle() + "\n");
 
 		driver.navigate().to("https://staging.certifiedmaillabels.com/login");
 
 		//=========Login with the newly Registered user========
+		log.info("Login with the newly Registered user");
+
 		loginPage = new LoginPageClass();
 		loginPage.Login_Testcases(SignUpPageClass.Emailaddress,SignUpPageClass.password);
 
 		// driver.navigate().refresh();
 		driver.get(driver.getCurrentUrl());
-		System.out.println("\n" + "-> Landing page Url is: " + driver.getCurrentUrl() + " and Title is-> "
-				+ driver.getTitle() + "\n");
 
 		// Verify page url after Email verification is matched or not
-		String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
-		String ActualUrl = driver.getCurrentUrl();
+		log.info("\n" + "-> Landing page URL is: " + driver.getCurrentUrl());
+
+// Verify the page URL after email verification is matched or not
+		String expectedUrl = "https://staging.certifiedmaillabels.com/";
+		String actualUrl = driver.getCurrentUrl();
+
 		try {
-			Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification Passed: ");
-			System.out.println("->User logged in and directed on landing page successfully " + "\n");
-			System.out.println("->Newly logged in user: Page Url has been verified successfully");
+			// Check if the current URL is "https://staging.certifiedmaillabels.com/user/dashboard"
+			if (actualUrl.equals("https://staging.certifiedmaillabels.com/user/dashboard")) {
+				log.info("URL is 'https://staging.certifiedmaillabels.com/user/dashboard', navigating back and refreshing the page.");
+				driver.navigate().back();  // Navigate back to the previous page
+				Thread.sleep(2000);
+				driver.navigate().refresh();  // Refresh the page
+				Thread.sleep(2000);        // Wait for the refresh to complete
+			}
+			// Verify that the current URL matches the expected URL
+			Assert.assertEquals(actualUrl, expectedUrl, "URL verification passed: ");
+			log.info("-> User logged in and directed to the landing page successfully. URL verification done." + "\n");
 
 		} catch (AssertionError e) {
-			System.out.println("Login Failed->These credentials do not match our records" + "\n");
+			log.error("Login Failed -> These credentials do not match our records" + "\n");
 			util.TakeScreenshot(driver, " _Signup Page Screenshot_ ");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}
+
 		return new LandingPageClass();
 	}
 }
