@@ -1,7 +1,9 @@
 package com.cml.qa.testcases;
 
 import com.cml.qa.base.TestBaseClass;
+import com.cml.qa.pages.DashboardPageClass;
 import com.cml.qa.pages.LandingPageClass;
+import com.cml.qa.pages.LoginPageClass;
 import com.cml.qa.pages.SignUpPageClass;
 import com.cml.qa.utilities.TestUtil;
 import com.cml.qa.utilities.TestUtil_mailinator;
@@ -18,7 +20,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
 
 import java.io.IOException;
 
@@ -27,6 +28,8 @@ public class LandingPageTest extends TestBaseClass {
     TestUtil util;
     SignUpPageClass signup;
     TestUtil_mailinator utilMailinator;
+    DashboardPageClass dash;
+    LoginPageClass login;
     LandingPageClass landPage;
     public static Logger log;
 
@@ -47,10 +50,11 @@ public class LandingPageTest extends TestBaseClass {
         signup.userRegistrationForm();
         utilMailinator = new TestUtil_mailinator();
         utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
+        dash=new DashboardPageClass();
         landPage = new LandingPageClass();
     }
 
-    @Test(priority = 3, invocationCount = 1, enabled = true, description = "TC_CML_SS_001")
+    @Test(priority = 3, invocationCount = 1, enabled = false, description = "TC_CML_SS_001")
     @Description("TC_CML_SS_001->Landing Page->Verify that user is able to validate Landing page UI is showing correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")
@@ -72,7 +76,7 @@ public class LandingPageTest extends TestBaseClass {
         log.info("**** Execution of Test 'TC_CML_SS_001' Ended ****");
     }
 
-    @Test(priority = 4, invocationCount = 1, enabled = false, description = "TC_CML_SS_002")
+    @Test(priority = 4, invocationCount = 1, enabled = true, description = "TC_CML_SS_002")
     @Description("TC_CML_SS_002->Landing Page->Verify that right side bar links are working correctly")
     @Epic("LandingPage->EP001")
     @Feature("LandingPage->Feature:001")

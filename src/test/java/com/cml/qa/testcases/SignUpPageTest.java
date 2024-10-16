@@ -91,10 +91,10 @@ public class SignUpPageTest extends TestBaseClass {
 
         log.info("\n" + "->Page Url is: " + driver.getCurrentUrl() + " and Title is-> " + driver.getTitle() + "\n");
 
-        if (signup.VerifyUniqueEmail().contains("   Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, ")) {
+        if (signup.VerifyUniqueEmail().contains("Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, ")) {
             log.info("Email is available. Proceeding with Mailinator verification");
             landPage = utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
-            log.info("email verified successfully");
+            log.info("Email verified successfully");
             String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
             Assert.assertEquals(driver.getCurrentUrl(), ExpectedUrl);
 

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -240,11 +241,6 @@ public class LandingPageClass extends TestBaseClass {
             String linkHref = singleLink.getAttribute("href");
             String linkTarget = singleLink.getAttribute("target");
 
-            // Skip the "Easy Step by Step Guide" link
-            if ("Easy Step by Step Guide".equals(linkText)) {
-                log.info("Skipping link: " + linkText);
-                continue; // Skip this link and move to the next one
-            }
 
             log.info("Link Text: " + linkText + " | Link: " + linkHref + " | Target: " + linkTarget);
             js.executeScript("window.scrollBy(0, 60)", ""); // Scroll slightly to bring the link into view
@@ -261,11 +257,8 @@ public class LandingPageClass extends TestBaseClass {
 
                 // Switch to the newly opened tab using index 1 (assuming the new tab is at index 1)
                 if (windowHandlesList.size() > 1) { // Make sure there is more than one window
-                    driver.switchTo().window(windowHandlesList.get(1));
+                    driver.switchTo().window(windowHandlesList.get(0));
                     log.info("Switched to the new tab.");
-                } else {
-                    log.warn("No new tab detected to switch.");
-                    continue; // No new tab to switch to, skip to the next link
                 }
             } else {
                 log.info("The link does not open in a new tab.");
@@ -281,7 +274,7 @@ public class LandingPageClass extends TestBaseClass {
 
             // Navigate back to the original window or close the tab based on the link's target
             if ("_blank".equals(linkTarget)) {
-                driver.close(); // Close the new tab
+               // driver.close(); // Close the new tab
                 driver.switchTo().window(originalWindow); // Switch back to the original tab
             } else {
                 driver.navigate().back(); // Go back to the original page
