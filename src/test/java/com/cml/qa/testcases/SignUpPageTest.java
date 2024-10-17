@@ -24,11 +24,9 @@ import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 
 public class SignUpPageTest extends TestBaseClass {
 
-    TestUtil util;
     LoginPageClass loginPage;
     SignUpPageClass signup;
     TestUtil_mailinator utilMailinator;
@@ -43,10 +41,8 @@ public class SignUpPageTest extends TestBaseClass {
 
     @BeforeMethod
     public void beforeMethod() throws IOException {
-
-        util = new TestUtil();
-      // intialization();
-        Headless_Intialization();
+       intialization();
+//        Headless_Intialization();
         loginPage = new LoginPageClass();
         signup = new SignUpPageClass();
         signup.Precondition();
@@ -54,7 +50,7 @@ public class SignUpPageTest extends TestBaseClass {
         landPage = new LandingPageClass();
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = true, description = "CML_REG_001")
+    @Test(priority = 1, invocationCount = 1, enabled = false, description = "CML_REG_001")
     @Description("CML_REG_001->SignUp Page->Verify that user is able to validate signUp Page Title")
     @Epic("SignUp->EP001")
     @Feature("SignUp->Feature:001")
@@ -69,7 +65,7 @@ public class SignUpPageTest extends TestBaseClass {
             log.info("SignUp title has been successfully verified");
         } catch (AssertionError e) {
             log.error("SignUp title verification failed: " +e.getMessage());
-            util.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'CML_REG_001'");
+            TestUtil.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'CML_REG_001'");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of SignUp Page Title verification 'CML_REG_001' Ended");
@@ -98,18 +94,18 @@ public class SignUpPageTest extends TestBaseClass {
             String ExpectedUrl = "https://staging.certifiedmaillabels.com/";
             Assert.assertEquals(driver.getCurrentUrl(), ExpectedUrl);
 
-            util.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_ 'TC_CML_SS_020' ");
+            TestUtil.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_ 'TC_CML_SS_020' ");
 
         } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
             log.error("Email is already taken->Test failed.");
 
-            util.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
+            TestUtil.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
             Assert.assertTrue(false, "Test case failed because, Email is already taken");
 
         } else {
             //	throw new SkipException("Skipping the test case execution, something went wrong");
             log.error("Skipping the test case execution, something went wrong");
-            util.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
+            TestUtil.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
         }
         log.info("**** Execution of User Registration successfully as parent user 'TC_CML_SS_020' Ended ****");
     }

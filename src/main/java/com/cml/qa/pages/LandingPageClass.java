@@ -1,11 +1,10 @@
 package com.cml.qa.pages;
 
 import com.cml.qa.base.TestBaseClass;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -18,10 +17,10 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.*;
 
+import com.cml.qa.utilities.TestUtil;
+
 public class LandingPageClass extends TestBaseClass {
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-    JavascriptExecutor js = (JavascriptExecutor) driver;
     public static Logger log;
     //Page Center elements
     @FindBy(xpath = "//h1[normalize-space()='USPS Certified Mail Labels']")
@@ -54,13 +53,15 @@ public class LandingPageClass extends TestBaseClass {
     @FindBy(xpath = "//img[@alt='Certified Mail Labels | GET STARTED FOR FREE TODAY']")
     @CacheLookup
     WebElement VerifyImage;
-    @FindBy(linkText = "Certified Mail Labels: Why Is My USPS Certified Mail Delayed?")
+
+    //Bottom links
+    @FindBy(linkText = "How to Print and Send Batch Certified Mail Labels")
     @CacheLookup
     WebElement VerifyLink1;
-    @FindBy(linkText = "Certified Mail Labels: How USPS Certified Mail Works")
+    @FindBy(linkText = "How to Send a Letter Certified: 6 Easy Steps")
     @CacheLookup
     WebElement VerifyLink2;
-    @FindBy(linkText = "Certified Mail Envelopes: Secure and Admissible")
+    @FindBy(linkText = "Certified Letters: How Much Does USPS Certified Mail Cost?")
     @CacheLookup
     WebElement VerifyLink3;
     //Right side bar links Page elements
@@ -89,7 +90,7 @@ public class LandingPageClass extends TestBaseClass {
     final String P_TAG_SKIP_TEXT_EXPECTED = "Skip the trip to the Post Office… Address and print USPS Certified Mail® Labels online. Save $3.15 on postage for each Certified Mail® green card receipt. No monthly fees, no contracts, and no software or special equipment. Get email notifications with Electronic Delivery Confirmations, Return Receipt Signatures, tracking, and a 10-year compliance archive at no extra cost. You’ll have proof of mailing, letter tracking plus delivery confirmation for each of your compliance letters available 24/7 – 365 days a year.";
     final String H2_TEXT_EXPECTED = "Print Certified Mail Labels OR Send Certified Mail Online!";
     final String IMAGE_AND_TEXT_COMBINED_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/usps_certified_mail_envelopes_with_return_receipt_electronic_250x166.jpg";
-    final String USPSCML_IMAGE_SRC_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/July%202024%20USPS%20Rates%20Certified%20Mail%20Labels%20.jpg";
+    final String USPSCML_IMAGE_SRC_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/Certified-Mail--Rates_SEPT2024.jpg";
     final String GET_STARTED_IMAGE_TEXT_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/Get-Started-Now-Certified-Mail-Labels-600.jpg";
 
     public HashMap<String, WebElement> VerifyLandingPageUIElements() throws InterruptedException {
@@ -114,50 +115,50 @@ public class LandingPageClass extends TestBaseClass {
         // Verify Page Headings
         WebElement pageHeadingH1 = elements.get("VerifyPageHeadingH1");
         WebElement pageHeadingH2 = elements.get("VerifyPageHeadingH2");
-        String actualTextH1 = wait.until(ExpectedConditions.visibilityOf(pageHeadingH1)).getText().trim();
+        String actualTextH1 = TestUtil.wait.until(ExpectedConditions.visibilityOf(pageHeadingH1)).getText().trim();
         Assert.assertEquals(actualTextH1, PAGE_HEADING_H1_EXPECTED, "Text mismatch for PageHeadingH1");
         log.info("PageHeadingH1 is: " + actualTextH1);
-        String actualTextH2 = wait.until(ExpectedConditions.visibilityOf(pageHeadingH2)).getText().trim();
+        String actualTextH2 = TestUtil.wait.until(ExpectedConditions.visibilityOf(pageHeadingH2)).getText().trim();
         Assert.assertEquals(actualTextH2, PAGE_HEADING_H2_EXPECTED, "Text mismatch for PageHeadingH2");
         log.info("PageHeadingH2 is: " + actualTextH2);
 
         // Verify USPS Certified Mail Labels Image
         WebElement uspsImage = elements.get("VerifyUSPSCertifiedMailLabelsImage");
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(uspsImage)).isDisplayed(), "The Image is not displayed on the page.");
+        Assert.assertTrue(TestUtil.wait.until(ExpectedConditions.visibilityOf(uspsImage)).isDisplayed(), "The Image is not displayed on the page.");
         String actualSrc = uspsImage.getAttribute("src").trim();
         Assert.assertEquals(actualSrc, USPSCML_IMAGE_SRC_EXPECTED, "Image source URL mismatch.");
         log.info("Image is present and Its Source URL is: " + actualSrc);
 
         // Scroll down and verify paragraph text
-        js.executeScript("window.scrollBy(0, 1200)", "");
+        TestUtil.js.executeScript("window.scrollBy(0, 1200)", "");
         WebElement pTagText = elements.get("VerifyPTAG_SkipTheTripText");
-        String actualPTagText = wait.until(ExpectedConditions.visibilityOf(pTagText)).getText().trim();
+        String actualPTagText = TestUtil.wait.until(ExpectedConditions.visibilityOf(pTagText)).getText().trim();
         Assert.assertEquals(actualPTagText, P_TAG_SKIP_TEXT_EXPECTED, "Text mismatch for VerifyUSPSCMLImagePText");
         log.info("VerifyUSPSCMLImagePText is: " + actualPTagText);
 
         // Verify H2 Text
         WebElement h2Text = elements.get("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline");
-        String actualH2Text = wait.until(ExpectedConditions.visibilityOf(h2Text)).getText().trim();
+        String actualH2Text = TestUtil.wait.until(ExpectedConditions.visibilityOf(h2Text)).getText().trim();
         Assert.assertEquals(actualH2Text, H2_TEXT_EXPECTED, "Text mismatch for VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline");
         log.info("VerifyH2Text_PrintCertifiedMailLabelsORSendCertifiedMailOnline is: " + actualH2Text);
 
         // Verify Video
         WebElement videoElement = elements.get("VerifyVideo");
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(videoElement)).isDisplayed(), "Video is not displayed on the page.");
+        Assert.assertTrue(TestUtil.wait.until(ExpectedConditions.visibilityOf(videoElement)).isDisplayed(), "Video is not displayed on the page.");
         String videoSrc = videoElement.getAttribute("src");
         Assert.assertNotNull(videoSrc, "Video source URL is missing.");
         log.info("Video is available on the Page and its Source URL is: " + videoSrc);
 
         // Verify Image and Text Combined
         WebElement imageAndTextElement = elements.get("VerifyImageAndTextCombined");
-        String actualImageAndText = wait.until(ExpectedConditions.visibilityOf(imageAndTextElement)).getAttribute("src");
+        String actualImageAndText = TestUtil.wait.until(ExpectedConditions.visibilityOf(imageAndTextElement)).getAttribute("src");
         Assert.assertEquals(actualImageAndText, IMAGE_AND_TEXT_COMBINED_EXPECTED, "Text mismatch for Image and Text Combined");
 
         log.info("Verify Image and Text both are present and Src Url is: " + actualImageAndText);
 
         // Verify Get Started Image
         WebElement getStartedImage = elements.get("VerifyImage");
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(getStartedImage)).isDisplayed(), "Get Started Image is not displayed on the page.");
+        Assert.assertTrue(TestUtil.wait.until(ExpectedConditions.visibilityOf(getStartedImage)).isDisplayed(), "Get Started Image is not displayed on the page.");
         String getStartedImageSrc = getStartedImage.getAttribute("src").trim();
         Assert.assertEquals(getStartedImageSrc, GET_STARTED_IMAGE_TEXT_EXPECTED, "Image source URL mismatch for Get Started Image.");
         log.info("Get Started Image is present and Its Source URL is: " + getStartedImageSrc);
@@ -168,9 +169,9 @@ public class LandingPageClass extends TestBaseClass {
 
         // Define the expected URLs and element keys
         String[] expectedUrls = {
-                "https://staging.certifiedmaillabels.com/blog/why-is-my-usps-certified-mail-delayed",
-                "https://staging.certifiedmaillabels.com/blog/how-usps-certified-mail-works",
-                "https://staging.certifiedmaillabels.com/blog/certified-mail-envelopes-secure-admissiblesss"};
+                "https://staging.certifiedmaillabels.com/blog/how-to-print-and-send-batch-certified-mail-labels",
+                "https://staging.certifiedmaillabels.com/blog/how-to-send-a-letter-certified-6-easy-steps",
+                "https://staging.certifiedmaillabels.com/blog/certified-letters-how-much-does-usps-certified-mail-cost"};
 
         String[] linkKeys = {"VerifyLink1", "VerifyLink2", "VerifyLink3"};
 
@@ -192,7 +193,7 @@ public class LandingPageClass extends TestBaseClass {
                 // Find all child elements inside the parent div
                 List<WebElement> allElementsInsideLink = parentDiv.findElements(By.xpath(".//*"));
 
-                js.executeScript("window.scrollBy(0, 200)", "");
+                TestUtil.js.executeScript("window.scrollBy(0, 200)", "");
 
                 // Log details of each element inside the link
                 for (WebElement element : allElementsInsideLink) {
@@ -203,7 +204,7 @@ public class LandingPageClass extends TestBaseClass {
 
                 // Navigate to the expected URL and verify
                 driver.navigate().to(expectedUrl);
-                wait.until(ExpectedConditions.urlToBe(expectedUrl));
+                TestUtil.wait.until(ExpectedConditions.urlToBe(expectedUrl));
                 Assert.assertEquals(driver.getCurrentUrl(), expectedUrl, "URL mismatch for Link: " + linkText);
                 log.info("Link verification passed: " + linkText);
 
@@ -243,7 +244,7 @@ public class LandingPageClass extends TestBaseClass {
 
 
             log.info("Link Text: " + linkText + " | Link: " + linkHref + " | Target: " + linkTarget);
-            js.executeScript("window.scrollBy(0, 60)", ""); // Scroll slightly to bring the link into view
+            TestUtil.js.executeScript("window.scrollBy(0, 60)", ""); // Scroll slightly to bring the link into view
 
             // Store the original window handle
             String originalWindow = driver.getWindowHandle();
@@ -281,7 +282,7 @@ public class LandingPageClass extends TestBaseClass {
             }
 
             // Wait for the original page to reload
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+            TestUtil.wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
         }
 
         log.info("-----Verification of Sidebar Links Ended-----");
@@ -289,7 +290,7 @@ public class LandingPageClass extends TestBaseClass {
 
     public void VerifyCMLLogo() throws InterruptedException {
 
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(CMLLogoClick)).isDisplayed(), "The Image is not displayed on the page.");
+        Assert.assertTrue(TestUtil.wait.until(ExpectedConditions.visibilityOf(CMLLogoClick)).isDisplayed(), "The Image is not displayed on the page.");
         log.info("Logo is present: " + CMLLogoClick.isDisplayed() + "  and Its Source URL is: " + CMLLogoClick.getAttribute("src"));
 
         CMLLogoClick.click();
@@ -299,7 +300,7 @@ public class LandingPageClass extends TestBaseClass {
         log.info("After Clicking on CML Logo, its Page URL is: " + expectedUrlAfterClickOnLogo);
     }
     public void GetStartedToday_ImageClick(){
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(VerifyImageGetStartedToday)).isDisplayed(), "'Get Started Today' Image is not displayed on the page.");
+        Assert.assertTrue(TestUtil.wait.until(ExpectedConditions.visibilityOf(VerifyImageGetStartedToday)).isDisplayed(), "'Get Started Today' Image is not displayed on the page.");
         String getStartedImageSrc = VerifyImageGetStartedToday.getAttribute("src");
         log.info("Get Started Image is present and Its Source URL is: " + getStartedImageSrc);
         VerifyImageGetStartedToday.click();

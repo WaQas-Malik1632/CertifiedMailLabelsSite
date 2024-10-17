@@ -2,9 +2,9 @@ package com.cml.qa.pages;
 
 import java.io.IOException;
 
+import com.cml.qa.utilities.TestUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -13,9 +13,9 @@ import com.cml.qa.base.TestBaseClass;
 
 public class LoginPageClass extends TestBaseClass {
 
-    JavascriptExecutor js = (JavascriptExecutor) driver;
     DashboardPageClass dashboard;
     public static Logger log;
+
     @FindBy(xpath = "//a[normalize-space()='Login']")
     @CacheLookup
     WebElement btnLoginClick;
@@ -68,7 +68,7 @@ public class LoginPageClass extends TestBaseClass {
         emailAddress.sendKeys(Email);
         log.info("Entering Password into the Password field");
         password.sendKeys(Pass);
-        js.executeScript("window.scrollBy(0, 200)", "");
+        TestUtil.js.executeScript("window.scrollBy(0, 200)", "");
 
         // If user wants to check the RememberMe
         rememberMe.click();
