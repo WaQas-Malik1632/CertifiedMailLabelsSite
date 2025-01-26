@@ -8,11 +8,4 @@
 	</buildSpec>
 	<natures>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>.link1</name>
-			<type>2</type>
-			<location>D:/Eclipse Installation/eclipse/configuration/org.eclipse.osgi/432/0/.cp</location>
-		</link>
-	</linkedResources>
 </projectDescription>

@@ -28,7 +28,8 @@ public class TestBaseClass {
 
         log = LogManager.getLogger(TestBaseClass.class);
         prop = new Properties();
-        FileInputStream ip = new FileInputStream("D:/Automation Sites/CertifiedMailLabelsSite/src/main/java/com/cml/qa/config/config.properties");
+     //   FileInputStream ip = new FileInputStream("E:/Automation Projects/CertifiedMailLablesSite/src/main/java/com/cml/qa/config/config.properties");
+        FileInputStream ip = new FileInputStream("src/main/java/com/cml/qa/config/config.properties");
         prop.load(ip);
     }
 
