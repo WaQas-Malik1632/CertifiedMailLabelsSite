@@ -18,12 +18,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
 
 import java.io.IOException;
 
 public class DashboardPageTestClass extends TestBaseClass {
-	TestUtil util;
 	LoginPageClass login;
 	DashboardPageClass dashboard;
 	public static Logger log;
@@ -36,9 +34,8 @@ public class DashboardPageTestClass extends TestBaseClass {
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
 		log.info("**** Starting Dashboard Page Test cases execution ****");
-		util = new TestUtil();
-		//intialization();
-		Headless_Intialization();
+		intialization();
+//		Headless_Intialization();
 		login = new LoginPageClass();
 		login.PreRequisiteLinkClickLogin();
 		dashboard = login.Login_Testcases(prop.getProperty("email"), prop.getProperty("password"));
@@ -59,8 +56,8 @@ public class DashboardPageTestClass extends TestBaseClass {
 			log.info("Page Title has been successfully verified");
 			log.info("User is landed on the Dashboard page successfully" + "\n");
 		} catch (AssertionError e) {
-			log.error("User doesn't login due to Invalid credentials->Dashboard Page Title Verification Failed" + "\n"+e.getMessage());
-			util.TakeScreenshot(driver," Screenshot_DashboardPage TestCase 'CML_DASHBOARD_001'");
+			log.error("User doesn't login due to invalid credentials->Dashboard Page Title Verification Failed" + "\n"+e.getMessage());
+			TestUtil.TakeScreenshot(driver," Screenshot_DashboardPage TestCase 'CML_DASHBOARD_001'");
 			throw e; // Re-throw the assertion error to ensure the test fails
 		}
 		log.info("** Execution of Dashboard Page Title Verification 'CML_DASHBOARD_001' Ended **");

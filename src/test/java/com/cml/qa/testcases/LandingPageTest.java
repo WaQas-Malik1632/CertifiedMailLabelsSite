@@ -1,7 +1,9 @@
 package com.cml.qa.testcases;
 
 import com.cml.qa.base.TestBaseClass;
+import com.cml.qa.pages.DashboardPageClass;
 import com.cml.qa.pages.LandingPageClass;
+import com.cml.qa.pages.LoginPageClass;
 import com.cml.qa.pages.SignUpPageClass;
 import com.cml.qa.utilities.TestUtil;
 import com.cml.qa.utilities.TestUtil_mailinator;
@@ -18,15 +20,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
 
 import java.io.IOException;
 
 public class LandingPageTest extends TestBaseClass {
 
-    TestUtil util;
     SignUpPageClass signup;
     TestUtil_mailinator utilMailinator;
+    DashboardPageClass dash;
     LandingPageClass landPage;
     public static Logger log;
 
@@ -39,14 +40,14 @@ public class LandingPageTest extends TestBaseClass {
     @BeforeMethod
     public void beforeMethod() throws IOException, InterruptedException {
         log.info("**** Starting Landing Page Test Cases Execution ****");
-        util = new TestUtil();
         intialization();
-     // Headless_Intialization();
+//       Headless_Intialization();
         signup = new SignUpPageClass();
         signup.Precondition();
         signup.userRegistrationForm();
         utilMailinator = new TestUtil_mailinator();
         utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
+        dash=new DashboardPageClass();
         landPage = new LandingPageClass();
     }
 
@@ -66,7 +67,7 @@ public class LandingPageTest extends TestBaseClass {
             log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_001' Ended ****");
         } catch (Exception e) {
             log.error("Landing Page UI verification Test Case failed: " + e.getMessage());
-            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_001' ");
+            TestUtil.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_001' ");
             throw new RuntimeException(e);
         }
         log.info("**** Execution of Test 'TC_CML_SS_001' Ended ****");
@@ -88,7 +89,7 @@ public class LandingPageTest extends TestBaseClass {
             log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_002' Ended ****");
         } catch (Exception e) {
             log.error("Landing Page Right side bar links verification Test Case failed: " + e.getMessage());
-            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_002' ");
+            TestUtil.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_002' ");
             throw new RuntimeException(e);
         }
         log.info("**** Execution of Test 'TC_CML_SS_003' Ended ****");
@@ -110,7 +111,7 @@ public class LandingPageTest extends TestBaseClass {
             log.info("**** Execution of Verify that user clicks on CML logo then app navigates to CML logo 'TC_CML_SS_003' Ended ****");
         } catch (Exception e) {
             log.error("Landing Page TC_CML_SS_003 Test Case failed: " + e.getMessage());
-            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_003' ");
+            TestUtil.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_003' ");
             throw new RuntimeException(e);
         }
         log.info("**** Execution of Test 'TC_CML_SS_003' Ended ****");
@@ -131,7 +132,7 @@ public class LandingPageTest extends TestBaseClass {
             log.info("**** Execution of verify that user clicks on GET STARTED TODAY 'TC_CML_SS_006' Ended ****");
         } catch (Exception e) {
             log.error("Landing Page TC_CML_SS_006 Test Case failed: " + e.getMessage());
-            util.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_006' ");
+            TestUtil.TakeScreenshot(driver, " _LandingPage Test Failure Screenshot_'TC_CML_SS_006' ");
             throw new RuntimeException(e);
         }
         log.info("**** Execution of Test 'TC_CML_SS_006' Ended ****");

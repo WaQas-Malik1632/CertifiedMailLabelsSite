@@ -16,15 +16,10 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
-
 import java.io.IOException;
-
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 
 public class LoginPageTest extends TestBaseClass {
-
-    TestUtil util;
     LoginPageClass login;
     DashboardPageClass dashboard;
     public static Logger log;
@@ -38,8 +33,6 @@ public class LoginPageTest extends TestBaseClass {
 
     @BeforeMethod
     public void beforeMethod() throws IOException {
-
-        util = new TestUtil();
         //intialization();
         Headless_Intialization();
         login = new LoginPageClass();
@@ -66,7 +59,7 @@ public class LoginPageTest extends TestBaseClass {
             log.info("User landed on Dashboard Page->Page Url has been successfully verified");
         } catch (AssertionError e) {
             log.error("Login Failed->These credentials do not match our records" + "\n"+e.getMessage());
-            util.TakeScreenshot(driver," Screenshot_Login TestCase 'TC_CML_SS_010' ");
+            TestUtil.TakeScreenshot(driver," Screenshot_Login TestCase 'TC_CML_SS_010' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of Test 'TC_CML_SS_010' Ended");
@@ -93,7 +86,7 @@ public class LoginPageTest extends TestBaseClass {
             log.info("\n" + "These credentials do not match our records. Password is case-sensitive." + "\n");
         } catch (AssertionError e) {
             log.error("User logged in successfully" + "\n"+e.getMessage());
-            util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_168' ");
+            TestUtil.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_168' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of Test 'TC_CML_SS_168' Ended");
@@ -115,7 +108,7 @@ public class LoginPageTest extends TestBaseClass {
             log.info("\"Login title has been successfully verified\"");
         } catch (AssertionError e) {
             log.error("Login title verification failed: " + e.getMessage());
-            util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_004' ");
+            TestUtil.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_004' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of Test 'TC_CML_SS_004' Ended");
@@ -137,7 +130,7 @@ public class LoginPageTest extends TestBaseClass {
             log.info("Login page logo has been successfully verified");
         } catch (AssertionError e) {
             log.error("Login page logo verification failed: " + e.getMessage());
-            util.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_005' ");
+            TestUtil.TakeScreenshot(driver, " _Login Test Failure Screenshot_'TC_CML_SS_005' ");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
         log.info("Execution of Test 'TC_CML_SS_005' Ended");

@@ -1,7 +1,9 @@
 package com.cml.qa.pages;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import com.cml.qa.utilities.TestUtil;
 import com.cml.qa.utilities.TestUtil_mailinator;
 import com.github.javafaker.Faker;
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +19,6 @@ import com.cml.qa.base.TestBaseClass;
 public class SignUpPageClass extends TestBaseClass {
 
     Faker fakeData = new Faker();
-    JavascriptExecutor js = (JavascriptExecutor) driver;
     public static String Emailaddress;
     public static String password = "Pass@123";
     public static Logger log;
@@ -116,12 +117,13 @@ public class SignUpPageClass extends TestBaseClass {
 
         // Enter your Return Address
         returnAddress.sendKeys(fakeData.address().fullAddress());
-        js.executeScript("window.scrollBy(0, 400)", "");
+        TestUtil.js.executeScript("window.scrollBy(0, 400)", "");
         log.info("Scrolling the window vertically");
         String fullAddress = fakeData.address().fullAddress();
         log.info("Full Address: " + fullAddress);
 
         // Example full address format: "1234 Elm Street, Springfield, IL 62704"
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 
         // Split the address to extract city, state, and zip
         String[] addressParts = fullAddress.split(",");
@@ -160,7 +162,7 @@ public class SignUpPageClass extends TestBaseClass {
         // Enter Password
         txt_password.sendKeys(password);
         log.info("Entered password: " + password);
-        js.executeScript("window.scrollBy(0, 400)", "");
+        TestUtil.js.executeScript("window.scrollBy(0, 400)", "");
 
         // Enter Confirm Password
         txt_confirm_Password.sendKeys(password);

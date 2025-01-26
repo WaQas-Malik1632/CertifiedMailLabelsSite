@@ -2,6 +2,7 @@ package com.cml.qa.base;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +28,8 @@ public class TestBaseClass {
 
         log = LogManager.getLogger(TestBaseClass.class);
         prop = new Properties();
-        FileInputStream ip = new FileInputStream("D:/Automation Sites/CertifiedMailLabelsSite/src/main/java/com/cml/qa/config/config.properties");
+     //   FileInputStream ip = new FileInputStream("E:/Automation Projects/CertifiedMailLablesSite/src/main/java/com/cml/qa/config/config.properties");
+        FileInputStream ip = new FileInputStream("src/main/java/com/cml/qa/config/config.properties");
         prop.load(ip);
     }
 
@@ -53,12 +55,13 @@ public class TestBaseClass {
             log.debug("This is debug message");
             log.fatal("This is fatal error message");
         }
-        driver.get(prop.getProperty("url"));
+        driver.get(prop.getProperty("BaseUrl"));
         log.info("**** Entering the CML Application Url into browser ****");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
     }
 
     public static void Headless_Intialization() {
@@ -91,12 +94,12 @@ public class TestBaseClass {
             log.debug("This is debug message");
             log.fatal("This is fatal error message");
         }
-        driver.get(prop.getProperty("url"));
+        driver.get(prop.getProperty("BaseUrl"));
         log.info("**** Entering the CML Application Url into browser ****");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
     }
 
 }
