@@ -23,22 +23,23 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
 
-public class LandingPageTest extends TestBaseClass {
-
+public class LandingPageTest extends TestBaseClass
+{
     SignUpPageClass signup;
     TestUtil_mailinator utilMailinator;
     DashboardPageClass dash;
     LandingPageClass landPage;
     public static Logger log;
 
-    public LandingPageTest() throws IOException {
-
-        log = LogManager.getLogger(LandingPageTest.class);
+    public LandingPageTest() throws IOException
+    {
         super();
+        log = LogManager.getLogger(LandingPageTest.class);
     }
 
     @BeforeMethod
-    public void beforeMethod() throws IOException, InterruptedException {
+    public void beforeMethod() throws IOException, InterruptedException
+    {
         log.info("**** Starting Landing Page Test Cases Execution ****");
         intialization();
 //       Headless_Intialization();
@@ -58,8 +59,8 @@ public class LandingPageTest extends TestBaseClass {
     @Story("LandingPage TestCases")
     @Step("After successful Login->LandingPage->Verify Landing page UI is showing correctly")
     @Severity(SeverityLevel.CRITICAL)
-    public void TC_CML_SS_001() throws IOException {
-
+    public void TC_CML_SS_001() throws IOException
+    {
         try {
             log.info("**** Execution of Landing Page UI verification 'TC_CML_SS_001' Started ****");
             landPage.VerifyLandingPageUIElements();
@@ -80,8 +81,8 @@ public class LandingPageTest extends TestBaseClass {
     @Story("LandingPage TestCases")
     @Step("After successful Login->LandingPage->Verify Landing page UI is showing correctly")
     @Severity(SeverityLevel.BLOCKER)
-    public void TC_CML_SS_002() throws IOException {
-
+    public void TC_CML_SS_002() throws IOException
+    {
         try {
             log.info("**** Execution of Landing Page right side bar links 'TC_CML_SS_002' Started ****");
             landPage.RightSideBarLinks();
@@ -102,8 +103,8 @@ public class LandingPageTest extends TestBaseClass {
     @Story("LandingPage TestCases")
     @Step("After successful Login->LandingPage->Verify that user clicks on CML logo then app navigates to CML logo")
     @Severity(SeverityLevel.BLOCKER)
-    public void TC_CML_SS_003() throws IOException {
-
+    public void TC_CML_SS_003() throws IOException
+    {
         try {
             log.info("**** Execution of verify that user clicks on CML logo then app navigates to CML logo 'TC_CML_SS_003' Started ****");
             landPage.VerifyCMLLogo();
@@ -123,8 +124,8 @@ public class LandingPageTest extends TestBaseClass {
     @Story("LandingPage TestCases")
     @Step("After successful Login->LandingPage->verify that user clicks on GET STARTED TODAY")
     @Severity(SeverityLevel.BLOCKER)
-    public void TC_CML_SS_006() throws IOException {
-
+    public void TC_CML_SS_006() throws IOException
+    {
         try {
             log.info("**** Execution of Test 'TC_CML_SS_006' 'Verify that user clicks on GET STARTED TODAY' Started ****");
             landPage.GetStartedToday_ImageClick();
@@ -139,7 +140,8 @@ public class LandingPageTest extends TestBaseClass {
     }
 
     @AfterClass
-    public void TearDown() {
+    public void TearDown()
+    {
         log.info("----All the test cases of Landing Page has been executed----");
     }
 
