@@ -21,18 +21,21 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
 
-public class DashboardPageTestClass extends TestBaseClass {
+public class DashboardPageTestClass extends TestBaseClass
+{
 	LoginPageClass login;
 	DashboardPageClass dashboard;
 	public static Logger log;
 
-	public DashboardPageTestClass() throws IOException {
-		log= LogManager.getLogger(DashboardPageTestClass.class);
+	public DashboardPageTestClass() throws IOException
+	{
 		super();
+		log= LogManager.getLogger(DashboardPageTestClass.class);
 	}
 
 	@BeforeMethod
-	public void beforeMethod() throws IOException {
+	public void beforeMethod() throws IOException
+	{
 		log.info("**** Starting Dashboard Page Test cases execution ****");
 		intialization();
 //		Headless_Intialization();
@@ -48,7 +51,8 @@ public class DashboardPageTestClass extends TestBaseClass {
 	@Story("Dashboard Page TestCases")
 	@Step("Login->Dashboard->Verify Page Title")
 	@Severity(SeverityLevel.CRITICAL)
-	public void VerifyDashboardPageTitle() throws IOException {
+	public void VerifyDashboardPageTitle() throws IOException
+	{
 		log.info("Execution of Dashboard Page Title verification 'CML_DASHBOARD_001' Started");
 		String DashboardPageTitleIs = dashboard.DashboardTitleVerify();
 		try {
@@ -64,7 +68,8 @@ public class DashboardPageTestClass extends TestBaseClass {
 	}
 
 	@AfterClass
-	public void TearDown() {
+	public void TearDown()
+	{
 		log.info("----All the test cases of Dashboard Page has been executed----");
 	}
 }

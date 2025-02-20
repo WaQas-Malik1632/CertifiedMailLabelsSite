@@ -11,8 +11,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.cml.qa.base.TestBaseClass;
 
-public class LoginPageClass extends TestBaseClass {
-
+public class LoginPageClass extends TestBaseClass
+{
     DashboardPageClass dashboard;
     public static Logger log;
 
@@ -38,32 +38,32 @@ public class LoginPageClass extends TestBaseClass {
     @CacheLookup
     WebElement CMLLogo;
 
-    public LoginPageClass() throws IOException {
-
+    public LoginPageClass() throws IOException
+    {
         super();
         PageFactory.initElements(driver, this);
         log = LogManager.getLogger(LoginPageClass.class);
     }
 
-    public void PreRequisiteLinkClickLogin() {
-
+    public void PreRequisiteLinkClickLogin()
+    {
         btnLoginClick.click();
     }
 
-    public String VerifyLoginTitle() {
-
+    public String VerifyLoginTitle()
+    {
         log.info("\n" + "Login Page Title is:" + LoginTitle.getText() + "\n");
         return LoginTitle.getText();
     }
 
-    public boolean VerifyLoginPageLogo() {
-
+    public boolean VerifyLoginPageLogo()
+    {
         log.info("\n" + "CML Site Logo is visible:" + CMLLogo.isDisplayed() + "\n");
         return CMLLogo.isDisplayed();
     }
 
-    public DashboardPageClass Login_Testcases(String Email, String Pass) throws IOException {
-
+    public DashboardPageClass Login_Testcases(String Email, String Pass) throws IOException
+    {
         log.info("Entering Email into the Email field");
         emailAddress.sendKeys(Email);
         log.info("Entering Password into the Password field");

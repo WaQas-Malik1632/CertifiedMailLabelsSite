@@ -12,14 +12,11 @@
 
 	<properties>
 
-		<maven.compiler.source>22</maven.compiler.source>
-
-
-		<maven.compiler.target>22</maven.compiler.target>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 	</properties>
-
 	<dependencies>
 		<!--https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -71,8 +68,7 @@
 			<artifactId>allure-testng</artifactId>
 			<version>2.27.0</version>
 		</dependency>
-		<!--
-        https://mvnrepository.com/artifact/io.qameta.allure/allure-test-filter -->
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-test-filter -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-test-filter</artifactId>
@@ -81,8 +77,7 @@
 		</dependency>
 
 
-		<!--
-        https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons -->
+		<!--https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-java-commons</artifactId>
@@ -101,8 +96,7 @@
 			<artifactId>allure-maven</artifactId>
 			<version>2.13.0</version>
 		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/com.github.automatedowl/allure-environment-writer -->
+		<!--https://mvnrepository.com/artifact/com.github.automatedowl/allure-environment-writer -->
 		<dependency>
 			<groupId>com.github.automatedowl</groupId>
 			<artifactId>allure-environment-writer</artifactId>
@@ -116,31 +110,6 @@
 			<version>2.16.1</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.checkerframework/jdk7 -->
-		<dependency>
-			<groupId>org.checkerframework</groupId>
-			<artifactId>jdk7</artifactId>
-			<version>2.1.14</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
-		<dependency>
-			<groupId>org.uncommons</groupId>
-			<artifactId>reportng</artifactId>
-			<version>1.1.4</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
-		<dependency>
-			<groupId>com.google.inject</groupId>
-			<artifactId>guice</artifactId>
-			<version>7.0.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/velocity/velocity-dep -->
-		<dependency>
-			<groupId>velocity</groupId>
-			<artifactId>velocity-dep</artifactId>
-			<version>1.4</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -164,21 +133,34 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.13.0</version>
 				<configuration>
-					<source>22</source>
-					<target>22</target>
+					<source>21</source>
+					<target>21</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>1.18.36</version>
+						</path>
+					</annotationProcessorPaths>
 					<compilerArgs>--enable-preview</compilerArgs>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.5</version>
+				<version>3.5.2</version>
 				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>SmokeSuit_TestNG.xml</suiteXmlFile>
-					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<property>
+							<name>myPropertyName</name> <!-- Ensure property name is provided -->
+							<value>myPropertyValue</value>
+						</property>
+					</systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/main/resources/SmokeSuit_TestNG.xml</suiteXmlFile>
+                    </suiteXmlFiles>
 					<properties>
 						<properties>
 							<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

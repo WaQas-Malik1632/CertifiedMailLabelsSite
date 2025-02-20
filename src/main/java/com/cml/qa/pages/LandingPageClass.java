@@ -19,8 +19,8 @@ import java.util.*;
 
 import com.cml.qa.utilities.TestUtil;
 
-public class LandingPageClass extends TestBaseClass {
-
+public class LandingPageClass extends TestBaseClass
+{
     public static Logger log;
     //Page Center elements
     @FindBy(xpath = "//h1[normalize-space()='USPS Certified Mail Labels']")
@@ -77,10 +77,10 @@ public class LandingPageClass extends TestBaseClass {
     @CacheLookup
     WebElement VerifyImageGetStartedToday;
 
-    public LandingPageClass() throws IOException {
-
-        log = LogManager.getLogger(LandingPageClass.class);
+    public LandingPageClass() throws IOException
+    {
         super();
+        log = LogManager.getLogger(LandingPageClass.class);
         PageFactory.initElements(driver, this);
     }
 
@@ -93,8 +93,8 @@ public class LandingPageClass extends TestBaseClass {
     final String USPSCML_IMAGE_SRC_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/Certified-Mail--Rates_SEPT2024.jpg";
     final String GET_STARTED_IMAGE_TEXT_EXPECTED = "https://cml-ckeditor.s3.amazonaws.com/Get-Started-Now-Certified-Mail-Labels-600.jpg";
 
-    public HashMap<String, WebElement> VerifyLandingPageUIElements() throws InterruptedException {
-
+    public HashMap<String, WebElement> VerifyLandingPageUIElements() throws InterruptedException
+    {
         HashMap<String, WebElement> elements = new HashMap<>();
         // Store WebElements in the HashMap
         elements.put("VerifyPageHeadingH1", VerifyPageHeadingH1);
@@ -223,7 +223,8 @@ public class LandingPageClass extends TestBaseClass {
         return elements;
     }
 
-    public void RightSideBarLinks() throws InterruptedException {
+    public void RightSideBarLinks() throws InterruptedException
+    {
         log.info("-----Verification of Sidebar Links Started-----");
 
         // Find the list of links in the right sidebar
@@ -232,7 +233,8 @@ public class LandingPageClass extends TestBaseClass {
         log.info("Number of elements in the specific <ul>: " + allLinks.size());
 
         // Iterate through each link in the sidebar
-        for (int i = 0; i < allLinks.size(); i++) {
+        for (int i = 0; i < allLinks.size(); i++)
+        {
             // Re-fetch the list of links to avoid stale element exception
             rightSideBar = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[2]/aside/ul"));
             allLinks = rightSideBar.findElements(By.xpath(".//a"));
@@ -251,13 +253,15 @@ public class LandingPageClass extends TestBaseClass {
             singleLink.click(); // Click the link
 
             // Check if the target attribute is '_blank'
-            if ("_blank".equals(linkTarget)) {
+            if ("_blank".equals(linkTarget))
+            {
                 // Wait and switch to the new tab that opens
                 Set<String> allWindowIds = driver.getWindowHandles();
                 List<String> windowHandlesList = new ArrayList<>(allWindowIds);
 
                 // Switch to the newly opened tab using index 1 (assuming the new tab is at index 1)
-                if (windowHandlesList.size() > 1) { // Make sure there is more than one window
+                if (windowHandlesList.size() > 1)
+                { // Make sure there is more than one window
                     driver.switchTo().window(windowHandlesList.get(0));
                     log.info("Switched to the new tab.");
                 }
@@ -268,13 +272,15 @@ public class LandingPageClass extends TestBaseClass {
             // Locate page content and log details of all elements within the parent div
             WebElement pageContent = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div/div/div[1]/div"));
             List<WebElement> allElementsInsideParentDiv = pageContent.findElements(By.xpath(".//*[not(self::br)]"));
-            for (WebElement element : allElementsInsideParentDiv) {
+            for (WebElement element : allElementsInsideParentDiv)
+            {
                 log.info("Tag Name: " + element.getTagName() + " | IsDisplayed: " + element.isDisplayed() + " | Text: " + element.getText());
             }
             log.info("====Link opened and its relevant content verified==== " + linkText);
 
             // Navigate back to the original window or close the tab based on the link's target
-            if ("_blank".equals(linkTarget)) {
+            if ("_blank".equals(linkTarget))
+            {
                // driver.close(); // Close the new tab
                 driver.switchTo().window(originalWindow); // Switch back to the original tab
             } else {
@@ -288,7 +294,8 @@ public class LandingPageClass extends TestBaseClass {
         log.info("-----Verification of Sidebar Links Ended-----");
     }
 
-    public void VerifyCMLLogo() throws InterruptedException {
+    public void VerifyCMLLogo() throws InterruptedException
+    {
 
         Assert.assertTrue(TestUtil.wait.until(ExpectedConditions.visibilityOf(CMLLogoClick)).isDisplayed(), "The Image is not displayed on the page.");
         log.info("Logo is present: " + CMLLogoClick.isDisplayed() + "  and Its Source URL is: " + CMLLogoClick.getAttribute("src"));
@@ -299,7 +306,8 @@ public class LandingPageClass extends TestBaseClass {
         Assert.assertEquals(driver.getCurrentUrl(), expectedUrlAfterClickOnLogo, "Page URL mismatch.");
         log.info("After Clicking on CML Logo, its Page URL is: " + expectedUrlAfterClickOnLogo);
     }
-    public void GetStartedToday_ImageClick(){
+    public void GetStartedToday_ImageClick()
+    {
         Assert.assertTrue(TestUtil.wait.until(ExpectedConditions.visibilityOf(VerifyImageGetStartedToday)).isDisplayed(), "'Get Started Today' Image is not displayed on the page.");
         String getStartedImageSrc = VerifyImageGetStartedToday.getAttribute("src");
         log.info("Get Started Image is present and Its Source URL is: " + getStartedImageSrc);

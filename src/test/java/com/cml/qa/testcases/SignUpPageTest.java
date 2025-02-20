@@ -25,22 +25,24 @@ import java.io.IOException;
 
 import org.testng.Assert;
 
-public class SignUpPageTest extends TestBaseClass {
-
+public class SignUpPageTest extends TestBaseClass
+{
     LoginPageClass loginPage;
     SignUpPageClass signup;
     TestUtil_mailinator utilMailinator;
     LandingPageClass landPage;
     public static Logger log;
 
-    public SignUpPageTest() throws IOException {
-        log = LogManager.getLogger(SignUpPageTest.class);
+    public SignUpPageTest() throws IOException
+    {
         super();
+        log = LogManager.getLogger(SignUpPageTest.class);
         log.info("**** Starting SignUp Page Test Cases Execution ****");
     }
 
     @BeforeMethod
-    public void beforeMethod() throws IOException {
+    public void beforeMethod() throws IOException
+    {
        intialization();
 //        Headless_Intialization();
         loginPage = new LoginPageClass();
@@ -57,7 +59,8 @@ public class SignUpPageTest extends TestBaseClass {
     @Story("SignUp Page TestCases")
     @Step("Login->Home->Verify Elements")
     @Severity(SeverityLevel.CRITICAL)
-    public void TC_CML_SS_002() throws IOException {
+    public void TC_CML_SS_002() throws IOException
+    {
         log.info("Execution of SignUp Page Title verification 'CML_REG_001' Started");
         String SignUpTitleVerify = signup.VerifySignUpTitle();
         try {
@@ -79,7 +82,8 @@ public class SignUpPageTest extends TestBaseClass {
     @Step("Signup>>Home page")
     @Severity(SeverityLevel.CRITICAL)
     @Attachment()
-    public void TC_CML_SS_020() throws InterruptedException, IOException {
+    public void TC_CML_SS_020() throws InterruptedException, IOException
+    {
 
         log.info("Execution of SignUp Page Title verification 'TC_CML_SS_020' Started");
 
@@ -87,7 +91,8 @@ public class SignUpPageTest extends TestBaseClass {
 
         log.info("\n" + "->Page Url is: " + driver.getCurrentUrl() + " and Title is-> " + driver.getTitle() + "\n");
 
-        if (signup.VerifyUniqueEmail().contains("Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, ")) {
+        if (signup.VerifyUniqueEmail().contains("Please check your email. Click the button or link inside the ACCOUNT REGISTRATION CONFIRMATION email to confirm your registration and email. To resend your email confirmation, "))
+        {
             log.info("Email is available. Proceeding with Mailinator verification");
             landPage = utilMailinator.MailinatorLinkVerificationAndLoginNewUser();
             log.info("Email verified successfully");
@@ -96,13 +101,15 @@ public class SignUpPageTest extends TestBaseClass {
 
             TestUtil.TakeScreenshot(driver, "TC_CML_SS_020_LinkVerifySuccess_ 'TC_CML_SS_020' ");
 
-        } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken.")) {
+        } else if (signup.VerifyEmailAlreadyTaken().contains("The email has already been taken."))
+        {
             log.error("Email is already taken->Test failed.");
 
             TestUtil.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
             Assert.assertTrue(false, "Test case failed because, Email is already taken");
 
-        } else {
+        } else
+        {
             //	throw new SkipException("Skipping the test case execution, something went wrong");
             log.error("Skipping the test case execution, something went wrong");
             TestUtil.TakeScreenshot(driver," Screenshot_SignUpPage Failed TestCase 'TC_CML_SS_020'");
@@ -111,7 +118,8 @@ public class SignUpPageTest extends TestBaseClass {
     }
 
     @AfterClass
-    public void TearDown() {
+    public void TearDown()
+    {
         log.info("----All the test cases of SignUp Page has been executed----");
     }
 

@@ -16,15 +16,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import com.cml.qa.base.TestBaseClass;
 
-public class SignUpPageClass extends TestBaseClass {
-
+public class SignUpPageClass extends TestBaseClass
+{
     Faker fakeData = new Faker();
     public static String Emailaddress;
     public static String password = "Pass@123";
     public static Logger log;
 
-    public SignUpPageClass() throws IOException {
-
+    public SignUpPageClass() throws IOException
+    {
         super();
         PageFactory.initElements(driver, this);
         log = LogManager.getLogger(SignUpPageClass.class);
@@ -91,17 +91,19 @@ public class SignUpPageClass extends TestBaseClass {
     @CacheLookup
     WebElement EmailAlreadyVerifiedText;
 
-    public void Precondition() {
-
+    public void Precondition()
+    {
         click_register.click();
     }
 
-    public String VerifySignUpTitle() {
+    public String VerifySignUpTitle()
+    {
         log.info("\n" + "SignUp Page Title is:" + registerTitle.getText() + "\n");
         return registerTitle.getText();
     }
 
-    public LoginPageClass userRegistrationForm() throws IOException {
+    public LoginPageClass userRegistrationForm() throws IOException
+    {
         // Enter First Name
         fName.sendKeys(fakeData.name().firstName());
         log.info("First Name: " + fakeData.name().firstName());
@@ -127,13 +129,15 @@ public class SignUpPageClass extends TestBaseClass {
 
         // Split the address to extract city, state, and zip
         String[] addressParts = fullAddress.split(",");
-        if (addressParts.length >= 3) {
+        if (addressParts.length >= 3)
+        {
             String city = addressParts[1].trim();
             String stateAndZip = addressParts[2].trim();
 
             // Split the state and zip part to get state and zip
             String[] stateZipParts = stateAndZip.split(" ");
-            if (stateZipParts.length >= 2) {
+            if (stateZipParts.length >= 2)
+            {
                 String state = stateZipParts[0].trim();
                 String zip = stateZipParts[1].trim();
 
@@ -146,7 +150,8 @@ public class SignUpPageClass extends TestBaseClass {
                 log.info("\n" +"Selected State Option is:"+ state);
                 ZipCode.sendKeys(zip);
                 log.info("ZIP Code is : " + zip);
-            } else {
+            } else
+            {
                 log.error("Unable to extract state and zip code");
             }
         }
@@ -173,12 +178,13 @@ public class SignUpPageClass extends TestBaseClass {
         return new LoginPageClass();
     }
 
-    public String VerifyUniqueEmail() {
-
+    public String VerifyUniqueEmail()
+    {
         return EmailVerifiedSuccessText.getText();
     }
 
-    public String VerifyEmailAlreadyTaken() {
+    public String VerifyEmailAlreadyTaken()
+    {
 
         return EmailAlreadyVerifiedText.getText();
     }

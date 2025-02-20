@@ -19,20 +19,22 @@ import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 import org.testng.Assert;
 
-public class LoginPageTest extends TestBaseClass {
+public class LoginPageTest extends TestBaseClass
+{
     LoginPageClass login;
     DashboardPageClass dashboard;
     public static Logger log;
 
-    public LoginPageTest() throws IOException {
-
-        log = LogManager.getLogger(LoginPageTest.class);
+    public LoginPageTest() throws IOException
+    {
         super();
+        log = LogManager.getLogger(LoginPageTest.class);
         log.info("**** Starting Login Page Test cases execution ****");
     }
 
     @BeforeMethod
-    public void beforeMethod() throws IOException {
+    public void beforeMethod() throws IOException
+    {
         //intialization();
         Headless_Intialization();
         login = new LoginPageClass();
@@ -47,7 +49,8 @@ public class LoginPageTest extends TestBaseClass {
     @Story("Login TestCases")
     @Step("Hit Site Url->Login as Parent User")
     @Severity(SeverityLevel.BLOCKER)
-    public void TC_CML_SS_010() throws IOException {
+    public void TC_CML_SS_010() throws IOException
+    {
 
         try {
             log.info("Execution of Login Page Tests 'TC_CML_SS_010' Started");
@@ -73,7 +76,8 @@ public class LoginPageTest extends TestBaseClass {
     @Story("Login TestCases")
     @Step("Hit Site Url->Login as Parent User")
     @Severity(SeverityLevel.CRITICAL)
-    public void TC_CML_SS_168() throws IOException {
+    public void TC_CML_SS_168() throws IOException
+    {
 
         log.info("Execution of Login Page Tests 'TC_CML_SS_168' Started");
         log.info("Entering Email and Password");
@@ -99,7 +103,8 @@ public class LoginPageTest extends TestBaseClass {
     @Story("Login Page TestCases")
     @Step("Login->Verify Login Page Title")
     @Severity(SeverityLevel.CRITICAL)
-    public void TC_CML_SS_004() throws IOException {
+    public void TC_CML_SS_004() throws IOException
+    {
 
         log.info("Execution of Login Page Tests 'TC_CML_SS_004' Started");
         String LoginTitle = login.VerifyLoginTitle();
@@ -121,7 +126,8 @@ public class LoginPageTest extends TestBaseClass {
     @Story("Login Page TestCases")
     @Step("Login->Verify Login Page Logo")
     @Severity(SeverityLevel.CRITICAL)
-    public void TC_CML_SS_005() throws IOException {
+    public void TC_CML_SS_005() throws IOException
+    {
 
         log.info("**** Execution of Login Page Tests 'TC_CML_SS_005' Started ****");
         boolean flag = login.VerifyLoginPageLogo();
@@ -137,7 +143,8 @@ public class LoginPageTest extends TestBaseClass {
     }
 
     @AfterClass
-    public void TearDown() {
+    public void TearDown()
+    {
         log.info("----All the test cases of Login Page has been executed----");
     }
 
