@@ -150,27 +150,18 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.5.2</version>
+				<version>3.1.2</version>
 				<configuration>
-					<systemPropertyVariables>
-						<property>
-							<name>myPropertyName</name> <!-- Ensure property name is provided -->
-							<value>myPropertyValue</value>
-						</property>
-					</systemPropertyVariables>
+					<properties>
+					<property>
+						<name>surefire.timeout</name>  <!-- ✅ Ensure each property has a "name" field -->
+						<value>300</value>
+					</property>
+					</properties>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/main/resources/SmokeSuit_TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
-					<properties>
-						<properties>
-							<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-							<aspectj.version>1.9.9.1</aspectj.version>
-						</properties>
-						<property>
-							<name>usedefaultlisteners</name>
-							<value>True</value>
-						</property>
-					</properties>
+
 				</configuration>
 			</plugin>
 		</plugins>
