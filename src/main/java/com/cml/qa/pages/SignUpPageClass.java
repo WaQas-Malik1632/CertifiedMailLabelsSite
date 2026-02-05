@@ -23,13 +23,6 @@ public class SignUpPageClass extends TestBaseClass
     public static String password = "Pass@123";
     public static Logger log;
 
-    public SignUpPageClass() throws IOException
-    {
-        super();
-        PageFactory.initElements(driver, this);
-        log = LogManager.getLogger(SignUpPageClass.class);
-    }
-
     @FindBy(xpath = "//a[normalize-space()='Register']")
     @CacheLookup
     WebElement click_register;
@@ -90,6 +83,13 @@ public class SignUpPageClass extends TestBaseClass
     @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div[1]/ul/li")
     @CacheLookup
     WebElement EmailAlreadyVerifiedText;
+
+    public SignUpPageClass() throws IOException
+    {
+        super();
+        PageFactory.initElements(driver, this);
+        log = LogManager.getLogger(SignUpPageClass.class);
+    }
 
     public void Precondition()
     {

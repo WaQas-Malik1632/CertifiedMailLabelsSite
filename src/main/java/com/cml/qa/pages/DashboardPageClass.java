@@ -10,20 +10,23 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class DashboardPageClass extends TestBaseClass {
+public class DashboardPageClass extends TestBaseClass
+{
 	public static Logger log;
 
 	@FindBy(xpath = "//h1[normalize-space()='Dashboard']")
 	@CacheLookup
 	WebElement DashboardTitle;
 
-	public DashboardPageClass() throws IOException {
+	public DashboardPageClass() throws IOException
+	{
 		super();
 		PageFactory.initElements(driver, this);
 		log = LogManager.getLogger(DashboardPageClass.class);
 	}
 
-	public String DashboardTitleVerify() {
+	public String DashboardTitleVerify()
+	{
 		DashboardTitle.isDisplayed();
 		return driver.getTitle();
 	}
